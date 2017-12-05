@@ -6,6 +6,8 @@ Tinder for Rap Battles:
 -establish a leader board
 	-top ranked one is the GOAT
 -people can meet up in parks and bring crowds/friends
+
+-public parks / meetups places
 ======================================================
 
 Opera performance finder:
@@ -15,4 +17,39 @@ Opera performance finder:
 googlemaps javascript API key : AIzaSyDiZ7cQkwAxaFBlRH74lle_xjtFln8fzVc
 	-Use Gmap3 jquery Plugin
 ======================================================
+
+
+Book Finder:
+-create accounts
+	-make wishlists of what characters of particular books you want
+-use google maps to find libraries that have what you're looking for
+
+-make mLab database called mobius with a collection of Users
+
+-make api authentication/JWT cosa.
+
+-make API endpoints for these users.
+
+see if API you'd interface with can take book names, ISBNs, or both...
+
+
+
+
+
+
+
+======================================================
+
+Netflix show binger
+"What are MY friends watching?"
+
+==============================================
+
+THere goes my hero...
+
+-create accounts for users and they can input their favorite comic book characters
+
+cross references the DC and Marvel apis and finds mention of your favorite characters appearing in movies or television shows.
+
+-dc, marvel, imdb apis?
 

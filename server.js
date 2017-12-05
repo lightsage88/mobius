@@ -70,9 +70,9 @@ passport.use(jwtStrategy);
 //an endpoint that includes /api/users/ that we are going to refer to rules
 //and features set up in the usersRouter file.
 //this is referenced up on like 20.
-app.use('/api/users', hoomanRouter);
+app.use('/api/hoomans', hoomanRouter);
 //similar deal but for /api/auth/  but it uses the authRouter file.
-app.use('/api/auth/', policeRouter);
+app.use('/api/cyberPolice/', policeRouter);
 
 //here, we set up a variable to represent a method of the passport package
 //so that when we are dealing with jsonwebTokens, we use this particular
