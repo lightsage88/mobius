@@ -124,7 +124,10 @@ const sizedFields = {
 //if the request body's version is too small, we return True as well...and then
 //we have a TRUE value for tooSmallField...which will throw an error soon.
 const tooSmallField = Object.keys(sizedFields).find(function(kirby){
-	return 'min' in sizedFields[kirby] &&
+	return 'min' in sizedFields[kirby] 
+	//it must be noted that the line above establishes that tooSmallField,
+	//when true, gets a value assigned to it where min is present?...????
+	&&
 			req.body[kirby].trim().length < sizedFields[kirby].min;
 });
 //but first...the search for things that are TOO BIIIIIG
@@ -137,4 +140,116 @@ const tooLargeField = Object.keys(sizedFields).find(function(deDede){
 			req.body[deDede].trim().length > sizedFields[deDede].max;
 });
 
-})
+//Now we use a logical operator || to say OR, so we can save some coding time
+//We will use this OR || operator in the context of saying if there is either
+//a positive value/TRUE attributed to the variables of tooSmallField or tooLargeField,
+//then we will be throwing an error. We will even use a tenrary operator to send
+//different messages to the use based on which value evaluated as TRUE
+if(tooSmallField || tooLargeField) {
+	//if either of these are said to be TRUE, then we are going to log it to the console
+	console.log(tooSmallField||tooLargeField);
+	//Object.keys() returns an array of whatever object is passed into it :)
+	console.log(sizedFields[tooSmallField]);
+//at any rate, if tooSmallField or tooLargeField have a value of TRUE,
+//we will be returning an error status code and a json
+	return res.status(422).json({
+		code: 422,
+		reason: 'ValidationError',
+		//Ternary operators work like...is the first thing you're 
+		//presenting the truth? then if yes, you immediately follow up with some
+		// `` marks with your desired code inside, then follow with a colon
+		//to store code for if the implied question's answer is different
+		message: tooSmallField ? `Needs to be at least ${sizedFields[tooSmallField].min}
+		characters long`
+		: `Can not be any longer than ${sizedFields[tooLargeField].max} characters long`,
+		location: tooSmallField || tooLargeField
+	});
+}
+
+//We use a destructuring assignment to establish that the following variables
+//must come from the request object's body.
+//we set the firstName and lastName as ''
+let {username, password, firstName = '', lastName= '' } = req.body;
+//after we establish that things are coming from the req.body...
+//(security purposes?)
+//we then state that firstName and lastName are equal to themselves with
+//the trim() function chained on at the end.
+firstName = firstName.trim();
+lastName = lastName.trim();
+//this we do to determine whether a username has been set already
+//we search in the Hooman database/collection to find an entry with
+//the username from the request body and count how many instances there
+//of such a username in the db/collection
+return Hooman.find({username})
+	.count()
+	.then(function(count){
+		if( count > 0) {
+			//it counts the number ofentries in the db/collection
+			//with that particular {username}. If there are more than zero,
+			//it's time to return the reject of a Promise!
+			return Promise.reject({
+				code: 422,
+				reason: 'ValidationError',
+				message: 'Someone already nabbed that username!',
+				location: 'username'
+			});
+		}
+		//however...if the count is less than or equal to zero...
+		//hash the password that is in the req.body
+		return Hooman.hashPassword(password);
+		//the above code is from models.js L67...we will literally be
+		//returning into the next part whatever the result of this code is
+		})//now the 'hash' will be sent to the next .then() block :)
+	.then(function(hash){
+		//I assume schemas have built in create methods in them, because
+		//we simply invoke the variable set in hoomans/models.js and begin
+		//filling in available information to fit what the schema we created
+		//looks like
+		return Hooman.create({
+			username,
+			password: hash,
+			firstName,
+			lastName
+		});
+	})
+	//there's more...now we are going to return a response object with
+	//the status of 201 to let the client know that a Hooman was created
+	//the Hooman was returned from the end of the last block, so we will be playing
+	//with that now in the following .then() block.
+	.then(function(hooman){
+		//we will send a 201 status and a json object with the hooman
+		//going through the apiRepr() method we defined in models.js
+		return res.status(201).json(hooman.apiRepr());
+	})
+	.catch(function(err){
+		//if there is a problem and the reason for the error evaluates
+		//to the 'ValidationError' we have been using so much, then it is
+		//safe to display the err code and the error
+		if(err.reason === 'ValidationError') {
+			return res.status(err.code).json(err);
+		}
+		//if the reason is something other than 'ValidationError', we could be
+		//dealing with something that involves more sensitive information and it
+		//is best to give a more generic error message that doesnt share too many details
+		res.status(500).json({code:500, message: 'Something is wack on our end'});
+	});
+});
+
+//Now we will define an endpoint for not any particular file tree destination, but
+//with a GET method. It will show us if we are indeed creating users that are
+//establishing permanence in our database
+//**written with classic function declarations
+router.get('/', function(req, res){
+	return Hooman.find()
+	.then(function(hoomans){
+		return res.json(hoomans.map(function(hooman){
+			hooman.apiRepr();
+		}));
+		//this semi-colon above may break this
+	})
+	.catch(function(err){
+		return res.status(500).json({message: 'Internal server screwup'});
+	});
+});
+
+/
