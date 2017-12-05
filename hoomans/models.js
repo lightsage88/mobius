@@ -34,4 +34,40 @@ const HoomanSchema = mongoose.Schema({
 		type: String,
 		default: ''
 	}
+	//we will want to add books we are searching for here later
 });
+//here wea re defining the method of apiRepr, which stands for api representation
+//which will determine WHAT the client will see on a successful get request and
+//what the other endpoints will be dealing with regarding other requests
+HoomanSchema.methods.apiRepr = function () {
+	return {
+		username: this.username || '';
+		firstName: this.firstName || '';
+		lastName: this.lastName || '';
+	};
+};
+
+//here we are defining the method of validatePassword. It will take, as an argument
+//data which is supposed to represent the password for a users account. It will 
+//use the middleware of bcrypt to compare the value of the passed in argument against
+//the actual password that was set up with the creation of a given account
+HoomanSchema.methods.validatePassword = function(password) {
+	return bcrypt.compare(password, this.password);
+};
+
+//static methods belong to the WHOLE class, not just the instance of a particular
+//object belonging to the class. Instantiated objects have member variables that
+//influence their behavior. When the instance has its method executed, the method will
+//refer to these variables.
+//However, all objects of a particular type might have behavior or need a behavior taht
+//is not dependent on member variables/other moving parts. These methods are best made
+// 'static'. By being static, no instance of the class is required to run that method
+//in our case, our password is going to need to be secure no matter what, so we will
+//be encrypting it like so: :)
+HoomanSchema.statics.hashPassword = function(password) {
+	return bcrypt.hash(password, 10);
+};
+
+const Hooman = mongoose.model('Hooman', HoomanSchema);
+
+module.exports = {Hooman};
