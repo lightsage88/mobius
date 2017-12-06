@@ -241,15 +241,25 @@ return Hooman.find({username})
 //**written with classic function declarations
 router.get('/', function(req, res){
 	return Hooman.find()
+	//says to find all the Hooman entries
 	.then(function(hoomans){
-		return res.json(hoomans.map(function(hooman){
+		//then with all the hoomans, pass them as an argument to an anonymous function
+	return res.json(hoomans.map(function(hooman){
+	//return a response object with a json made up of an array getting mapped
+	//named 'hoomans' which is built by taking each 'hooman' from the .find() method's use
+	//and then pushing it through the apiRepr() method we defined
 			hooman.apiRepr();
 		}));
 		//this semi-colon above may break this
 	})
+	//if there is an error, we will send a very basic message back in jSON
+	//and return a status code of 500
 	.catch(function(err){
 		return res.status(500).json({message: 'Internal server screwup'});
 	});
 });
 
-/
+//we will export so that other documents in our file tree can reference these
+//router methods and apply the various tests it will apply to users submissions when
+//trying to create accounts properly.
+module.exports = {router};
