@@ -1,9 +1,9 @@
 language: node_js
 node_js: node
 before_deploy:
-  git config --global alias.stash 'stash -q'
+ git config --global alias.stash 'stash -q'
 deploy:
-    provider: heroku
+  provider: heroku
   api_key:
     secure: tN4TgfBmSw721CtxHnOYOb9C8HLNandDjBXGGnmxPXF0sHG+3hXDcnrh/GEYnyqr1w2eTvBRis8NZxyAovczOZ/eRTgwCAoj7nRrZojFQoAcPPYXYAdQ0/301cXlFCbrOOMEGzRfpzgS2nWUauXvdttd+g9cZKFRr2JmNF9dyGKWdf4ZJn8GyRQwrFYBRah+0xO8Xw56gwPH+lY8JQB/mgl6OUl+Ou244n9+xLu5ImGckZMvm/pZlkmryENJqYD0xinWLClYNTzxodCBBCj6nF8cxqDFDURpT9hxDevbqfYvbBQ5zi7gzn6KjMCn67KUtIc5kbqX8NQZjy0TOks1fzCyJQU1fZRKYL8XbAhGPzU3M5job8/YMmK5nPJA7d/iMJ6rs3HSWpKf5yRd9YveEdzxazgfgbsAVQzWbd6SvPRHhRkXB5bPLedbjHG37+WovkrW9q3/xbsUNrPQS33Ha02kKZF3yhz+ay8mWdIU/+VHUUrJGAWepk6jIYuhNZJLqGxj6M7+m6Iziw6Yo+J+/Dr23+1kskf9eqBCqafJHpBCmDXChWZHy18Lg0sUvkrCXwCNe+pGlCFwANQORTh3b9o/kD1rlalAcmVoH6nQrTQ9W22dapQHFBi2U2G5l8sh6cOg0D6kADJ42+zRq9/rj+ZpW0mPaLcCVmMVISDvsIA=
   app: shrouded-anchorage-29615
