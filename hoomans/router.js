@@ -1,3 +1,7 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const {Hooman} = require('./models');
+const router = express.Router();
 //here we are setting up the necessary middleware to process and parse data
 //in the JSON Javascript Object Notation format
 const jsonParser = bodyParser.json();
@@ -80,9 +84,9 @@ router.post('/', jsonParser, function(req, res){
 //and then seeing if that is NOTequal to the same things without the trim() method run on it.
 //if it is equal, then nonTrimmedField becomes 'TRUE' and then we throw an error much like
 //we have done above two times already
-	const nonTrimmedField = explicitlyTrimmedFields.find(function(turkey){
-		return req.body[turkey].trim() !== req.body(turkey);
-	});
+	const nonTrimmedField = explicitlyTrimmedFields.find(
+		turkey => req.body[turkey].trim() !== req.body[turkey]
+	);
 //Now if nonTrimmedField has a value of 'true', we return, yet again, the same kind of
 //error as above, but with a slightly different message, reflected the presence of 
 //white spaces, and how that is a problem and point the location of the error to be

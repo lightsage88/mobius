@@ -41,9 +41,9 @@ const HoomanSchema = mongoose.Schema({
 //what the other endpoints will be dealing with regarding other requests
 HoomanSchema.methods.apiRepr = function () {
 	return {
-		username: this.username || '';
-		firstName: this.firstName || '';
-		lastName: this.lastName || '';
+		username: this.username || '',
+		firstName: this.firstName || '',
+		lastName: this.lastName || ''
 	};
 };
 
