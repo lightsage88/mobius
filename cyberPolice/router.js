@@ -40,7 +40,7 @@ router.use(bodyParser.json());
 //which will have the value returned by the result of the createAuthToken function we defined on line
 //14!!
 router.post('/login', localAuth, function(req, res){
-	const authToken = createAuthToken(req.hooman.apiRepr());
+	const authToken = createAuthToken(req.user.apiRepr());
 	//after an authToken is made via the function we defined on line 14, the token is sent in a response
 	//as JSON
 	res.json({authToken});

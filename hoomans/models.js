@@ -33,8 +33,12 @@ const HoomanSchema = mongoose.Schema({
 	lastName: {
 		type: String,
 		default: ''
-	}
+	},
+	books: Array
 	//we will want to add books we are searching for here later
+	//we can push loads of objects into the array
+	//users can still be made, but notice that Array is not REQUIRED...we add this in later 
+	//with a POST method.
 });
 //here wea re defining the method of apiRepr, which stands for api representation
 //which will determine WHAT the client will see on a successful get request and
