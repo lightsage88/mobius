@@ -1,5 +1,5 @@
 //add a database for this from your local mongo server
-exports.DATABASE_URL = process.env.DATABASE_URL || global.env.DATABASE_URL || 'mongodb://lightsage88:Walruses8@ds131826.mlab.com:31826/mobius';
+exports.DATABASE_URL = process.env.DATABASE_URL || global.DATABASE_URL || 'mongodb://lightsage88:Walruses8@ds131826.mlab.com:31826/mobius';
 
 //we set up these exports as such:
 //the port will be whatever its working on if defined through some other means, or 8080

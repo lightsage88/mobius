@@ -1,5 +1,4 @@
-//omitting use strict mode for experimentational purposes
-//we will require .env to store secret information for the
+'use strict'//we will require .env to store secret information for the
 //JWTokens. the .env file should ONLY be in the server.
 require('dotenv').config();
 
@@ -99,7 +98,7 @@ app.get('/api/vault', jwtAuth, (req, res)=>{
 //exist, you will instantly get a 404 status code
 //and an error message that will be send as json
 
-app.use('*', (res, res)=>{
+app.use('*', (req, res)=>{
 	return res.status(404).json({message: 'Mang, that shit dont exist'});
 });
 
