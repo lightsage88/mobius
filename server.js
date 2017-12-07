@@ -31,6 +31,9 @@ const {PORT, DATABASE_URL} = require('./config');
 
 //the app is an express app.
 const app = express();
+//tells app to use the 'public' folder to serve up static assets
+//like html, css to our clients
+app.use(express.static('public'))
 
 //for our logging purposes, we will use Morgan
 	//moreover, we will use the common set up from Morgan
@@ -91,6 +94,8 @@ app.get('/api/vault', jwtAuth, (req, res)=>{
 		data: 'Blue stays TRU, Crip 4 LIFE'
 	});
 });
+
+
 
 //the * in this context refers to any endpoint that has
 //not been created in this application, like '/pigshit' or
