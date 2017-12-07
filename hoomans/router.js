@@ -2,9 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {Hooman} = require('./models');
 const router = express.Router();
+
+const request = require('request');
 //here we are setting up the necessary middleware to process and parse data
 //in the JSON Javascript Object Notation format
 const jsonParser = bodyParser.json();
+const crackCocaine = bodyParser.urlencoded();
 
 //here we set up the api/hoomans/ endpoint with a POST method
 //this is to set up a NEW HOOMAN, user

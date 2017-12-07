@@ -7,6 +7,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 
 //we will also be adding a .gitignore file to the git.
 //the .gitignore will have node_modules/ in it...just as
