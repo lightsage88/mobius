@@ -12,15 +12,15 @@
 
 	<main>
 		
-		<form action="api/hoomans" method='post' enctype="application/json" content-type="application/json">
+		<form id='registerForm'>
 			Username:
 			<input type='text' name='username' id='username'>
 			Password: [at least 6 characters, but no more than 20]
 			<input type='password' id='password' name='password'>
 			First Name:
-			<input type='text' placeholder="D'Artagnan" name='firstName'>
+			<input type='text' placeholder="D'Artagnan" name='firstName' id='firstName'>
 			Last Name:
-			<input type='text' placeholder="Jones" name='lastName'>
+			<input type='text' placeholder="Jones" name='lastName' id='lastName'>
 
 			<button type='submit'>Submit</button>
 		</form>
@@ -28,7 +28,6 @@
 	</main>
 
 <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-<!-- <script src='index.js'></script>
- --><!-- <script src='../server.js'></script> -->
+<script src='index.js'></script>
 </body>
 </html>

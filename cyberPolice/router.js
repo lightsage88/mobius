@@ -44,6 +44,8 @@ router.post('/login', localAuth, function(req, res){
 	//after an authToken is made via the function we defined on line 14, the token is sent in a response
 	//as JSON
 	res.json({authToken});
+	//
+	//localStorage.setItem({authToken})
 });
 
 //telling passport to use the 'jwt' strategy when ever we pass in jwtAuth
