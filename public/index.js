@@ -52,12 +52,9 @@ $('#loginForm').submit(function(event){
 			localStorage.setItem('token', response.authToken);
 			toProtectedData();
 			getDataFromMlab(username);
-<<<<<<< HEAD
-			location.href='accountPage.html';
-=======
-			
+
 			// location.href='accountPage.html';
->>>>>>> 2c40044c6cf87988a98be5fa2f82ea4608926adf
+
 			//add something taking the user to the protected data stuff
 		},
 		error: (err) => {
@@ -93,11 +90,8 @@ function toProtectedData() {
 
 //to make get stuff from the database to populate our span tags and
 //unordered lists username name bookList
-<<<<<<< HEAD
  $('.username').html(sessionStorage.firstName);
-=======
 // $('.username').html();
->>>>>>> 2c40044c6cf87988a98be5fa2f82ea4608926adf
 
 let mLabApiKey = 'pJysmium6S33nXs_wxZ0VK9wyMIQQlSa';
 let mLabDb = 'mobius';
@@ -109,16 +103,12 @@ function getDataFromMlab (username) {
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			method: "GET",
-			url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username': '${username}'}&apiKey=${mLabApiKey}`,
-			contentType: 'application/json;charset=utf-8',
+			url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username':'${username}'}&apiKey=${mLabApiKey}`,
 			})
 		.done((response)=>{
 			console.log('hooray!');
 			console.log(response);
-<<<<<<< HEAD
-=======
-			
->>>>>>> 2c40044c6cf87988a98be5fa2f82ea4608926adf
+
 		})
 		.then((response)=>{
 			console.log(response[0].username);			
