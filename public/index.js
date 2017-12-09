@@ -165,6 +165,7 @@ function deleteAccount() {
 							setTimeout(function(){
 								location.href='index.html';
 							}, 3000);
+							resolve();
 						},
 						error: function(xhr, status, err) {
 						}
@@ -173,6 +174,9 @@ function deleteAccount() {
 				})
 			});
 			
+		});
+		$('button.reprieve').click(function(){
+			$('.superDelete').attr('hidden',true);
 		});
 	});
 
