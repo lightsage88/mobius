@@ -52,11 +52,13 @@ $('#loginForm').submit(function(event){
 			localStorage.setItem('token', response.authToken);
 			toProtectedData();
 			getDataFromMlab(username);
-
-			// location.href='accountPage.html';
+			 // location.href='accountPage.html';
 
 			//add something taking the user to the protected data stuff
 		},
+		// complete: function(){
+		// 	location.href='accountPage.html';
+		// },
 		error: (err) => {
 			console.log('Keep trying, homes');
 			console.error(err);
@@ -115,12 +117,19 @@ function getDataFromMlab (username) {
 			sessionStorage.setItem('username', response[0].username);
 			sessionStorage.setItem('firstName', response[0].firstName);
 			sessionStorage.setItem('lastName', response[0].lastName);
-		})
+			resolve();
+		});
 		// .reject((err) => {
 		// 	console.log('dont give up');
 		// 	console.error(err);
 		// });
 	});
+}
+
+function logOut() {
+	$('.logOut').click(function(){
+
+	})
 }
 
 //https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username': lightsage88&apiKey=hKWiRGd3vrdDNeevRH9itVTSpdHc_Ldt
