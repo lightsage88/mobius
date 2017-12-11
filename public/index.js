@@ -89,6 +89,7 @@ function toProtectedData() {
 //to make get stuff from the database to populate our span tags and
 //unordered lists username name bookList
  $('.firstName').html(localStorage.firstName);
+ $('.lastName').html(localStorage.lastName);
  $('.username').html(localStorage.username);
 
 
@@ -135,9 +136,7 @@ function logOut() {
 //2) make everything else go blurry
 //3) pressing the button will delete the mLab collection for that user
 function deleteAccount() {
-	console.log(localStorage);
 	$('button.deleteAccount').click(function(){
-		console.log('trying to delete');
 		$('main').append(`
 			<div class='superDelete'>
 				<p>Are you sure?</p>
@@ -145,7 +144,6 @@ function deleteAccount() {
 				<button class='reprieve'>Nep</button>
 			</div>`);
 		$('button.kill').click(function(){
-			console.log('here I go killing again');
 			return new Promise((resolve, reject)=>{
 				$.ajax({
 				method: "GET",
@@ -154,12 +152,10 @@ function deleteAccount() {
 				})
 				.then((response)=>{
 					let dBiD = response[0]._id.$oid;
-					console.log(dBiD);
 					$.ajax({
 						method: "DELETE",
 						url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen/${dBiD}?apiKey=${mLabApiKey}`,
 						success: function(data){
-							console.log('You are out of the club');
 							$('main').html("Your account has been deleted successfully...returning to beginning");
 							$('p').html('');
 							setTimeout(function(){
@@ -182,11 +178,94 @@ function deleteAccount() {
 
 }
 
+function upDateAccount() {
+	$('.upDateAccount').click(function(){
+	console.log('get ready to update your account');
+	console.log(localStorage);
+	$('.userLegend').html(`
+		<form class='updateForm'>
+			<h3>Edit your account</h3>
+			First Name:
+			<input type='text' name='firstName' id='firstName' placeholder=${localStorage.firstName}>
+			<br>
+			Last Name:
+			<input type='text' name='lastName' id='lastName' placeholder=${localStorage.lastName}>
+
+			For Security Reasons, please enter your password:
+			<input type='password' name='password' id='password' placeholder='password'>
+			<button type='button'>Save Changes</button>
+		</form>`);
+	($('form.updateForm button').click(function(event){
+		event.preventDefault();
+		let newFirstName = $('form.updateForm #firstName').val();
+		console.log(newFirstName);
+		let newLastName = $('form.updateForm #lastName').val();
+		console.log(newLastName);
+		let enteredPassword = $('form.updateForm #password').val();
+		console.log(enteredPassword);
+		$.ajax({
+				method: "GET",
+				url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q=
+				{'username':'${localStorage.username}'}&apiKey=${mLabApiKey}`
+				})
+		.then((response)=>{
+			console.log(response);
+			let dBiD = response[0]._id.$oid;
+			console.log(dBiD);
+			// let hashWord = response[0].password;
+			// console.log(hashWord);
+			// console.log(enteredPassword);
+				$.ajax({
+					method: "PUT",
+					url: `https://api.mlab.com/api/1/databases/mobius
+					/collections/hoomen/${dBiD}?apiKey=${mLabApiKey}`,
+					contentType: 'application/json',
+					dataType: 'JSON',
+					data: JSON.stringify(
+						{'$set':{
+						'firstName':`${newFirstName}`,
+						'lastName': `${newLastName}`
+								}
+					})
+				})
+				.done((response)=>{
+					console.log('refreshing soon...');
+					console.log(response);
+					localStorage.setItem('firstName', response.firstName);
+					localStorage.setItem('lastName', response.lastName);
+					(setTimeout(function(){
+						location.href='accountPage.html';
+					}, 0300))
+					
+				})
+			})
+				})
+			)
+})
+}
+// 				.success((response)=> {
+// 					console.log('bongochea');
+// 								});
+// 					}));
+// 		})
+// }
+
+
+// // function editAccountSubmit() {
+// // 	$('form.updateForm').click(function(event){
+// // 		event.preventDefault();
+// // 		console.log(event);
+// // 	// console.log(newFirstName);
+// // 	}) 
+// // }
+
 
 
 function accountFunctionality(){
 	logOut();
 	deleteAccount();
+	upDateAccount();
+	// editAccountSubmit();
 }
 
 
