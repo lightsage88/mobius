@@ -40,6 +40,10 @@ MARVEL PRIVATE API: 8b57ad93f2c50fab739baba5c367a2bbe399ccd3
 super chain:
 ?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b
 
+
+WORLDCAT API KEY:
+AnBORg2YZMDxdGmsY1nUmAddgq1EQ0joWGn7RBsXT02KYBfkfAPYv3wqmZluXUFZD9Pb1nMNbzBOEPqn
+
 Authentication for Server-Side Applications
 Server-side applications must pass two parameters in addition to the apikey parameter:
 
@@ -71,3 +75,6 @@ cross references the DC and Marvel apis and finds mention of your favorite chara
 
 -dc, marvel, imdb apis?
 
+make ajax requests to back end and in that backend endpoiint use mongoose to communicate to the database at mLab.
+
+send to backend and have it hashed on that end and send back.

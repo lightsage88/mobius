@@ -8,11 +8,71 @@ const request = require('request');
 //here we are setting up the necessary middleware to process and parse data
 //in the JSON Javascript Object Notation format
 const jsonParser = bodyParser.json();
-const crackCocaine = bodyParser.urlencoded();
 
 //here we set up the api/hoomans/ endpoint with a POST method
 //this is to set up a NEW HOOMAN, user
 
+// flow is :
+// user clicks a button 
+// then ajax requests to endpoint on backend that uses Mongoose to fuck with your database
+// once it has done that it sends backa  response and then the callback function from your ajax requeset
+// executes
+
+// passport stoes property on request object called user that has user ID...don't need to 
+// //can do const userId= req.user(id)...console.log(req.user) to see if it has the thing to begin with.
+
+router.put('/', jsonParser, function(req,res){
+	
+	//check to see if things exist and if they do
+	//const stringFields not necessary since front end form has a text type so you're good :)
+	console.log(req.body);
+let {firstName, lastName, password} = req.body;
+firstName = firstName.trim();
+lastName = lastName.trim();
+password = password;
+if((!password) || (password === null)){
+	return res.status(422).json({
+		code: 422,
+		reason: 'lack of Password',
+		message: 'missing pw',
+		location: password
+	});
+}
+
+const explicitlyTrimmedField = ['password'];
+ 
+
+//need to ensure
+const nonTrimmedField = explicitlyTrimmedField.find(
+		turkey => req.body[turkey].trim() !== req.body[turkey]
+	);
+// //Now if nonTrimmedField has a value of 'true', we return, yet again, the same kind of
+// //error as above, but with a slightly different message, reflected the presence of 
+// //white spaces, and how that is a problem and point the location of the error to be
+// //the variable 'nonTrimmedField'
+	if(nonTrimmedField) {
+		return res.status(422).json({
+			code: 422,
+			reason: 'ValidationError',
+			message: 'You have heavy thumbs and included spaces where they should not have been',
+			location: nonTrimmedField
+		});
+	}
+const sizeRule = {
+	password: {
+		min: 6,
+		max: 20
+	}
+};
+
+const badlySizedField = explicitlyTrimmedField.find(turkey => {
+	req.body[turkey]
+})
+
+
+
+
+});
 //a post request is sent to any* endpoint, we use jsonParser to
 //parse the data that is submitted by the client, we have our trusty
 //anon function with the request and result object passed in
@@ -258,14 +318,13 @@ router.get('/', function(req, res){
 	return Hooman.find()
 	//says to find all the Hooman entries
 	.then(function(hoomans){
-		//then with all the hoomans, pass them as an argument to an anonymous function
-	return res.json(hoomans.map(function(hooman){
-	//return a response object with a json made up of an array getting mapped
-	//named 'hoomans' which is built by taking each 'hooman' from the .find() method's use
-	//and then pushing it through the apiRepr() method we defined
-			hooman.apiRepr();
-		}));
-		//this semi-colon above may break this
+	// console.log(hoomans);
+	let set = [];
+	for(let i=0; i<=hoomans.length-1; i++){
+		set.push(hoomans[i].apiRepr());
+	}
+	// console.log(set);
+	return res.status(200).json(set);
 	})
 	//if there is an error, we will send a very basic message back in jSON
 	//and return a status code of 500

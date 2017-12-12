@@ -54,13 +54,21 @@ $('#loginForm').submit(function(event){
 		success: (response) => {
 			console.log('cooking up authToken');
 			console.log(response);
+			console.log(response.authToken);
 			console.log(username); 
 			localStorage.setItem('token', response.authToken);
-			toProtectedData();
 			getDataFromMlabXXXLoadAccountPage(username);
-		}//I read somewhere you couldn't have both a success and an error callback in the same request...one for Ray.
-	});
+			toProtectedData();
+		},
+		error: (response) => {
+			console.log('You messed up!');
+			$('#loginForm').after('<p class="loginFail">Password/Username Error</p>');
+			$('.loginFail').fadeOut(2000);
+				
+			//I read somewhere you couldn't have both a success and an error callback in the same request...one for Ray.
+		}
 	// location.href='accountPage.html';
+	});
 });
 
 function toProtectedData() {
@@ -71,18 +79,20 @@ function toProtectedData() {
 		url: "/api/vault",
 		headers:{
 		contentType: 'application/json',
+
 		authorization: `Bearer ${token}`
-	},
-		dataType: 'json',
-		done: function(response) {
-			console.log(response.data)
 		},
-		error: (err) => {
-			console.log('just a bump in the road');
-			console.error(err);
-			$('#loginForm').after('<p>There was a problem with your login credentials');
+		dataType: 'json',
+		success: (response) =>{
+			console.log(response);
 		}
-	}); 
+	})
+	// error: (err) => {
+	// 		console.log('just a bump in the road');
+	// 		console.error(err);
+	// 		$('#loginForm').after('<p>There was a problem with your login credentials');
+	// 	}
+	
 }
 
 
@@ -100,18 +110,25 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			method: "GET",
-			url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username':'${username}'}&apiKey=${mLabApiKey}`,
+			// url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username':'${username}'}&apiKey=${mLabApiKey}`,
+			url: '/api/hoomans',
+			// apiKey: 'pJysmium6S33nXs_wxZ0VK9wyMIQQlSa',
+			// query: `{'username':'${username}'}`,
+			contentType: 'application/json',
+			dataType: 'json'
 			})
-		.done((response)=>{
-			console.log('hooray!');
-			console.log(response);
-
-		})
+		//use the backend endpoint for GET
 		.then((response)=>{
-			console.log(response[0].username);			
-			localStorage.setItem('username', response[0].username);
-			localStorage.setItem('firstName', response[0].firstName);
-			localStorage.setItem('lastName', response[0].lastName);
+			console.log(response);
+			console.log(username);
+			for(let i=0; i<=response.length-1; i++){
+				if(response[i].username === username){
+					localStorage.setItem('username', response[i].username);
+					localStorage.setItem('firstName', response[i].firstName);
+					localStorage.setItem('lastName', response[i].lastName);
+					localStorage.setItem('id', response[i].id);
+				}
+			}
 			location.href=('accountPage.html');
 			resolve();
 		});
@@ -147,6 +164,7 @@ function deleteAccount() {
 			return new Promise((resolve, reject)=>{
 				$.ajax({
 				method: "GET",
+				//Your URL should be a backend API endpoint that uses mongoose to interact with mLab
 				url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q=
 				{'username':'${localStorage.username}'}&apiKey=${mLabApiKey}`
 				})
@@ -186,10 +204,10 @@ function upDateAccount() {
 		<form class='updateForm'>
 			<h3>Edit your account</h3>
 			First Name:
-			<input type='text' name='firstName' id='firstName' placeholder=${localStorage.firstName}>
+			<input type='text' name='firstName' id='firstName' placeholder=${localStorage.firstName} value=${localStorage.firstName}>
 			<br>
 			Last Name:
-			<input type='text' name='lastName' id='lastName' placeholder=${localStorage.lastName}>
+			<input type='text' name='lastName' id='lastName' placeholder=${localStorage.lastName} value=${localStorage.lastName}>
 
 			For Security Reasons, please enter your password:
 			<input type='password' name='password' id='password' placeholder='password'>
@@ -203,30 +221,30 @@ function upDateAccount() {
 		console.log(newLastName);
 		let enteredPassword = $('form.updateForm #password').val();
 		console.log(enteredPassword);
-		$.ajax({
-				method: "GET",
-				url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q=
-				{'username':'${localStorage.username}'}&apiKey=${mLabApiKey}`
-				})
-		.then((response)=>{
-			console.log(response);
-			let dBiD = response[0]._id.$oid;
-			console.log(dBiD);
-			// let hashWord = response[0].password;
-			// console.log(hashWord);
-			// console.log(enteredPassword);
+
+		
+			console.log(enteredPassword);
 				$.ajax({
 					method: "PUT",
-					url: `https://api.mlab.com/api/1/databases/mobius
-					/collections/hoomen/${dBiD}?apiKey=${mLabApiKey}`,
+					url: '/api/hoomans',
+					//what is a relative path?
 					contentType: 'application/json',
 					dataType: 'JSON',
 					data: JSON.stringify(
-						{'$set':{
+						{
 						'firstName':`${newFirstName}`,
-						'lastName': `${newLastName}`
-								}
-					})
+						'lastName': `${newLastName}`,
+						'password': `${enteredPassword}`
+						}
+					),
+					success: (response) => {
+						console.log(response);
+					},
+					error: (err) => {
+						console.log('something is wrong');
+						console.error(err);
+					}
+
 				})
 				.done((response)=>{
 					console.log('refreshing soon...');
@@ -236,12 +254,10 @@ function upDateAccount() {
 					(setTimeout(function(){
 						location.href='accountPage.html';
 					}, 0300))
-					
 				})
-			})
-				})
-			)
-})
+		
+	}))
+	})
 }
 // 				.success((response)=> {
 // 					console.log('bongochea');
