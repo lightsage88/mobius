@@ -333,6 +333,17 @@ router.get('/', function(req, res){
 	});
 });
 
+router.delete('/', jsonParser, function(req,res){
+	let {id} = req.body;
+	console.log(req.body);
+	return Hooman.deleteOne({'_id':id})
+		.then(()=>{
+		console.log('howow');
+			return res.status(200).json('hamburger');
+		});
+
+});
+
 //we will export so that other documents in our file tree can reference these
 //router methods and apply the various tests it will apply to users submissions when
 //trying to create accounts properly.
