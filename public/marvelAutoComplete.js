@@ -32,9 +32,10 @@
   let growingArray = [];
   let resultArray = [];
   let queryString = '';
+  let characterNames;
   $('.biginput').keydown(function(){
-
-  		  		if(event.key !== 'Backspace') {
+  	characterNames = [];
+  		  		if(event.key !== 'Backspace' && 'Alt') {
   			growingArray.push(event.key);
   		} else {
   			growingArray.pop();
@@ -51,16 +52,26 @@ console.log(queryString);
   $('#autocomplete').autocomplete({
   		method: "GET",
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
-  		minChars: 1,
+  		minChars: 5,
   		contentType: 'application/json',
   		dataType: 'json',
   		paramName: 'nameStartsWith',
   		transformResult: function(response) {
-  			console.log(response.data.results);
-  			for(let i=0; i<=response.data.results.length; i++){
-  				resultArray.push(response.data.results[i].name);
-  				//temp1.data.results[0].name
-  			}
+  			resultArray = response.data.results;
   			console.log(resultArray);
-  		}
-  });
+  			lookupLimit: 5
+  			// for(let i=0; i<resultArray.length; i++) {
+  			// 	characterNames.push({value: `${resultArray[i].name}`, data: 'any'});
+  			// }
+  			// console.log(characterNames);
+  			return {
+  				suggestions: $.map(response.data.results, function(results) {
+  					return { value: results.name, data: 'any'};
+  				}),
+  				lookupLimit: 5
+  			};
+  		},
+  		lookupLimit: 5,
+  		zIndex: 9999
+
+   });
