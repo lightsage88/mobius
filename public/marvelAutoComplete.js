@@ -30,6 +30,7 @@
 //   console.log(body);
 // });
   let growingArray = [];
+  let resultArray = [];
   let queryString = '';
   $('.biginput').keydown(function(){
 
@@ -54,8 +55,12 @@ console.log(queryString);
   		contentType: 'application/json',
   		dataType: 'json',
   		paramName: 'nameStartsWith',
-  				
   		transformResult: function(response) {
-  			console.log(response);
+  			console.log(response.data.results);
+  			for(let i=0; i<=response.data.results.length; i++){
+  				resultArray.push(response.data.results[i].name);
+  				//temp1.data.results[0].name
+  			}
+  			console.log(resultArray);
   		}
   });
