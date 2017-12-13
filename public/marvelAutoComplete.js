@@ -53,25 +53,30 @@ console.log(queryString);
   		method: "GET",
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
   		minChars: 5,
+  		maxHeight: 150,
   		contentType: 'application/json',
   		dataType: 'json',
   		paramName: 'nameStartsWith',
   		transformResult: function(response) {
   			resultArray = response.data.results;
   			console.log(resultArray);
-  			lookupLimit: 5
-  			// for(let i=0; i<resultArray.length; i++) {
-  			// 	characterNames.push({value: `${resultArray[i].name}`, data: 'any'});
-  			// }
-  			// console.log(characterNames);
   			return {
   				suggestions: $.map(response.data.results, function(results) {
-  					return { value: results.name, data: 'any'};
-  				}),
-  				lookupLimit: 5
+  					return { value: results.name, data: {
+  						id: results.id,
+  						events: results.events,
+  						thumbnail: results.thumbnail
+  					}};
+  				})
   			};
   		},
-  		lookupLimit: 5,
-  		zIndex: 9999
-
+  		onSelect: function(suggestion) {
+  			console.log(suggestion);
+  			console.log(suggestion.data);
+  			console.log(suggestion.data.thumbnail.path + '.' + suggestion.data.thumbnail.extension);
+  			let thumbnail = `${suggestion.data.thumbnail.path}` + '.' + `${suggestion.data.thumbnail.extension}`;
+  			console.log(thumbnail);
+  			$('main').append(`<img class='characterThumbnail' src=${thumbnail}>`);
+  			//clicking one will call
+  		}
    });
