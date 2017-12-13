@@ -49,16 +49,19 @@ app.use(morgan('common'));
 
 app.use(function(req, res, next) {
 //lets the origins be *, meaning ANYTHING	
+	req.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Origin', '*');
-//defines the headers that will work with CORS, Content-Type & Authorization	
+//defines the headers that will work with CORS, Content-Type & Authorization
+	req.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 //defines the methods that will work with CORS
+	req.header('Access-Control-Allow-Methods', 'GET');
 	res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
 //sets up an if loop that states that if the req.method presented is 'OPTIONS'
 //we will return the response object with a status code of '204'
-	if(req.method === 'OPTIONS') {
-		return res.send(204);
-	}
+	// if(req.method === 'OPTIONS') {
+	// 	return res.send(204);
+	// }
 	//HOwever, if we don't send a 204, then we just call next and the 
 	//following middleware will be used in this file
 	next();

@@ -86,18 +86,9 @@ function toProtectedData() {
 		then: (response) =>{
 			console.log(response);
 		}
-	})
-	// error: (err) => {
-	// 		console.log('just a bump in the road');
-	// 		console.error(err);
-	// 		$('#loginForm').after('<p>There was a problem with your login credentials');
-	// 	}
-	
+	})	
 }
 
-
-//to make get stuff from the database to populate our span tags and
-//unordered lists username name bookList
  $('.firstName').html(localStorage.firstName);
  $('.lastName').html(localStorage.lastName);
  $('.username').html(localStorage.username);
@@ -110,14 +101,10 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			method: "GET",
-			// url: `https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username':'${username}'}&apiKey=${mLabApiKey}`,
 			url: '/api/hoomans',
-			// apiKey: 'pJysmium6S33nXs_wxZ0VK9wyMIQQlSa',
-			// query: `{'username':'${username}'}`,
 			contentType: 'application/json',
 			dataType: 'json'
 			})
-		//use the backend endpoint for GET
 		.then((response)=>{
 			console.log(username);
 			for(let i=0; i<=response.length-1; i++){
@@ -131,10 +118,6 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 			location.href=('accountPage.html');
 			resolve();
 		});
-		// .reject((err) => {
-		// 	console.log('dont give up');
-		// 	console.error(err);
-		// });
 	});
 }
 
@@ -142,15 +125,10 @@ function logOut() {
 	$('button.logOut').click(function(){
 		localStorage.clear();
 		location.href='index.html';
-
 	})
 }
 
 
-//function to delete account
-//1) make a div show up with a superDelete button and asks if user is sure
-//2) make everything else go blurry
-//3) pressing the button will delete the mLab collection for that user
 function deleteAccount() {
 	console.log(localStorage.id);
 	$('button.deleteAccount').click(function(){
@@ -179,9 +157,7 @@ function deleteAccount() {
 				});
 				
 			})
-		});
-		
-	
+		});	
 		$('button.reprieve').click(function(){
 			$('.superDelete').attr('hidden',true);
 		});
@@ -213,14 +189,11 @@ function upDateAccount() {
 		let newLastName = $('form.updateForm #lastName').val();
 		console.log(newLastName);
 		let enteredPassword = $('form.updateForm #password').val();
-		console.log(enteredPassword);
-
-		
+		console.log(enteredPassword);		
 			console.log(enteredPassword);
 				$.ajax({
 					method: "PUT",
 					url: '/api/hoomans',
-					//what is a relative path?
 					contentType: 'application/json',
 					dataType: 'JSON',
 					data: JSON.stringify(
@@ -237,7 +210,6 @@ function upDateAccount() {
 						console.log('something is wrong');
 						console.error(err);
 					}
-
 				})
 				.done((response)=>{
 					console.log('refreshing soon...');
@@ -252,23 +224,6 @@ function upDateAccount() {
 	}))
 	})
 }
-// 				.success((response)=> {
-// 					console.log('bongochea');
-// 								});
-// 					}));
-// 		})
-// }
-
-
-// // function editAccountSubmit() {
-// // 	$('form.updateForm').click(function(event){
-// // 		event.preventDefault();
-// // 		console.log(event);
-// // 	// console.log(newFirstName);
-// // 	}) 
-// // }
-
-
 
 function accountFunctionality(){
 	logOut();
@@ -279,17 +234,3 @@ function accountFunctionality(){
 
 
 $(accountFunctionality());
-
-//https://api.mlab.com/api/1/databases/mobius/collections/hoomen?q={'username': lightsage88&apiKey=hKWiRGd3vrdDNeevRH9itVTSpdHc_Ldt
-// //for alogin form the success response => {
-// 	localStorage.setItem('token', response.authToken) 
-// }
-
-
-// //protected endpoint
-// let token = localStorage.getItem('token');
-// //send this in the header of the request as 'Bearer'
-// header: {
-// 	contentType: 'application/json',
-// 	authorization: `Bearer ${token}`
-// }
