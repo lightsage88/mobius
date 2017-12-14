@@ -20,6 +20,26 @@ const jsonParser = bodyParser.json();
 
 // passport stoes property on request object called user that has user ID...don't need to 
 // //can do const userId= req.user(id)...console.log(req.user) to see if it has the thing to begin with.
+router.put('/char', jsonParser, function(req,res){
+	
+	let {username, marvelousData} = req.body;
+	Hooman.updateOne(
+		{username},
+		{$addToSet: {marvelousData: marvelousData}  
+		}
+	)
+	.then((response)=>{
+		console.log(response);
+	})
+});
+
+router.get('/char', function(req, res){
+	Hooman.findOne({username})
+
+	//if there is nothing there, then response should be like
+	//console.log('nothing yet');
+})
+ 
 
 router.put('/', jsonParser, function(req,res){
 	
@@ -27,6 +47,7 @@ router.put('/', jsonParser, function(req,res){
 	//const stringFields not necessary since front end form has a text type so you're good :)
 	console.log(req.body);
 let {firstName, lastName, password} = req.body;
+
 firstName = firstName.trim();
 lastName = lastName.trim();
 password = password;

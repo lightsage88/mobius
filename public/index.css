@@ -1,0 +1,9 @@
+img.characterThumbnail {
+	max-height: 8em;
+	max-width: 8em;
+	border: solid 3px green;
+}
+
+body {
+	background: yellow;
+}

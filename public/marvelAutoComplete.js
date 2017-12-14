@@ -52,7 +52,7 @@ console.log(queryString);
   $('#autocomplete').autocomplete({
   		method: "GET",
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
-  		minChars: 5,
+  		minChars: 2,
   		maxHeight: 150,
   		contentType: 'application/json',
   		dataType: 'json',
@@ -70,13 +70,42 @@ console.log(queryString);
   				})
   			};
   		},
+         // data: JSON.stringify({username: username, password: password, firstName: firstName, lastName: lastName}),
+
   		onSelect: function(suggestion) {
+  			query = '';
   			console.log(suggestion);
   			console.log(suggestion.data);
+        let entry = suggestion.data;
+        $.ajax({
+          url: '/api/hoomans/char',
+          method: "PUT",
+          data: JSON.stringify({marvelousData:entry, username: localStorage.username}),
+          dataType: 'json',
+          contentType: 'application/json',
+         })
+        .then((response)=>{
+          console.log(response);
+          console.log('yay');
+        })
   			console.log(suggestion.data.thumbnail.path + '.' + suggestion.data.thumbnail.extension);
   			let thumbnail = `${suggestion.data.thumbnail.path}` + '.' + `${suggestion.data.thumbnail.extension}`;
   			console.log(thumbnail);
-  			$('main').append(`<img class='characterThumbnail' src=${thumbnail}>`);
+  			$('#outputbox').append(`<img class='characterThumbnail' src=${thumbnail}>
+  								<span class='characterName'>${suggestion.value}<span>`);
+
   			//clicking one will call
   		}
    });
+
+  //an ever present listening function
+  // $.ajax({
+  //   method: 'GET',
+  //   url: '/api/hoomans/char',
+  //   data: JSON.stringify({username: localStorage.username}),
+  //   dataType: 'json',
+  //   contentType: 'application/json'
+  // })
+  // .then((response){
+  //   console.log(response)
+  // })

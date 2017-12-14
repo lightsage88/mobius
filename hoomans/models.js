@@ -34,7 +34,7 @@ const HoomanSchema = mongoose.Schema({
 		type: String,
 		default: ''
 	},
-	books: Array
+	marvelousData: Array
 	//we will want to add books we are searching for here later
 	//we can push loads of objects into the array
 	//users can still be made, but notice that Array is not REQUIRED...we add this in later 
