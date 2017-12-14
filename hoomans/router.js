@@ -33,8 +33,20 @@ router.put('/char', jsonParser, function(req,res){
 	})
 });
 
-router.get('/char', function(req, res){
+router.get('/char', jsonParser, function(req, res){
+	let {username} = req.headers;
+	console.log(username);
 	Hooman.findOne({username})
+	.then(function(hooman){
+		console.log(hooman);
+		res.status(200).json(hooman);
+	})
+	
+	
+	// Hooman.findOne({username})
+	// .then((hooman)=> {
+	// 	res.status(200).json(hooman);
+	// })
 
 	//if there is nothing there, then response should be like
 	//console.log('nothing yet');

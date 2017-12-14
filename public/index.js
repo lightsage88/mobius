@@ -225,10 +225,58 @@ function upDateAccount() {
 	})
 }
 
+//
+function loadMainPage() {
+if(location.href === 'http://localhost:8080/mainPage.html') {
+	console.log('crippity crip crip');
+		$.ajax({
+			method: "GET",
+			url: "/api/hoomans/char",
+			headers: {
+				contentType: 'application/json',
+				username: `${localStorage.username}`
+			},
+			dataType: 'json'
+			
+		})
+		.then((response)=>{
+			let marvelousData = response.marvelousData;
+			console.log(marvelousData);
+			for(let i=0; i<=marvelousData.length-1; i++) {
+				let picPath = marvelousData[i].thumbnail.path + '.' + marvelousData[i].thumbnail.extension;
+				console.log(picPath);
+				$('#outputbox').append(`<img class='characterThumbnail' src=${picPath}>`);
+				// $('#outputbox').append(`<img class="characterImage" src=${marvelousData[i].thumbnail.path} + "." + ${marvelousData[i].thumbnail.extension}>`);
+			}
+			
+		})
+	}	
+}
+
+function toProtectedData() {
+	let token = localStorage.getItem('token');
+	console.log(token);
+	$.ajax({
+		method: "GET",
+		url: "/api/vault",
+		headers:{
+		contentType: 'application/json',
+		cacheControl: 'no-cache',
+		authorization: `Bearer ${token}`
+		},
+		dataType: 'json',
+		then: (response) =>{
+			console.log(response);
+		}
+	})	
+}
+ 
+
 function accountFunctionality(){
 	logOut();
 	deleteAccount();
 	upDateAccount();
+	loadMainPage();
 	// editAccountSubmit();
 }
 
