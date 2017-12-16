@@ -367,15 +367,42 @@ router.get('/', function(req, res){
 });
 
 router.delete('/', jsonParser, function(req,res){
-	let {id} = req.body;
-	console.log(req.body);
-	return Hooman.deleteOne({'_id':id})
-		.then(()=>{
-		console.log('howow');
-			return res.status(200).json('hamburger');
-		});
+	let {username, characterName} = req.body;
+	console.log('sw is dead');
+	console.log(username);
+	console.log(characterName);
+	return Hooman.findOne({'username':username})
+		.then((hooman)=>{
+		let marvelousData =	hooman.marvelousData;
+		console.log(marvelousData);
+		console.log(characterName);
+		for(let i=0; i<=marvelousData.length-1; i++) {
+			if(marvelousData[i].name === characterName) {
+				console.log('shut your mouth');
+				let target = marvelousData[i];
+				console.log(marvelousData[i]);
 
-});
+				Hooman.update({'username':username},
+							{$pull : {marvelousData:target}},
+							function(err, data) {
+								if(err) {
+									return res.status(500).json({'error': 'gosh darn'});
+								}
+								res.json(data);
+							}
+					)
+
+			}
+			// for(let x=0; x<=marvelousData[i].length-1; x++) {
+			// 	let focus = marvelousData[i];
+			// 	if(marvelousData[i][x])
+			}
+		})
+			return res.status(200).json('hamburger');
+	});
+	
+
+
 
 //we will export so that other documents in our file tree can reference these
 //router methods and apply the various tests it will apply to users submissions when

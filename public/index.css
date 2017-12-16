@@ -7,3 +7,8 @@ img.characterThumbnail {
 body {
 	background: yellow;
 }
+
+.xSymbol {
+	max-height: 1em;
+	max-width: 1em;
+}

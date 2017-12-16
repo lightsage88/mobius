@@ -65,7 +65,8 @@ console.log(queryString);
   					return { value: results.name, data: {
   						id: results.id,
   						events: results.events,
-  						thumbnail: results.thumbnail
+  						thumbnail: results.thumbnail,
+              name: results.name
   					}};
   				})
   			};
@@ -91,8 +92,32 @@ console.log(queryString);
   			console.log(suggestion.data.thumbnail.path + '.' + suggestion.data.thumbnail.extension);
   			let thumbnail = `${suggestion.data.thumbnail.path}` + '.' + `${suggestion.data.thumbnail.extension}`;
   			console.log(thumbnail);
-  			$('#outputbox').append(`<img class='characterThumbnail' src=${thumbnail}>
-  								<span class='characterName'>${suggestion.value}<span>`);
+  			$('#outputbox').append(`<div class='characterBox'>
+          <img class='characterThumbnail' src=${thumbnail}>
+  				<span class='characterName'>${suggestion.value}<span>
+          <button class='deleteChar' type='button'>
+          <img class='xSymbol' src='assets/images/xSymbol.png'>
+        </button>
+          </div>`);
+        $('.deleteChar').click(function(){
+        console.log('deselecting a character');
+        let characterName = `${suggestion.value}`;
+        console.log(characterName);
+        $.ajax({
+          method: "DELETE",
+          url: "/api/hoomans",
+          data: JSON.stringify({username:localStorage.username, characterName: characterName}),
+          dataType: "json",
+          contentType: "application/json"
+        })
+        .then(function(response){
+          console.log('star wars sucks now');
+          console.log(response);
+        })
+  });
+
+
+
 
   			//clicking one will call
   		}

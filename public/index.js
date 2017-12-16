@@ -73,7 +73,6 @@ $('#loginForm').submit(function(event){
 
 function toProtectedData() {
 	let token = localStorage.getItem('token');
-	console.log(token);
 	$.ajax({
 		method: "GET",
 		url: "/api/vault",
@@ -92,6 +91,8 @@ function toProtectedData() {
  $('.firstName').html(localStorage.firstName);
  $('.lastName').html(localStorage.lastName);
  $('.username').html(localStorage.username);
+
+
 
 
 
@@ -185,12 +186,8 @@ function upDateAccount() {
 	($('form.updateForm button').click(function(event){
 		event.preventDefault();
 		let newFirstName = $('form.updateForm #firstName').val();
-		console.log(newFirstName);
 		let newLastName = $('form.updateForm #lastName').val();
-		console.log(newLastName);
 		let enteredPassword = $('form.updateForm #password').val();
-		console.log(enteredPassword);		
-			console.log(enteredPassword);
 				$.ajax({
 					method: "PUT",
 					url: '/api/hoomans',
@@ -220,15 +217,14 @@ function upDateAccount() {
 						location.href='accountPage.html';
 					}, 0300))
 				})
-		
-	}))
+		}))
 	})
 }
 
 //
 function loadMainPage() {
+
 if(location.href === 'http://localhost:8080/mainPage.html') {
-	console.log('crippity crip crip');
 		$.ajax({
 			method: "GET",
 			url: "/api/hoomans/char",
@@ -237,25 +233,61 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 				username: `${localStorage.username}`
 			},
 			dataType: 'json'
-			
 		})
 		.then((response)=>{
 			let marvelousData = response.marvelousData;
 			console.log(marvelousData);
 			for(let i=0; i<=marvelousData.length-1; i++) {
 				let picPath = marvelousData[i].thumbnail.path + '.' + marvelousData[i].thumbnail.extension;
-				console.log(picPath);
-				$('#outputbox').append(`<img class='characterThumbnail' src=${picPath}>`);
-				// $('#outputbox').append(`<img class="characterImage" src=${marvelousData[i].thumbnail.path} + "." + ${marvelousData[i].thumbnail.extension}>`);
+				let namePath = marvelousData[i].name;
+				$('#outputbox').append(`<div class='characterBox'>
+				<img class='characterThumbnail' src=${picPath}>
+				<span class='characterName'>${namePath}</span>
+				<button class='deleteChar' type='button'>
+					<img class='xSymbol' src='assets/images/xSymbol.png'>
+				</button>
+				</div>`);
 			}
-			
+			$('.deleteChar').click(function(){
+		let characterName = $(this).prev()[0].textContent;
+		console.log(characterName);
+		console.log('deselecting a character');
+		$.ajax({
+			method: "DELETE",
+			url: "/api/hoomans",
+			data: JSON.stringify({username:localStorage.username,
+				characterName: characterName}),
+			dataType: "json",
+			contentType: "application/json"
+		})
+		.then(function(response){
+			console.log(characterName);
+			console.log('merry ep8 was terrible mas');
+			console.log(response);
+		})
+	});
 		})
 	}	
 }
 
+// $('.deleteChar').click(function(){
+// 		console.log('deselecting a character');
+// 		$.ajax({
+// 			method: "DELETE",
+// 			url: "/api/hoomans",
+// 			data: JSON.stringify({username:localStorage.username}),
+// 			dataType: "json",
+// 			contentType: "application/json"
+// 		})
+// 		.then(function(response){
+// 			console.log('merry ep8 was terrible mas');
+// 			console.log(response);
+// 		})
+// 	});
+
+
 function toProtectedData() {
 	let token = localStorage.getItem('token');
-	console.log(token);
 	$.ajax({
 		method: "GET",
 		url: "/api/vault",
@@ -277,7 +309,6 @@ function accountFunctionality(){
 	deleteAccount();
 	upDateAccount();
 	loadMainPage();
-	// editAccountSubmit();
 }
 
 
