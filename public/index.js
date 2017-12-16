@@ -265,6 +265,10 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 			console.log('merry ep8 was terrible mas');
 			console.log(response);
 		})
+		.then(()=>{
+			location.href='mainPage.html';
+
+			})
 	});
 		})
 	}	
