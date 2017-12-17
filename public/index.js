@@ -260,11 +260,12 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 					eventList.push(events[x].name);
 				}
 				for(let z=0; z<=eventList.length-1; z++) {
-					$(`.${nameClass}`).append('<li>'+eventList[z]+'</li>');
+					$(`.${nameClass}`).append(`
+						<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
 				}
 
 
-
+// https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=spider-island
 
 				// for(let x=0; x<=events.length-1; x++) {
 				// 	if( $('.eventBox > ul').attr('class') === nameClass  ) {
