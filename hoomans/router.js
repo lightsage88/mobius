@@ -368,20 +368,15 @@ router.get('/', function(req, res){
 
 router.delete('/', jsonParser, function(req,res){
 	let {username, characterName} = req.body;
-	console.log('sw is dead');
-	console.log(username);
 	console.log(characterName);
 	return Hooman.findOne({'username':username})
 		.then((hooman)=>{
 		let marvelousData =	hooman.marvelousData;
-		console.log(marvelousData);
 		console.log(characterName);
 		for(let i=0; i<=marvelousData.length-1; i++) {
 			if(marvelousData[i].name === characterName) {
-				console.log('shut your mouth');
+				console.log(`deleting ${characterName}`);
 				let target = marvelousData[i];
-				console.log(marvelousData[i]);
-
 				Hooman.update({'username':username},
 							{$pull : {marvelousData:target}},
 							function(err, data) {

@@ -9,6 +9,39 @@ body {
 }
 
 .xSymbol {
-	max-height: 1em;
-	max-width: 1em;
+	max-height: 1.3em;
+	max-width: 1.3em;
+}
+
+.outputbox {
+	position: static;
+}
+
+.characterBox {
+	margin: 2em 0;
+	height: auto;
+	min-height: 138px;
+	border: white 2px solid;
+}
+
+.eventList {
+	border: solid blue 1px;
+	clear: left;
+	height: auto;
+}
+
+.eventBox {
+	overflow: scroll;
+}
+
+
+.deleteChar {
+	border-radius: 80%;
+	position: absolute;
+	left: 10%;
+}
+
+span.characterName {
+	position: absolute;
+	display: block;
 }

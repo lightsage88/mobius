@@ -71,8 +71,6 @@ console.log(queryString);
   				})
   			};
   		},
-         // data: JSON.stringify({username: username, password: password, firstName: firstName, lastName: lastName}),
-
   		onSelect: function(suggestion) {
   			query = '';
   			console.log(suggestion);
@@ -91,14 +89,25 @@ console.log(queryString);
         })
   			console.log(suggestion.data.thumbnail.path + '.' + suggestion.data.thumbnail.extension);
   			let thumbnail = `${suggestion.data.thumbnail.path}` + '.' + `${suggestion.data.thumbnail.extension}`;
-  			console.log(thumbnail);
+        let eventBlock = suggestion.data.events.items;
+          console.log(eventBlock);
+        let eventList = [];
+          for(let i=0; i<=eventBlock.length-1; i++) {
+            eventList.push(eventBlock[i].name);
+          }
+          
   			$('#outputbox').append(`<div class='characterBox'>
           <img class='characterThumbnail' src=${thumbnail}>
   				<span class='characterName'>${suggestion.value}<span>
           <button class='deleteChar' type='button'>
           <img class='xSymbol' src='assets/images/xSymbol.png'>
-        </button>
-          </div>`);
+          </button>
+          <ul class='eventList'></ul>
+          </div><!--characterBox-->`);
+        eventList.forEach((name)=>{
+            $('ul.eventList').append(`<li>${name}</li>`);
+            console.log('clamburger');
+          });
         $('.deleteChar').click(function(){
         console.log('deselecting a character');
         let characterName = `${suggestion.value}`;
@@ -118,11 +127,7 @@ console.log(queryString);
         location.href='mainPage.html';
        })
   });
-
-
-
-
-  			//clicking one will call
+      window.location.reload();
   		}
    });
 

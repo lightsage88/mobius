@@ -237,17 +237,67 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 		.then((response)=>{
 			let marvelousData = response.marvelousData;
 			console.log(marvelousData);
+			// let eventBlock = marvelousData[0].events.items;
+			// console.log(eventBlock);
+			
 			for(let i=0; i<=marvelousData.length-1; i++) {
 				let picPath = marvelousData[i].thumbnail.path + '.' + marvelousData[i].thumbnail.extension;
 				let namePath = marvelousData[i].name;
+				let nameClass = namePath.replace(/\W/g,'');
 				$('#outputbox').append(`<div class='characterBox'>
 				<img class='characterThumbnail' src=${picPath}>
 				<span class='characterName'>${namePath}</span>
 				<button class='deleteChar' type='button'>
 					<img class='xSymbol' src='assets/images/xSymbol.png'>
 				</button>
+		<div class='eventBox'>
+          <ul class=${nameClass}></ul>
+        </div> 
 				</div>`);
 			}
+
+		
+
+			for(let c=0; c<=marvelousData.length-1; c++) {
+				let eventBlock = [];
+				eventBlock = marvelousData[c].events.items;
+				let namePath = (marvelousData[c].name).replace(/\W/g,'');
+				console.log(namePath);
+
+				console.log('zamboni');
+				console.log(eventBlock);
+				// if()
+
+				$('.eventBox').each(function(){
+						console.log(this);
+						console.log($('ul').attr('class'));
+						console.log(namePath);
+					$('ul').each(function(){
+						console.log(this);
+						console.log(namePath);
+						console.log(eventBlock);
+						if( $(this).attr('class')===namePath ) {
+							$(this).append(`<li>${eventBlock}</li>`);
+						} else {
+							console.log('nope');
+						}
+					})
+
+
+					// if( $('ul').attr('class') === namePath ){
+					// console.log('matchy matchy'); 
+		   //      	$(`.${namePath}`).append(`<li>${eventBlock}</li>`);
+		   //      	} else {
+		   //      		console.log('bad feeling');
+		   //      	}
+
+				})
+					
+		    }
+		
+
+			
+
 			$('.deleteChar').click(function(){
 		let characterName = $(this).prev()[0].textContent;
 		console.log(characterName);
