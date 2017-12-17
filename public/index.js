@@ -237,6 +237,7 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 		.then((response)=>{
 			let marvelousData = response.marvelousData;
 			console.log(marvelousData);
+			let events = [];
 			// let eventBlock = marvelousData[0].events.items;
 			// console.log(eventBlock);
 			
@@ -250,50 +251,37 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 				<button class='deleteChar' type='button'>
 					<img class='xSymbol' src='assets/images/xSymbol.png'>
 				</button>
-		<div class='eventBox'>
-          <ul class=${nameClass}></ul>
-        </div> 
+				<div class='eventBox'>
+		          <ul class=${nameClass}></ul>
+		        </div> 
 				</div>`);
+
+				events = marvelousData[i].events.items;
+				console.log(events);
+				console.log(nameClass);
+				let eventList = [];
+				for(let x=0; x<=events.length-1; x++) {
+					eventList.push(events[x].name);
+				}
+				console.log(eventList);
+				for(let z=0; z<=eventList.length-1; z++) {
+					$(`.${nameClass}`).append('<li>'+eventList[z]+'</li>');
+				}
+
+
+
+
+				// for(let x=0; x<=events.length-1; x++) {
+				// 	if( $('.eventBox > ul').attr('class') === nameClass  ) {
+				// 		console.log( $('ul.nameClass') );
+				// 		console.log('cookies are great');
+
+				// 	}
+				// }
+
 			}
 
-		
 
-			for(let c=0; c<=marvelousData.length-1; c++) {
-				let eventBlock = [];
-				eventBlock = marvelousData[c].events.items;
-				let namePath = (marvelousData[c].name).replace(/\W/g,'');
-				console.log(namePath);
-
-				console.log('zamboni');
-				console.log(eventBlock);
-				// if()
-
-				$('.eventBox').each(function(){
-						console.log(this);
-						console.log($('ul').attr('class'));
-						console.log(namePath);
-					$('ul').each(function(){
-						console.log(this);
-						console.log(namePath);
-						console.log(eventBlock);
-						if( $(this).attr('class')===namePath ) {
-							$(this).append(`<li>${eventBlock}</li>`);
-						} else {
-							console.log('nope');
-						}
-					})
-
-
-					// if( $('ul').attr('class') === namePath ){
-					// console.log('matchy matchy'); 
-		   //      	$(`.${namePath}`).append(`<li>${eventBlock}</li>`);
-		   //      	} else {
-		   //      		console.log('bad feeling');
-		   //      	}
-
-				})
-					
-		    }
 		
 
 			
