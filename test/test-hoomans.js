@@ -25,3 +25,58 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 //now we get to the actual describe
+
+describe('/api/hoomans', function(){
+	const username = 'exampleUser';
+	const password = 'examplePass';
+	const firstName = 'Example';
+	const lastName = 'User';
+	const usernameB = 'exampleUserB';
+	const passwordB = 'examplePassB';
+	const firstNameB = 'ExampleB';
+	const lastNameB = 'UserB';
+before(function(){
+	return runServer();
+});
+after(function(){
+	return closeServer();
+});
+beforeEach(function(){});
+afterEach(function(){
+	return Hooman.remove({});
+});
+
+describe('/api/hoomans', function(){
+	describe('GET', function(){
+		it('should return all Hooman entries', ()=>{
+			return chai.request(app).get('/api/hoomans')
+			.then(res=> {
+				expect(res).to.have.status(200);
+				expect(res.body).to.be.an('array');
+			});
+		});
+	});
+});
+
+
+});
+
+
+// router.get('/', function(req, res){
+// 	return Hooman.find()
+// 	//says to find all the Hooman entries
+// 	.then(function(hoomans){
+// 	// console.log(hoomans);
+// 	let set = [];
+// 	for(let i=0; i<=hoomans.length-1; i++){
+// 		set.push(hoomans[i].apiRepr());
+// 	}
+// 	// console.log(set);
+// 	return res.status(200).json(set);
+// 	})
+// 	//if there is an error, we will send a very basic message back in jSON
+// 	//and return a status code of 500
+// 	.catch(function(err){
+// 		return res.status(500).json({message: 'Internal server screwup'});
+// 	});
+// });

@@ -28,12 +28,10 @@ $('#registerForm').submit(function(event){
 				(setTimeout(function(){
 					location.href = 'login.html';
 				}, 2000));
-			//fancy counting function that calls itself, WHUUUUT?!
 		},
 		error: (err) => {
 			console.log('god damnit');
 			console.error(err);
-			//can use jquery to put the error into some html element in your document
 			$('main').append(`${err.responseJSON.message}`);
 		} 
 	});
@@ -43,9 +41,7 @@ $('#loginForm').submit(function(event){
 	event.preventDefault();
 	let username = 	$('#username').val();
 	let password = $('#password').val();
-	console.log('Batman never quits and neither should you!');
 	$.ajax({
-		//method url data contentType dataType success and error 
 		method: "POST",
 		url: "/api/cyberPolice/login",
 		data: JSON.stringify({username: username, password: password}),
@@ -65,9 +61,7 @@ $('#loginForm').submit(function(event){
 			$('#loginForm').after('<p class="loginFail">Password/Username Error</p>');
 			$('.loginFail').fadeOut(2000);
 
-			//I read somewhere you couldn't have both a success and an error callback in the same request...one for Ray.
 		}
-	// location.href='accountPage.html';
 	});
 });
 
@@ -116,7 +110,7 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 					localStorage.setItem('id', response[i].id);
 				}
 			}
-			location.href=('accountPage.html');
+			location.href=('mainPage.html');
 			resolve();
 		});
 	});
@@ -161,7 +155,7 @@ function deleteAccount() {
 		$('button.reprieve').click(function(){
 			$('.superDelete').attr('hidden',true);
 		});
-	}
+}
 
 
 
@@ -220,7 +214,7 @@ function upDateAccount() {
 	})
 }
 
-//
+
 function loadMainPage() {
 
 if(location.href === 'http://localhost:8080/mainPage.html') {
@@ -263,18 +257,6 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 					$(`.${nameClass}`).append(`
 						<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
 				}
-
-
-// https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=spider-island
-
-				// for(let x=0; x<=events.length-1; x++) {
-				// 	if( $('.eventBox > ul').attr('class') === nameClass  ) {
-				// 		console.log( $('ul.nameClass') );
-				// 		console.log('cookies are great');
-
-				// 	}
-				// }
-
 			}
 
 
@@ -307,21 +289,6 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 		})
 	}	
 }
-
-// $('.deleteChar').click(function(){
-// 		console.log('deselecting a character');
-// 		$.ajax({
-// 			method: "DELETE",
-// 			url: "/api/hoomans",
-// 			data: JSON.stringify({username:localStorage.username}),
-// 			dataType: "json",
-// 			contentType: "application/json"
-// 		})
-// 		.then(function(response){
-// 			console.log('merry ep8 was terrible mas');
-// 			console.log(response);
-// 		})
-// 	});
 
 
 function toProtectedData() {
