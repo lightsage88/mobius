@@ -45,3 +45,10 @@ span.characterName {
 	position: absolute;
 	display: block;
 }
+
+#autocomplete, .autocomplete-suggestions .autocomplete-suggestion {
+	color: white;
+	background: black;
+	height: auto;
+	max-height: 100%;
+}

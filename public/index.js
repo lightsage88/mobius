@@ -131,7 +131,6 @@ function logOut() {
 
 
 function deleteAccount() {
-	console.log(localStorage.id);
 	$('button.deleteAccount').click(function(){
 		$('main').append(`
 			<div class='superDelete'>
@@ -236,7 +235,6 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 		})
 		.then((response)=>{
 			let marvelousData = response.marvelousData;
-			console.log(marvelousData);
 			let events = [];
 			// let eventBlock = marvelousData[0].events.items;
 			// console.log(eventBlock);
@@ -257,13 +255,10 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 				</div>`);
 
 				events = marvelousData[i].events.items;
-				console.log(events);
-				console.log(nameClass);
 				let eventList = [];
 				for(let x=0; x<=events.length-1; x++) {
 					eventList.push(events[x].name);
 				}
-				console.log(eventList);
 				for(let z=0; z<=eventList.length-1; z++) {
 					$(`.${nameClass}`).append('<li>'+eventList[z]+'</li>');
 				}
