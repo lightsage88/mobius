@@ -48,7 +48,8 @@ HoomanSchema.methods.apiRepr = function () {
 		username: this.username || '',
 		firstName: this.firstName || '',
 		lastName: this.lastName || '',
-		id: this.id
+		id: this.id,
+		marvelousData: this.marvelousData
 	};
 };
 

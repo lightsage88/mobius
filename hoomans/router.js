@@ -25,8 +25,7 @@ router.put('/char', jsonParser, function(req,res){
 	let {username, marvelousData} = req.body;
 	Hooman.updateOne(
 		{username},
-		{$addToSet: {marvelousData: marvelousData}  
-		}
+		{$addToSet: {marvelousData: marvelousData} }
 	)
 	.then((response)=>{
 		console.log(response);
@@ -39,18 +38,10 @@ router.get('/char', jsonParser, function(req, res){
 	console.log(username);
 	Hooman.findOne({username})
 	.then(function(hooman){
-		console.log(hooman);
-		res.status(200).json(hooman);
+	console.log(hooman);
+	res.status(200).json(hooman);
 	})
 	
-	
-	// Hooman.findOne({username})
-	// .then((hooman)=> {
-	// 	res.status(200).json(hooman);
-	// })
-
-	//if there is nothing there, then response should be like
-	//console.log('nothing yet');
 })
  
 
@@ -377,7 +368,6 @@ router.delete('/', jsonParser, (req,res)=> {
 
 router.delete('/char', jsonParser, function(req,res){
 	let {username, characterName} = req.body;
-	console.log(characterName);
 	return Hooman.findOne({'username':username})
 		.then((hooman)=>{
 		let marvelousData =	hooman.marvelousData;
@@ -386,20 +376,23 @@ router.delete('/char', jsonParser, function(req,res){
 			if(marvelousData[i].name === characterName) {
 				console.log(`deleting ${characterName}`);
 				let target = marvelousData[i];
-				Hooman.update({'username':username},
-							{$pull : {marvelousData:target}},
+				Hooman.update({'username':username},{$pull : {marvelousData:target}},
 							function(err, data) {
 								if(err) {
 									return res.status(500).json({'error': 'gosh darn'});
+								} else {
+									return res.status(200).json(data);
 								}
-								res.json(data);
 							}
-					)
+							)
 
 			}
 		}
-	})
+		})
+		.then((res)=>{
 			return res.status(200).json('hamburger');
+
+		});
 });
 	
 
