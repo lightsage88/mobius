@@ -270,7 +270,7 @@ if(location.href === 'http://localhost:8080/mainPage.html') {
 		console.log('deselecting a character');
 		$.ajax({
 			method: "DELETE",
-			url: "/api/hoomans",
+			url: "/api/hoomans/char",
 			data: JSON.stringify({username:localStorage.username,
 				characterName: characterName}),
 			dataType: "json",

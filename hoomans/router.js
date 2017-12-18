@@ -356,7 +356,8 @@ router.get('/', function(req, res){
 	for(let i=0; i<=hoomans.length-1; i++){
 		set.push(hoomans[i].apiRepr());
 	}
-	// console.log(set);
+	console.log(set);
+	console.log(set[0].id);
 	return res.status(200).json(set);
 	})
 	//if there is an error, we will send a very basic message back in jSON
@@ -366,7 +367,38 @@ router.get('/', function(req, res){
 	});
 });
 
-router.delete('/', jsonParser, function(req,res){
+
+router.delete('/', jsonParser, (req,res)=> {
+	let {id} = req.body;
+	return Hooman.findOne({'_id': id})
+	.then((hooman)=>{
+		let killSwitch = id;
+		console.log(hooman);
+		return Hooman.deleteOne({'_id': killSwitch})
+			.then(()=>{
+			console.log(`account id ${killSwitch} terminated`);
+			return res.status(204).json({message: 'Account Terminated'});
+		})
+	.catch((err)=>{
+		console.log(err);
+		console.error(err);
+		return res.status(500).json({message: 'Internal Server Issue'});
+	});
+	})
+
+	
+});
+
+
+
+
+
+
+
+
+
+
+router.delete('/char', jsonParser, function(req,res){
 	let {username, characterName} = req.body;
 	console.log(characterName);
 	return Hooman.findOne({'username':username})
@@ -388,13 +420,10 @@ router.delete('/', jsonParser, function(req,res){
 					)
 
 			}
-			// for(let x=0; x<=marvelousData[i].length-1; x++) {
-			// 	let focus = marvelousData[i];
-			// 	if(marvelousData[i][x])
-			}
-		})
+		}
+	})
 			return res.status(200).json('hamburger');
-	});
+});
 	
 
 
