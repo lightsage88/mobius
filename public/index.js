@@ -181,6 +181,7 @@ function upDateAccount() {
 		let newFirstName = $('form.updateForm #firstName').val();
 		let newLastName = $('form.updateForm #lastName').val();
 		let enteredPassword = $('form.updateForm #password').val();
+		let username = localStorage.username;
 				$.ajax({
 					method: "PUT",
 					url: '/api/hoomans',
@@ -190,7 +191,8 @@ function upDateAccount() {
 						{
 						'firstName':`${newFirstName}`,
 						'lastName': `${newLastName}`,
-						'password': `${enteredPassword}`
+						'password': `${enteredPassword}`,
+						'username': `${username}`
 						}
 					),
 					success: (response) => {
@@ -208,7 +210,7 @@ function upDateAccount() {
 					localStorage.setItem('lastName', response.lastName);
 					(setTimeout(function(){
 						location.href='accountPage.html';
-					}, 0300))
+					}, 1300))
 				})
 		}))
 	})

@@ -27,7 +27,7 @@ chai.use(chaiHttp);
 //now we get to the actual describe
 
 describe('/api/hoomans', function(){
-	const username = 'TestDummy1';
+	const username = 'TestDummy1' + Math.random();
 	const password = 'password';
 	const firstName = 'Kevin';
 	const lastName = 'McK';
@@ -52,7 +52,7 @@ afterEach(function(){
 	// return Hooman.remove({});
 });
 
-describe('/api/hoomans', function(){
+//test the get method
 	describe('GET', function(){
 		it('should return all Hooman entries', ()=>{
 			return chai.request(app)
@@ -64,9 +64,9 @@ describe('/api/hoomans', function(){
 			});
 		});
 	});
-
+	//test the delete method
+		//works, KINDA
 	describe('DELETE', function(){
-	
 		it('should delete a specific user', ()=>{
 		return chai.request(app)
 		.get('/api/hoomans')
@@ -76,7 +76,7 @@ describe('/api/hoomans', function(){
 			console.log(killSwitch);
 			return chai.request(app)
 			.delete(`/api/hoomans`)
-			.set({'_id': '5a3484cdcbe57939348da91e'})
+			.send({'_id': '5a3484cdcbe57939348da91e'})
 			.then(res=>{
 				expect(res).to.have.status(204);
 			});
@@ -85,9 +85,58 @@ describe('/api/hoomans', function(){
 
 		});
 	});
-
-
+	//test the PUT method
+	describe('POST', ()=>{
+		it('should create a user',()=>{
+			return chai.request(app)
+			.post('/api/hoomans')
+			.send({username, password, firstName, lastName})
+			.then((res)=>{
+				expect(res).to.have.status(201);
+	            expect(res.body).to.be.an('object');
+	            expect(res.body).to.have.keys(
+	              'username',
+	              'firstName',
+	              'lastName',
+	              'id'
+	            );
+			})
+			.catch((err)=>{
+				console.error(err);
+				console.log(err);
+				if(err instanceof chai.AssertionError) {
+					throw err;
+				}
+			})
+		});
 	});
+
+	describe('PUT', ()=>{
+		it('should update a user', ()=>{
+			return chai.request(app)
+			.put('/api/hoomans')
+			.send({username, firstName, lastName, password})
+			.then((res)=>{
+				console.log(res.body);
+				expect(res).to.have.status(202);
+				expect(res.body).to.be.an('object');
+				expect(res.body).should.include.keys(
+					'username',
+					'firstName',
+					'lastName',
+					'id'
+					);
+			})
+			.catch((err)=>{
+				console.error(err);
+				console.log(err);
+				if(err instanceof chai.AssertionError) {
+					throw err;
+				}
+			});
+		});
+	});
+	
 });
 
 
