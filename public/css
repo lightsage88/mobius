@@ -1,16 +1,11 @@
-/*Mobile style*/
+css
 
-main {
-/*	height: auto;
-*/}
+
 
 img.characterThumbnail {
-	max-height: 20em;
-	max-width: 20em;
+	max-height: 8em;
+	max-width: 8em;
 	border: solid 3px green;
-	display: inline;
-	float: left;
-	clear: left;
 }
 
 body {
@@ -24,35 +19,23 @@ body {
 
 .outputbox {
 	position: static;
-	height: 100%;
 }
 
 .characterBox {
 	margin: 2em 0;
 	height: auto;
-    width: auto;
-	min-height: 326px;
-	border: blue 2px solid;
+	min-height: 138px;
+	border: white 2px solid;
 }
 
 .eventList {
 	border: solid blue 1px;
 	clear: left;
-/*	height: auto;
-*/}
+	height: auto;
+}
 
 .eventBox {
 	overflow: auto;
-	height: auto;
-    /*unexpected choice for inline, but I like it*/
-    display: inline;
-}
-/*The part for the eventLists*/
-ul:only-child {
-	background: white;
-	list-style: none;
-	clear: left;
-
 }
 
 
@@ -63,11 +46,8 @@ ul:only-child {
 }
 
 span.characterName {
+	position: absolute;
 	display: block;
-	font-size: 4vw;
-    font-family: 'Bungee', cursive; 
-    line-height: 2em;
-    text-align: center;
 }
 
 #autocomplete, .autocomplete-suggestions .autocomplete-suggestion {
