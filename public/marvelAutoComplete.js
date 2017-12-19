@@ -96,22 +96,10 @@ console.log(queryString);
           console.log('star wars sucks now');
           console.log(response);
         })
-       // .then(()=>{
-       //  location.href='mainPage.html';
-       // })
+       
   });
       window.location.reload();
   		}
    });
 
-  //an ever present listening function
-  // $.ajax({
-  //   method: 'GET',
-  //   url: '/api/hoomans/char',
-  //   data: JSON.stringify({username: localStorage.username}),
-  //   dataType: 'json',
-  //   contentType: 'application/json'
-  // })
-  // .then((response){
-  //   console.log(response)
-  // })
+  
