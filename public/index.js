@@ -219,7 +219,7 @@ function upDateAccount() {
 
 function loadMainPage() {
 
-if(location.href === 'http://localhost:8080/mainPage.html') {
+if(location.href === 'mainPage.html') {
 		$.ajax({
 			method: "GET",
 			url: "/api/hoomans/char",
