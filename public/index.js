@@ -232,8 +232,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 		.then((response)=>{
 			let marvelousData = response.marvelousData;
 			let events = [];
-			// let eventBlock = marvelousData[0].events.items;
-			// console.log(eventBlock);
+			
 			
 			for(let i=0; i<=marvelousData.length-1; i++) {
 				let picPath = marvelousData[i].thumbnail.path + '.' + marvelousData[i].thumbnail.extension;
@@ -264,34 +263,12 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				for(let z=0; z<=eventList.length-1; z++) {
 					console.log(eventList.length-1);
 					
-					// if(eventList.length == 0) {
-					// 	console.log('calling Ben Reilly');
-					// 	$(`.${nameClass}`).append(`<li>No events for this character</li>`);
-					// }
-					
+							
 					$(`.${nameClass}`).append(`
 						<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
 				}
 			}
-
-				// for(let z=0; z<=eventList.length-1; z++) {
-				// 	console.log(eventList.length-1);
-					
-				// 	// if(eventList.length == 0) {
-				// 	// 	console.log('calling Ben Reilly');
-				// 	// 	$(`.${nameClass}`).append(`<li>No events for this character</li>`);
-				// 	// }
-					
-				// 	$(`.${nameClass}`).append(`
-				// 		<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
-				// }
-			}
-
-
-		
-
-			
-
+		}
 			$('.deleteChar').click(function(){
 		let characterName = $(this).prev()[0].textContent;
 		console.log(characterName);
