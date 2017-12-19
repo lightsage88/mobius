@@ -3,7 +3,7 @@
 //'mongod://localhost/mobius-test';
 //we set up a db called mobius-test and it has a collection
 //called hoomans which has some entries in it
-global.DATABASE_URL = 'mongodb://localhost/mobius-test';
+// global.DATABASE_URL = 'mongodb://localhost/mobius-test';
 //for these tests we are going to need chai and chaiHttp
 const chai = require('chai');
 const chaiHttp = require('chai-http');
@@ -508,52 +508,8 @@ afterEach(function(){
 			})
 		})
 	});
-
-	// describe('DELETE/char', ()=>{
-	// 		it('should remove a character from your marvelousData', ()=>{
-	// 		return chai.request(app)
-	// 		.get('/api/hoomans')
-	// 		.then(res =>{
-	// 			console.log('a wild goose chase');
-	// 			console.log(res.body)
-	// 			let usernameX = res.body[0].username;
-	// 			let testData = res.body[0].marvelousData;
-	// 			console.log(usernameX);
-	// 			return chai.request(app)
-	// 				.delete('/api/hoomans/char')
-	// 				.send({username:usernameX, characterName: testData[0].name})
-	// 				.then((res)=>{
-	// 					console.log(res);
-	// 					expect(res).to.have.status(200);
-	// 				})
-
-					
-	// 		})
-
-	// 	})
-	// });
-	
 });
 
-	// describe('DELETE', function(){
-	// 	it('should delete a specific user', ()=>{
-	// 	return chai.request(app)
-	// 	.get('/api/hoomans')
-	// 	.then(res=>{
-	// 		console.log(res.body[0].id);
-	// 		killSwitch = res.body[0].id;
-	// 		console.log(killSwitch);
-	// 		return chai.request(app)
-	// 		.delete(`/api/hoomans`)
-	// 		.send({'_id': '5a3484cdcbe57939348da91e'})
-	// 		.then(res=>{
-	// 			expect(res).to.have.status(204);
-	// 		});
-	// 	});
-			
-
-	// 	});
-	// });
 
 
 
