@@ -509,29 +509,29 @@ afterEach(function(){
 		})
 	});
 
-	describe('DELETE/char', ()=>{
-			it('should remove a character from your marvelousData', ()=>{
-			return chai.request(app)
-			.get('/api/hoomans')
-			.then(res =>{
-				console.log('a wild goose chase');
-				console.log(res.body)
-				let usernameX = res.body[0].username;
-				let testData = res.body[0].marvelousData;
-				console.log(usernameX);
-				return chai.request(app)
-					.delete('/api/hoomans/char')
-					.send({username:usernameX, characterName: testData[0].name})
-					.then((res)=>{
-						console.log(res);
-						expect(res).to.have.status(200);
-					})
+	// describe('DELETE/char', ()=>{
+	// 		it('should remove a character from your marvelousData', ()=>{
+	// 		return chai.request(app)
+	// 		.get('/api/hoomans')
+	// 		.then(res =>{
+	// 			console.log('a wild goose chase');
+	// 			console.log(res.body)
+	// 			let usernameX = res.body[0].username;
+	// 			let testData = res.body[0].marvelousData;
+	// 			console.log(usernameX);
+	// 			return chai.request(app)
+	// 				.delete('/api/hoomans/char')
+	// 				.send({username:usernameX, characterName: testData[0].name})
+	// 				.then((res)=>{
+	// 					console.log(res);
+	// 					expect(res).to.have.status(200);
+	// 				})
 
 					
-			})
+	// 		})
 
-		})
-	});
+	// 	})
+	// });
 	
 });
 
