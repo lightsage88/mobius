@@ -96,9 +96,9 @@ console.log(queryString);
           console.log('star wars sucks now');
           console.log(response);
         })
-       .then(()=>{
-        location.href='mainPage.html';
-       })
+       // .then(()=>{
+       //  location.href='mainPage.html';
+       // })
   });
       window.location.reload();
   		}
