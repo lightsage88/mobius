@@ -1,5 +1,47 @@
 /*Mobile style*/
 
+header{
+    background: rgba(0,0,0,0.7);
+    
+}
+
+header h1.mainPageHeader{
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    padding: 0;
+    font-size: 3.5em;
+    text-size-adjust: auto;
+    text-align: center;
+    padding-bottom: .3em;
+    position:relative;
+}
+
+img.marvelLogo{
+    height:2em;
+    top:.42em;
+    position: relative;
+    display: inline-block;
+    margin-top:0;
+}
+
+.stickyNav{
+    text-align:center;
+}
+
+a.siteLink{
+    font-family: 'Comfortaa', cursive;
+    font-size: 3em;
+    padding: 0 .2em;
+    font-weight:bold;
+    color:red;
+    text-decoration: none;
+    background: rgba(0,0,0,0.5);
+    text-shadow: .1em -0.03em 2px white;
+    border-radius: 20%;
+}
+
+
+
 body {
     background: url('assets/images/orangeDots.jpg');
 /*    background-size: cover;*/
@@ -16,10 +58,7 @@ img.characterThumbnail {
 
 
 
-.xSymbol {
-	max-height: 1.3em;
-	max-width: 1.3em;
-}
+
 
 .outputbox {
 	position: static;
@@ -28,6 +67,7 @@ img.characterThumbnail {
 
 .characterBox {
 	margin: 2em 0;
+    position: relative;
 	height: auto;
     width: auto;
 	min-height: 326px;
@@ -76,11 +116,24 @@ a:active{
     text-decoration: none;
 }
 
-
 .deleteChar {
-	border-radius: 80%;
+    border-radius: 50%;
+    border-style:outset;
+    border-width: .52em;
 	position: absolute;
-	left: 10%;
+    height: 16em;
+    width: 16em;
+    right: 0em;
+    top: 0;
+}
+
+.deleteChar:hover{
+    background: yellow;
+}
+
+.xSymbol {
+    height: 100%;
+    width:100%;
 }
 
 span.characterName {
@@ -97,7 +150,8 @@ span.characterName {
 }
 
 #searchfield{
-    margin-bottom: 20%;
+    margin-top:10%;
+    margin-bottom: 10%;
     padding: 0;
 }
 
@@ -114,6 +168,7 @@ span.characterName {
     color: skyblue;
     
 }
+
 
 .autocomplete-suggestions .autocomplete-suggestion {
 	color: white;
