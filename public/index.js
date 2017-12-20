@@ -236,7 +236,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 			
 			for(let i=0; i<=marvelousData.length-1; i++) {
                 console.log(marvelousData);
-                let road = (marvelousData[0].thumbnail.path).slice(7);
+                let road = (marvelousData[i].thumbnail.path).slice(7);
                 console.log(road);
                 
                 //marvelousData[i].thumbnail.path
