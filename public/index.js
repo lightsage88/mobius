@@ -235,7 +235,14 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 			
 			
 			for(let i=0; i<=marvelousData.length-1; i++) {
-				let picPath = marvelousData[i].thumbnail.path + '.' + marvelousData[i].thumbnail.extension;
+                console.log(marvelousData);
+                let road = (marvelousData[0].thumbnail.path).slice(7);
+                console.log(road);
+                
+                //marvelousData[i].thumbnail.path
+                
+				let picPath = 'https://' + road + '.' + marvelousData[i].thumbnail.extension;
+                console.log(picPath);
 				let namePath = marvelousData[i].name;
 				let nameClass = namePath.replace(/\W/g,'');
 				$('#outputbox').append(`<div class='characterBox'>
