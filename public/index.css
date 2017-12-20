@@ -1,8 +1,9 @@
 /*Mobile style*/
 
-main {
-/*	height: auto;
-*/}
+body {
+    background: url('assets/images/orangeDots.jpg');
+/*    background-size: cover;*/
+}
 
 img.characterThumbnail {
 	max-height: 20em;
@@ -13,9 +14,7 @@ img.characterThumbnail {
 	clear: left;
 }
 
-body {
-	background: yellow;
-}
+
 
 .xSymbol {
 	max-height: 1.3em;
@@ -32,7 +31,8 @@ body {
 	height: auto;
     width: auto;
 	min-height: 326px;
-	border: blue 2px solid;
+	border: #379634 2px solid;
+    background: rgba(0,0,0,0.5);
 }
 
 .eventList {
@@ -64,10 +64,12 @@ ul:only-child {
 
 span.characterName {
 	display: block;
-	font-size: 4vw;
+	font-size: 5vw;
+    overflow-wrap:normal;
     font-family: 'Bungee', cursive; 
     line-height: 2em;
     text-align: center;
+    color: #66D7D1;
 }
 
 #autocomplete, .autocomplete-suggestions .autocomplete-suggestion {
