@@ -61,7 +61,12 @@ console.log(queryString);
           console.log('yay');
         })
   			console.log(suggestion.data.thumbnail.path + '.' + suggestion.data.thumbnail.extension);
-  			let thumbnail = `${suggestion.data.thumbnail.path}` + '.' + `${suggestion.data.thumbnail.extension}`;
+            
+            let road = (suggestion.data.thumbnail.path).slice(7);
+            console.log(road);
+            
+            
+  			let thumbnail = 'https://'+`${road}` + '.' + `${suggestion.data.thumbnail.extension}`;
         let eventBlock = suggestion.data.events.items;
           console.log(eventBlock);
         let eventList = [];
