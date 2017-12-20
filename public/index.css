@@ -59,6 +59,7 @@ ul:only-child {
 li{
     text-align: center;
     font-family: 'Comfortaa', cursive;
+    font-size: 5em;
     margin: 1.7em 0;
 }
 
@@ -83,15 +84,16 @@ a:active{
 }
 
 span.characterName {
-	display: block;
-	font-size: 8.8vw;
+	display: inline-block;
+	font-size: 10vw;
     overflow-wrap: break-word;
     font-family: 'Bungee', cursive; 
     line-height: 1.2em;
     word-spacing: 0em;
-    text-align: left;
+    text-align: center;
     color: #66D7D1;
     padding: 0;
+    clear:right;
 }
 
 #searchfield{
