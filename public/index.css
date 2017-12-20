@@ -67,7 +67,7 @@ span.characterName {
 	font-size: 5vw;
     overflow-wrap:normal;
     font-family: 'Bungee', cursive; 
-    line-height: 2em;
+    line-height: 1.2em;
     text-align: center;
     color: #66D7D1;
 }
