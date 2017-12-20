@@ -100,6 +100,9 @@ span.characterName {
 }
 
 .biginput{
+    border-style: outset;
+    border-width: .2em;
+    border-radius: .8em;
     width: 90%;
     height: 2em;
     background: black;
@@ -116,10 +119,7 @@ span.characterName {
     font-family: 'Comfortaa', cursive;
     font-size: 400%;
     color: skyblue;
-/*
-	height: auto;
-	max-height: 100%;
-*/
+
 }
 .autocomplete-suggestions .autocomplete-suggestion:hover{
     background: #fde74c;
