@@ -2,7 +2,6 @@
 
 header{
     background: rgba(0,0,0,0.7);
-    
 }
 
 header h1.mainPageHeader{
@@ -23,6 +22,8 @@ img.marvelLogo{
     display: inline-block;
     margin-top:0;
 }
+
+
 
 .stickyNav{
     text-align:center;
@@ -63,6 +64,15 @@ img.characterThumbnail {
 .outputbox {
 	position: static;
 	height: 100%;
+}
+
+#outputcontent{
+    color: white;
+    font-family: 'Bungee', cursive;
+    font-size: 4em;
+    text-align:center;
+    text-shadow: 6px 6px blue;
+    
 }
 
 .characterBox {
@@ -153,6 +163,7 @@ span.characterName {
     margin-top:10%;
     margin-bottom: 10%;
     padding: 0;
+    text-align: center;
 }
 
 .biginput{
