@@ -1,3 +1,55 @@
 main {
-    font-family: cursive;
+    font-family: 'Comfortaa', cursive; 
+    font-size: 5em;
+    
+}
+.marvel{
+    color: red;
+    float: left;
+    margin-right: 0;
+    padding: 0;
+}
+header{
+    
+    font-family: 'Comfortaa', cursive; 
+    font-size: 4em;
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+p{
+    margin: 0;
+}
+
+body{
+    background: url(assets/images/multiWall.jpg);
+    color: #BFFFF1;
+}
+
+main h3{
+    margin: 0;
+/*    border: yellow 3px solid;*/
+    padding: .3em;
+    word-wrap: normal;
+    
+}
+
+img{
+    height: 50%;
+    width: 50%;
+/*    border: white 1px solid;*/
+    bottom: 3em;
+    float: left;
+}
+
+a {
+    display: inline-block;
+    clear: left;
+    border: solid 2px white;
+    margin: 0 1em;
+    position: relative;
+    background: white;
+    text-decoration: none;
 }
