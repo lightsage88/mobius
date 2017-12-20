@@ -117,7 +117,7 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 }
 
 function logOut() {
-	$('button.logOut').click(function(){
+	$('.logOut').click(function(){
 		localStorage.clear();
 		location.href='index.html';
 	})

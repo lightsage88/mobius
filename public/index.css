@@ -29,17 +29,33 @@ img.marvelLogo{
     text-align:center;
 }
 
+
+#siteLinkBox{
+    text-align: right;
+}
+
 a.siteLink{
-    font-family: 'Comfortaa', cursive;
-    font-size: 3em;
+    font-family: 'Bungee', cursive;
     padding: 0 .2em;
     font-weight:bold;
-    color:red;
+    color:#C9FBFF;
     text-decoration: none;
-    background: rgba(0,0,0,0.5);
-    text-shadow: .1em -0.03em 2px white;
+    text-shadow: .1em -0.13em 2px blue;
     border-radius: 20%;
+    font-size: 4em;
+    text-align:center;
+    text-shadow: 6px 6px blue;
 }
+
+a.account{
+    float: left;
+}
+
+/*
+a.logOut{
+    
+}
+*/
 
 
 
@@ -67,7 +83,7 @@ img.characterThumbnail {
 }
 
 #outputcontent{
-    color: white;
+    color: #C9FBFF;
     font-family: 'Bungee', cursive;
     font-size: 4em;
     text-align:center;
@@ -180,6 +196,12 @@ span.characterName {
     
 }
 
+.logOut {
+    position: relative;
+    height: 4em;
+    width: 7em;
+    
+}
 
 .autocomplete-suggestions .autocomplete-suggestion {
 	color: white;
