@@ -31,7 +31,7 @@ body {
 }
 
 #registerForm {
-    border: 4px red solid;
+    border: 3px silver solid;
     border-radius: 1em;
     border-style: outset;
     border-width: .18em;
@@ -54,14 +54,20 @@ body {
     text-align: center;
     display: inline-block;
     border: 5px yellow solid;
-    border-radius: 1em;
-    height: 3.5em;
+    border-radius: .3em;
+    height: 2em;
     width: 62%;
     position: relative;
     margin-left: .2em;
-    bottom: .6em;
-    left: .4em;
+/*    bottom: .1em;*/
+    left: .2em;
     background: rgba(0,0,0,0);
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 0;
+    
 
 }
 
