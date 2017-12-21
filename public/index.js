@@ -119,13 +119,18 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 function logOut() {
 	$('.logOut').click(function(){
 		localStorage.clear();
-		location.href='index.html';
-	})
+        setTimeout(function(){
+            location.href='index.html';
+            }, 3000);
+        
+	});
+    
 }
 
 
 function deleteAccount() {
-	$('button.deleteAccount').click(function(){
+	$('.deleteAccount').click(function(){
+        console.log('fishsticks');
 		$('main').append(`
 			<div class='superDelete'>
 				<p>Are you sure?</p>
@@ -268,9 +273,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				$(`.${nameClass}`).append('<li>No events for this one</li>');
 			}	else {
 				for(let z=0; z<=eventList.length-1; z++) {
-					console.log(eventList.length-1);
 					
-							
 					$(`.${nameClass}`).append(`
 						<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
 				}

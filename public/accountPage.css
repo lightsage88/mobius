@@ -34,7 +34,7 @@ img.marvelLogo{
     text-align: right;
 }
 
-a.siteLink{
+a.siteLink, p.upDateAccount, p.deleteAccount{
     font-family: 'Bungee', cursive;
     padding: 0 .2em;
     font-weight:bold;
@@ -47,14 +47,17 @@ a.siteLink{
     text-shadow: 6px 6px red;
 }
 
-a.edit, a.delete{
+p.upDateAccount, p.deleteAccount{
     color: black;
     text-shadow: 6px 6px cyan;
+    display:inline-block;
+    position: relative;
+    bottom: 1em;
 }
 
 
 
-a.main, a.edit{
+a.main, p.upDateAccount{
     float: left;
 }
 
