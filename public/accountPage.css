@@ -51,6 +51,14 @@ a.main{
     float: left;
 }
 
+.userInfo p {
+    color: white;
+    text-align: left;
+    font-family: 'Bungee', cursive;
+    font-size: 3em;
+    
+}
+
 
 
 body {
@@ -60,6 +68,9 @@ body {
 
 .userLegend {
     background: rgba(0,0,0,0.6);
+    padding-left: 3em;
+    padding-bottom: 2em;
+    border-radius: 2em;
     
 }
 
@@ -68,6 +79,15 @@ body {
     font-size: 3em;
     color: white;
     text-align: left;
+}
+
+.username, .firstName, .lastName {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    padding-left: .3em;
+    font-weight: bolder;
+    color: limegreen;
+    
 }
 
 .logOut {
