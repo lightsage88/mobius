@@ -26,6 +26,12 @@ p{
 body{
     background: url(assets/images/multiWall.jpg);
     color: #BFFFF1;
+    background-size: contain;
+}
+
+main{
+    background: rgba(0,0,0,0.6);
+    margin-top: .6em;
 }
 
 main h3{
@@ -57,4 +63,39 @@ a {
 .textHeaderPart{
     font-size: 1.7em;
     margin: auto;
+}
+
+.frontGroup {
+    position: relative;
+    padding: 0;
+    border: solid 1px white;
+    box-sizing: content-box;
+
+    
+}
+
+.frontGroup a {
+    border-radius: 1em;
+    font-family: 'Bungee', sans-serif;
+    display: block;
+    text-align: center;
+    margin: .11em 0;
+    border-style: inset;
+    border-collapse: collapse;
+}
+.frontGroup a:hover{
+    background: purple;
+    color: white;
+}
+
+.frontGroup a:active{
+    background: cyan;
+    color: crimson;
+}
+
+.register {
+/*    float: left;*/
+}
+.login{
+/*    float: right;*/
 }
