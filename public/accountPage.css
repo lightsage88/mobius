@@ -32,6 +32,7 @@ img.marvelLogo{
 
 #siteLinkBox{
     text-align: right;
+    height: 9em;
 }
 
 a.siteLink, p.upDateAccount, p.deleteAccount{
@@ -106,4 +107,42 @@ body {
     width: 7em;
     
 }
+.superDelete{
+    text-align: center;
+}
 
+.superDelete p{
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-family: 'Bungee', cursive;
+/*    font-size: 3em;*/
+    text-align: center;
+}
+
+.question{
+    right: 1.5em;
+    font-size: 3em;
+        text-shadow: 6px 6px lime;
+}
+
+.kill, .reprieve {
+    position: relative;
+    font-size: 3em;
+}
+
+.kill {
+    right: 7em;
+    text-shadow: 6px 6px red;
+}
+.reprieve{
+    left: 7em;
+    text-shadow: 6px 6px cyan;
+}
+
+.deleteMessage {
+    font-family: 'Bungee', cursive;
+    font-size: 4.5em;
+    color: white;
+    text-shadow: 6px 6px black;
+}

@@ -133,11 +133,12 @@ function deleteAccount() {
         console.log('fishsticks');
 		$('main').append(`
 			<div class='superDelete'>
-				<p>Are you sure?</p>
-				<button class='kill'>Yep</button>
-				<button class='reprieve'>Nep</button>
+				<p class='question'>Are you sure?</p>
+                <br>
+				<p class='kill'>Yep</p>
+				<p class='reprieve'>Nep</p>
 			</div>`);
-		$('button.kill').click(function(){
+		$('p.kill').click(function(){
 				$.ajax({
 					method: "DELETE",
 					url: 'api/hoomans',
@@ -145,8 +146,9 @@ function deleteAccount() {
 					dataType: 'json',
 					contentType: 'application/json',
 					success: function(){
-						$('main').html("Your account has been deleted successfully...returning to beginning");
-						$('p').html('');
+				$('main').html('');
+                $('main').append("<p class='deleteMessage'>Your account has been deleted successfully...returning to beginning</p>");
+//						$('p').html('');
 						setTimeout(function(){
 							location.href='index.html';
 						}, 3000);
