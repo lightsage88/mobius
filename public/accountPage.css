@@ -47,7 +47,14 @@ a.siteLink{
     text-shadow: 6px 6px red;
 }
 
-a.main{
+a.edit, a.delete{
+    color: black;
+    text-shadow: 6px 6px cyan;
+}
+
+
+
+a.main, a.edit{
     float: left;
 }
 
