@@ -82,6 +82,10 @@ a {
     margin: .11em 0;
     border-style: inset;
     border-collapse: collapse;
+    background: rgba(0,0,0,0);
+    color: gold;
+    text-shadow: -2px 5px 2px red;
+
 }
 .frontGroup a:hover{
     background: purple;
