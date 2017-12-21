@@ -31,11 +31,17 @@ body {
 }
 
 #registerForm {
-    border: 4px white solid;
+    border: 4px red solid;
+    border-radius: 1em;
+    border-style: outset;
+    border-width: .18em;
     font-family: 'Bungee', sans-serif;
     font-size: 3em;
     color: gold;
     text-shadow: 6px 6px 2px red;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.2);
+    padding-bottom: 1em;
 }
 
 #registerForm span {
@@ -47,6 +53,29 @@ body {
 #registerForm input {
     text-align: center;
     display: inline-block;
+    border: 5px yellow solid;
+    border-radius: 1em;
+    height: 3.5em;
+    width: 62%;
+    position: relative;
+    margin-left: .2em;
+    bottom: .6em;
+    left: .4em;
+    background: rgba(0,0,0,0);
+
+}
+
+#registerForm button{
+    height:3em;
+    display: inline-block;
+    position:relative;
+    left: 37%;
+    width: 30%;
+    background: rgba(0,0,0,0);
+    font-family: 'Bungee', sans-serif;
+    color: lime;
+    text-shadow: purple 6px 6px 2px;
+    font-size: 100%;
 }
 
 
