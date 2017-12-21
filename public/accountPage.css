@@ -38,162 +38,36 @@ a.siteLink{
     font-family: 'Bungee', cursive;
     padding: 0 .2em;
     font-weight:bold;
-    color:#C9FBFF;
+    color:gold;
     text-decoration: none;
     text-shadow: .1em -0.13em 2px blue;
     border-radius: 20%;
     font-size: 4em;
     text-align:center;
-    text-shadow: 6px 6px blue;
+    text-shadow: 6px 6px red;
 }
 
-a.account{
+a.main{
     float: left;
 }
-
-/*
-a.logOut{
-    
-}
-*/
 
 
 
 body {
-    background: url('assets/images/orangeDots.jpg');
-/*    background-size: cover;*/
+/*    background: url('assets/images/blueDots.jpg');*/
+    background: linear-gradient(to right, transparent, red), url('assets/images/blueDots.jpg');
 }
 
-img.characterThumbnail {
-	max-height: 20em;
-	max-width: 20em;
-	border: solid 3px green;
-	display: inline;
-	float: left;
-	clear: left;
-}
-
-
-
-
-
-.outputbox {
-	position: static;
-	height: 100%;
-}
-
-#outputcontent{
-    color: #C9FBFF;
-    font-family: 'Bungee', cursive;
-    font-size: 4em;
-    text-align:center;
-    text-shadow: 6px 6px blue;
+.userLegend {
+    background: rgba(0,0,0,0.6);
     
 }
 
-.characterBox {
-	margin: 2em 0;
-    position: relative;
-	height: auto;
-    width: auto;
-	min-height: 326px;
-	border: #379634 2px solid;
-    background: rgba(0,0,0,0.5);
-}
-
-.eventList {
-	border: solid blue 1px;
-	clear: left;
-/*	height: auto;
-*/}
-
-.eventBox {
-	overflow: auto;
-	height: auto;
-    /*unexpected choice for inline, but I like it*/
-    display: inline;
-}
-/*The part for the eventLists*/
-ul:only-child {
-/*	background: white;*/
-	list-style: none;
-	clear: left;
-    text-decoration: none;
+.aboutYou {
+    font-family:'Bungee', cursive;
+    font-size: 3em;
     color: white;
-}
-
-li{
-    text-align: center;
-    font-family: 'Comfortaa', cursive;
-    font-size: 5em;
-    margin: 1.7em 0;
-}
-
-a:hover{
-    color: yellow;
-}
-
-a:active{
-    color: #5fdd9d;
-}
-
- li a {
-    color: #f1fffa;
-    text-decoration: none;
-}
-
-.deleteChar {
-    border-radius: 50%;
-    border-style:outset;
-    border-width: .52em;
-	position: absolute;
-    height: 16em;
-    width: 16em;
-    right: 0em;
-    top: 0;
-}
-
-.deleteChar:hover{
-    background: yellow;
-}
-
-.xSymbol {
-    height: 100%;
-    width:100%;
-}
-
-span.characterName {
-	display: inline-block;
-	font-size: 10vw;
-    overflow-wrap: break-word;
-    font-family: 'Bungee', cursive; 
-    line-height: 1.2em;
-    word-spacing: 0em;
-    text-align: center;
-    color: #66D7D1;
-    padding: 0;
-    clear:right;
-}
-
-#searchfield{
-    margin-top:10%;
-    margin-bottom: 10%;
-    padding: 0;
-    text-align: center;
-}
-
-.biginput{
-    border-style: outset;
-    border-width: .2em;
-    border-radius: .8em;
-    width: 90%;
-    height: 2em;
-    background: black;
-    padding: 0;
-    font-family: 'Comfortaa', cursive;
-    font-size: 400%;
-    color: skyblue;
-    
+    text-align: left;
 }
 
 .logOut {
@@ -203,20 +77,3 @@ span.characterName {
     
 }
 
-.autocomplete-suggestions .autocomplete-suggestion {
-	color: white;
-	background: black;
-    font-family: 'Comfortaa', cursive;
-    font-size: 400%;
-    color: skyblue;
-
-}
-.autocomplete-suggestions .autocomplete-suggestion:hover{
-    background: #fde74c;
-    color: #66d7d1;
-}
-
-.autocomplete-suggestions .autocomplete-suggestion:active{
-    background: #66d7d1;
-    color: red;
-}
