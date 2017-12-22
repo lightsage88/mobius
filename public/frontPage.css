@@ -17,6 +17,7 @@ header{
 
 h1{
     margin-bottom: 0;
+    font-size: 1.9em;
 }
 
 p{
@@ -61,8 +62,10 @@ a {
 }
 
 .textHeaderPart{
-    font-size: 1.7em;
+    font-size: 1.5em;
     margin: auto;
+    display: inline;
+    box-sizing: border-box;
 }
 
 .frontGroup {
