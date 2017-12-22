@@ -62,6 +62,93 @@ a.main, p.upDateAccount{
     float: left;
 }
 
+
+.updateForm {
+    height: 43em;
+
+}
+
+.inputGroup {
+/*    border: white solid 3px;
+*/    font-family: 'Bungee',sans-serif;
+    color: black;
+    text-align: left;
+/*    float: left;
+*/}
+
+.updateForm input {
+    float: right;
+    font-size: 1.7em;
+    right: 10%;
+    position: relative;
+    bottom: 4.5em;
+    width: 40%; 
+    height: 3em;
+    background: rgba(0,0,0,0.7);
+    border-radius: 1em;   
+    color: white;
+    text-align: center;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.updateForm p {
+    position: relative;
+    text-align: left;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.updateForm h3 {
+    color: white;
+    font-family: 'Bungee', sans-serif;
+    font-size: 3em;
+    text-shadow: red 3px 6px 2px;
+}
+
+.updateForm #firstName {
+}
+
+.updateForm #lastName {
+
+}
+
+.updateForm #password {
+bottom: 2em;
+margin-top: 10px;
+}
+
+.updateForm button {
+    height: 7em;
+    width: 7em;
+    border-radius: 100%;
+    position: relative;
+    bottom: 1em;
+    display: block;
+    background: black;
+    color: white;
+    font-size: 1em;
+}
+
+.first {
+    color: lime;
+    text-shadow: red 6px -3px 3px;
+}
+
+.last {
+    color: white;
+    text-shadow: blue 6px -3px 3px;
+}
+
+.pw {
+    color: ;
+    text-shadow: lime 6px -3px 3px;
+    text-decoration: dotted;
+
+}
+
+
+
+
 .userInfo p {
     color: white;
     text-align: left;

@@ -173,15 +173,20 @@ function upDateAccount() {
 	$('.userLegend').html(`
 		<form class='updateForm'>
 			<h3>Edit your account</h3>
-			First Name:
+			<div class='inputGroup'>
+			<p class='first'>First Name:</p>
 			<input type='text' name='firstName' id='firstName' placeholder=${localStorage.firstName} value=${localStorage.firstName}>
+			</div>
 			<br>
-			Last Name:
+			<div class='inputGroup'>
+			<p class='last'>Last Name:</p>
 			<input type='text' name='lastName' id='lastName' placeholder=${localStorage.lastName} value=${localStorage.lastName}>
-
-			For Security Reasons, please enter your password:
+			</div>
+			<div class='inputGroup'>
+			<p class='pw'>For Security Reasons,<br>please enter your password:</p>
 			<input type='password' name='password' id='password' placeholder='password'>
-			<button type='button'>Save Changes</button>
+			</div>
+			<button type='button'>S A V E</button>
 		</form>`);
 	($('form.updateForm button').click(function(event){
 		event.preventDefault();

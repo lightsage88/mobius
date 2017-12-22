@@ -61,7 +61,7 @@ body {
     margin-left: .2em;
 /*    bottom: .1em;*/
     left: .2em;
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0.6);
     color: white;
     font-family: "Comfortaa", sans-serif;
     box-sizing: border-box;
