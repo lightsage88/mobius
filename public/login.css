@@ -48,12 +48,12 @@ main {
     font-size: 3em;
     color: white;
     text-shadow: 6px 6px 2px blue;
-    box-sizing: border-box;
-    background: rgba(0,0,0,0.4);
+/*    box-sizing: border-box;
+*/    background: rgba(0,0,0,0.4);
     padding: 1em 0;
     position: relative;
-    top: 2em;
-    height: 70%;
+/*    top: 2em;
+*/    height: 70%;
 }
 
 #formName{
@@ -80,14 +80,14 @@ text-shadow: -3px 6px blue;
     box-sizing: border-box;
     font-size: 1em;
     padding: 0;
-    margin-bottom: 3em;
-    
+/*    margin-bottom: 3em;
+*/    
 
 }
 
 #loginForm button{
     height:3em;
-    display: inline-block;
+    display: block;
     position:relative;
     left: 37%;
     width: 30%;
@@ -100,3 +100,58 @@ text-shadow: -3px 6px blue;
 
 
 
+@media only screen and (min-width: 1000px) {
+
+body{
+    background-position-y:-10em;
+}
+
+main {
+    width: 50%;
+    margin: 0 auto;
+    right: 4.3%;
+    position: relative;
+    left: 1em;
+}
+
+#loginForm{
+    bottom: 0;
+    margin: 0;
+    height:42%;
+
+}
+
+button{
+    clear: left;
+}
+
+#formName {
+    margin: -0.6em auto;
+}
+
+h5 {
+    margin: 0;
+}
+
+#password {
+    float: left;
+}
+
+#registerForm {
+    text-align: center;
+    font-size:1.8em;
+    background: rgba(0,0,0,0.7);
+    width: 116%;
+}
+
+#errorFriend {
+    margin-bottom: 2em;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    right: 2.5em;
+}
+
+
+
+}

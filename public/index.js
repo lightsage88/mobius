@@ -33,6 +33,8 @@ $('#registerForm').submit(function(event){
 			console.log('god damnit');
 			console.error(err);
 			$('main').append(`${err.responseJSON.message}`);
+			$('button').before(`<p id='errorFriend'>Something is wrong</p>`);
+			$('#errorFriend').fadeOut(2000);
 		} 
 	});
 });
