@@ -248,12 +248,16 @@ input#autocomplete.biginput {
 p#outputcontent{
     position: relative;
     display: inline-table;
-    right: -20em;
+    right: -2em;
+    top: -7em;
+    font-size: 1.6em;
 }
 div.characterBox{
-    width: 33%;
-    float: left;
-    margin: -5em 2em;
+    width: 100%;
+    top: -10em;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: .5em;
 }
 
 #siteLinkBox{
@@ -282,7 +286,7 @@ li {
 }
 
 span.characterName {
-    font-size: 2em;
+    font-size: 2.3em;
     position: relative;
 }
 
@@ -311,13 +315,17 @@ section.stickyNav {
 }
 
 div#outputbox {
-    display: flex;
+    display: inline-block;
     float:left;
     max-width: 1296px;
     height: auto;
-    margin-left:-8em;
+    left: 5em;
+    position: relative;
+
 }
 
-
+ul{
+    padding-bottom: 1em;
+}
 
 }
