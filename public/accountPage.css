@@ -162,6 +162,7 @@ margin-top: 10px;
 body {
 /*    background: url('assets/images/blueDots.jpg');*/
     background: linear-gradient(to right, transparent, red), url('assets/images/blueDots.jpg');
+    height: auto;
 }
 
 .userLegend {
@@ -245,6 +246,42 @@ main {
 #registerForm {
     text-align: center;
     margin: 0 3em;
+}
+
+section#siteLinkBox {
+    position: relative;
+    font-size:0.6em;
+    left: -30em;
+}
+
+p.upDateAccount{
+    float:left;
+    bottom: 16em;
+    display: inline-block;
+}
+
+p.deleteAccount {
+    bottom: 13.7em;
+    margin-left: -3em;
+    float: left;
+}
+
+a.siteLink.logOut{
+    float:left;
+    clear:left;
+    left: -1.3em;
+}
+
+div.userInfo {
+    font-size: 0.7em;
+}
+
+section.userLegend {
+    position: relative;
+    bottom: 16em;
+    clear:left;
+    width: 100%;
+    margin-left: 10em;
 }
 
 
