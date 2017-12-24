@@ -101,6 +101,12 @@ text-shadow: -3px 6px blue;
 
 
 @media only screen and (min-width: 1000px) {
+input#username, input#password{
+    height: 1em;
+    top:-1.3em;
+
+}
+
 
 body{
     background-position-y:-10em;
@@ -117,20 +123,41 @@ main {
 #loginForm{
     bottom: 0;
     margin: 0;
-    height:42%;
+    height:5.5em;
+    width: 15em;
 
 }
 
-button{
+#submitButton{
     clear: left;
+    font-size: 42%;
 }
 
 #formName {
     margin: -0.6em auto;
+    font-size: .6em;
+    position: relative;
+    top: -1.6em;
 }
+
+
 
 h5 {
     margin: 0;
+    font-size: .5em;
+    top: 1.3em;
+}
+
+h5.siteName {
+    position: relative;
+    top: -1em;
+    left: .5em;
+}
+
+h5.pDub {
+    position: relative;
+    top: -2.7em;
+    left: .5em;
 }
 
 #password {
@@ -151,6 +178,9 @@ h5 {
     position: relative;
     right: 2.5em;
 }
+
+
+
 
 
 
