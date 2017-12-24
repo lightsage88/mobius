@@ -161,8 +161,8 @@ function deleteAccount() {
 				
 			})
 		});	
-		$('button.reprieve').click(function(){
-			$('.superDelete').attr('hidden',true);
+		$('p.reprieve').click(function(){
+			location.href='accountPage.html';
 		});
 }
 

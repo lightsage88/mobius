@@ -101,15 +101,21 @@ text-shadow: -3px 6px blue;
 
 
 @media only screen and (min-width: 1000px) {
+main{
+    height:auto;
+}
+
 input#username, input#password{
-    height: 1em;
+    height: 1.8em;
     top:-1.3em;
+    font-size: .7em;
 
 }
 
 
 body{
     background-position-y:-10em;
+    height:auto;
 }
 
 main {
@@ -118,19 +124,21 @@ main {
     right: 4.3%;
     position: relative;
     left: 1em;
+    border-radius: 2em;
 }
 
 #loginForm{
-    bottom: 0;
+    bottom: 0.3em;
     margin: 0;
-    height:5.5em;
+    height:5.6em;
     width: 15em;
 
 }
 
-#submitButton{
+button#submitButton{
     clear: left;
     font-size: 42%;
+    background: rgba(0,0,0,0.6);
 }
 
 #formName {

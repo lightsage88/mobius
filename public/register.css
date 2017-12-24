@@ -1,5 +1,15 @@
 /*Mobile style*/
 
+p.accountCreation {
+    font-family: 'Bungee',cursive;
+    color: white;
+    font-size: 2.5em;
+    border: 1px solid lime;
+    text-align:center;
+
+
+}
+
 header{
     background: rgba(0,0,0,0.7);
 }
@@ -121,5 +131,20 @@ button{
     background: rgba(0,0,0,0.8);
 
 }
+
+p.accountCreation{
+    display:inline-block;
+    width: auto;
+    min-width: 25em;
+    font-size: 1.2em;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    margin-left: 20em;
+    position: relative;
+    bottom: 3.5em;
+    right: 10em;
+}
+
+
 
 }

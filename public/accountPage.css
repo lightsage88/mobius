@@ -140,8 +140,8 @@ margin-top: 10px;
 }
 
 .pw {
-    color: ;
-    text-shadow: lime 6px -3px 3px;
+    color: darkgoldenrod;
+    text-shadow: blue 6px -3px 3px;
     text-decoration: dotted;
 
 }
@@ -161,7 +161,7 @@ margin-top: 10px;
 
 body {
 /*    background: url('assets/images/blueDots.jpg');*/
-    background: linear-gradient(to right, transparent, red), url('assets/images/blueDots.jpg');
+    background: linear-gradient(to left, transparent, red), url('assets/images/blueDots.jpg');
     height: auto;
 }
 
@@ -172,6 +172,8 @@ body {
     border-radius: 2em;
     
 }
+
+
 
 .aboutYou {
     font-family:'Bungee', cursive;
@@ -258,18 +260,21 @@ p.upDateAccount{
     float:left;
     bottom: 16em;
     display: inline-block;
+    cursor: pointer;
 }
 
 p.deleteAccount {
     bottom: 13.7em;
     margin-left: -3em;
     float: left;
+    cursor: pointer;
 }
 
 a.siteLink.logOut{
     float:left;
     clear:left;
     left: -1.3em;
+    color: black;
 }
 
 div.userInfo {
@@ -282,6 +287,7 @@ section.userLegend {
     clear:left;
     width: 100%;
     margin-left: 10em;
+    background: rgba(0,0,0,0.8);
 }
 
 form.updateForm{
@@ -290,6 +296,27 @@ form.updateForm{
     padding:0;
     height: 49.7em;
 }
+a.main, a.logOut {
+    color:black;
+    text-shadow: 3px 6px 2px lime;
+}
+
+.superDelete{
+    position:relative;
+    text-align:center;
+    bottom: 54em;
+    background: black;
+    width: auto;
+    min-width:60em;
+    border: 2em;
+    height: 35em;
+}
+
+.deleteMessage {
+    font-size: 2.5em;
+}
+
+
 
 }
 
