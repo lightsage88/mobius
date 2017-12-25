@@ -125,6 +125,9 @@ main {
     position: relative;
     left: 1em;
     border-radius: 2em;
+    height:auto;
+    max-height: 23em;
+    bottom: 1.2em;
 }
 
 #loginForm{
@@ -137,6 +140,7 @@ main {
 
 button#submitButton{
     clear: left;
+    top:.3em;
     font-size: 42%;
     background: rgba(0,0,0,0.6);
 }
@@ -186,7 +190,17 @@ h5.pDub {
     position: relative;
     right: 2.5em;
 }
-
+p.loginFail {
+    display: inline;
+    text-align: center;
+    font-family: 'Bungee',cursive;
+    color: black;
+    font-size: 1.1em;
+    left: -13em;
+    position: relative;
+    bottom:1.4em;
+    text-shadow: yellow 5px -1px 4px;
+}
 
 
 

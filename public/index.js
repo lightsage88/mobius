@@ -60,7 +60,7 @@ $('#loginForm').submit(function(event){
 		},
 		error: (response) => {
 			console.log('You messed up!');
-			$('#loginForm').after('<p class="loginFail">Password/Username Error</p>');
+			$('main').append('<p class="loginFail">Password/Username Error</p>');
 			$('.loginFail').fadeOut(2000);
 
 		}
