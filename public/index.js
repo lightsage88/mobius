@@ -23,7 +23,7 @@ $('#registerForm').submit(function(event){
       	dataType: 'json', 
 		success: (response) => {
 			console.log(response);
-			$('#registerForm').after('<p class="accountCreation">Your account was successfully created</p>');
+			$('form').after('<p class="accountCreation">Your account was successfully created</p>');
 			$('.accountCreation').fadeOut(2000);
 				(setTimeout(function(){
 					location.href = 'login.html';
@@ -32,8 +32,8 @@ $('#registerForm').submit(function(event){
 		error: (err) => {
 			console.log('god damnit');
 			console.error(err);
-			$('main').append(`${err.responseJSON.message}`);
-			$('button').before(`<p id='errorFriend'>Something is wrong</p>`);
+			// $('main').append(`${err.responseJSON.message}`);
+			$('form').after(`<p id='errorFriend'>Something is wrong</p>`);
 			$('#errorFriend').fadeOut(2000);
 		} 
 	});

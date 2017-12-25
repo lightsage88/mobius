@@ -243,6 +243,7 @@ input#autocomplete.biginput {
     bottom: 3em;
     float:left;
     height: 1em;
+    padding:.2em;
 }
 
 p#outputcontent{
