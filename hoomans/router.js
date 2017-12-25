@@ -8,6 +8,7 @@ const request = require('request');
 //here we are setting up the necessary middleware to process and parse data
 //in the JSON Javascript Object Notation format
 const jsonParser = bodyParser.json();
+const bcrypt = require('bcryptjs');
 
 //here we set up the api/hoomans/ endpoint with a POST method
 //this is to set up a NEW HOOMAN, user
@@ -88,6 +89,31 @@ const badlySizedField = explicitlyTrimmedField.find(turkey => {
 			location: badlySizedField
 		});
 	}
+console.log(password);
+
+function AuthPW(data) {
+	return bcrypt.hash(data,10).then(data => {
+		console.log(data);
+		console.log('Mega Man is blue');
+		return data;
+	});
+}
+
+let attemptPW = AuthPW(password);
+console.log('piggies');
+console.log(password);
+// console.log(attemptPW);
+console.log('Santa Clause 2 is on');
+
+//going to pull down our Hooman with the same username,
+//compare the hashes and if they match, then do the below
+Hooman.findOne({username})
+	.then(function(Hooman) {
+		console.log('eat me');
+		console.log(Hooman);
+		console.log('drink me');
+	});
+
 Hooman.updateOne({username},
 			{$set: {firstName: firstName, lastName: lastName}}
 			)
@@ -97,6 +123,8 @@ Hooman.updateOne({username},
 				return Hooman.findOne({username})
 				.then((response)=>{
 					console.log(response);
+					console.log('I like pigshit to eat');
+					console.log(response.password);
 					res.status(202).json(response);
 				})
 			})
