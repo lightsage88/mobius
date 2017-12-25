@@ -92,27 +92,53 @@ const badlySizedField = explicitlyTrimmedField.find(turkey => {
 console.log(password);
 
 function AuthPW(data) {
-	return bcrypt.hash(data,10).then(data => {
+	return bcrypt.hash(data,10)
+	.then(data => {
 		console.log(data);
 		console.log('Mega Man is blue');
 		return data;
+	})
+	.then(data=>{
+		console.log('mad enrollment');
+		console.log(data);
+		attemptPW = data;
 	});
 }
 
-let attemptPW = AuthPW(password);
+AuthPW(password);
 console.log('piggies');
 console.log(password);
-// console.log(attemptPW);
+console.log(attemptPW);
 console.log('Santa Clause 2 is on');
 
 //going to pull down our Hooman with the same username,
 //compare the hashes and if they match, then do the below
+let legitWord;
 Hooman.findOne({username})
 	.then(function(Hooman) {
 		console.log('eat me');
 		console.log(Hooman);
+		console.log(attemptPW);
 		console.log('drink me');
+		legitWord = Hooman.password;
+		console.log(legitWord);
+		console.log(typeof legitWord);
+		return legitWord;
+	})
+	.then(function(legitWord){
+		console.log(legitWord);
+		legitWord = legitWord;
+		return Hooman.findOne({username})
+		.then((response)=>{
+			console.log('Magazines are dead');
+			console.log(response.password);
+			console.log(attemptPW === response.password);
+
+		});
+
 	});
+// console.log('heres the legit word');
+// console.log(legitWord);
 
 Hooman.updateOne({username},
 			{$set: {firstName: firstName, lastName: lastName}}
