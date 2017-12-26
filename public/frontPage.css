@@ -44,7 +44,6 @@ main{
 
 main h3{
     margin: 0;
-/*    border: yellow 3px solid;*/
     padding: .3em;
     word-wrap: normal;
     
@@ -107,12 +106,7 @@ a {
     color: crimson;
 }
 
-.register {
-/*    float: left;*/
-}
-.login{
-/*    float: right;*/
-}
+
 
 /*FOR LARGER SCREENS*/
 @media only screen and (min-width: 1000px) {

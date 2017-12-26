@@ -37,7 +37,6 @@ $('#registerForm').submit(function(event){
 		error: (err) => {
 			console.log('god damnit');
 			console.error(err);
-			// $('main').append(`${err.responseJSON.message}`);
 			$('form').after(`<p id='errorFriend'>Something is wrong</p>`);
 			$('#errorFriend').fadeOut(2000);
 		} 
@@ -155,7 +154,6 @@ function deleteAccount() {
 					success: function(){
 				$('main').html('');
                 $('main').append("<p class='deleteMessage'>Your account has been deleted successfully...returning to beginning</p>");
-//						$('p').html('');
 						setTimeout(function(){
 							location.href='index.html';
 						}, 3000);
@@ -255,7 +253,6 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
                 let road = (marvelousData[i].thumbnail.path).slice(7);
                 console.log(road);
                 
-                //marvelousData[i].thumbnail.path
                 
 				let picPath = 'https://' + road + '.' + marvelousData[i].thumbnail.extension;
                 console.log(picPath);
