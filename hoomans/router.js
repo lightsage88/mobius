@@ -51,101 +51,91 @@ router.put('/', jsonParser, function(req,res){
 let {firstName, lastName, password, username} = req.body;
 firstName = firstName.trim();
 lastName = lastName.trim();
-password = password;
-if((!password) || (password === null)){
-	return res.status(422).json({
-		code: 422,
-		reason: 'lack of Password',
-		message: 'missing pw',
-		location: password
-	});
-}
-const explicitlyTrimmedField = ['password'];
-const nonTrimmedField = explicitlyTrimmedField.find(
-turkey => req.body[turkey].trim() !== req.body[turkey]
-);
-	if(nonTrimmedField) {
-		return res.status(422).json({
-			code: 422,
-			reason: 'ValidationError',
-			message: 'You have heavy thumbs and included spaces where they should not have been',
-			location: nonTrimmedField
-		});
-	}
-const sizeRule = {
-	password: {
-		min: 6,
-		max: 20
-	}
-};
-const badlySizedField = explicitlyTrimmedField.find(turkey => {
-	req.body[turkey]
-});
-	if(badlySizedField) {
-		return res.status(422).json({
-			code: 422,
-			reason: 'ValidationError',
-			message: 'Your inputs are not within size guidelines',
-			location: badlySizedField
-		});
-	}
-console.log(password);
+// password = password;
+// if((!password) || (password === null)){
+// 	return res.status(422).json({
+// 		code: 422,
+// 		reason: 'lack of Password',
+// 		message: 'missing pw',
+// 		location: password
+// 	});
+// }
+// const explicitlyTrimmedField = ['password'];
+// const nonTrimmedField = explicitlyTrimmedField.find(
+// turkey => req.body[turkey].trim() !== req.body[turkey]
+// );
+// 	if(nonTrimmedField) {
+// 		return res.status(422).json({
+// 			code: 422,
+// 			reason: 'ValidationError',
+// 			message: 'You have heavy thumbs and included spaces where they should not have been',
+// 			location: nonTrimmedField
+// 		});
+// 	}
+// const sizeRule = {
+// 	password: {
+// 		min: 6,
+// 		max: 20
+// 	}
+// };
+// const badlySizedField = explicitlyTrimmedField.find(turkey => {
+// 	req.body[turkey]
+// });
+// 	if(badlySizedField) {
+// 		return res.status(422).json({
+// 			code: 422,
+// 			reason: 'ValidationError',
+// 			message: 'Your inputs are not within size guidelines',
+// 			location: badlySizedField
+// 		});
+// 	}
+// console.log(password);
 
-function AuthPW(data) {
-	return bcrypt.hash(data,10)
-	.then(data => {
-		console.log(data);
-		console.log('Mega Man is blue');
-		return data;
-	})
-	.then(data=>{
-		console.log('mad enrollment');
-		console.log(data);
-		attemptPW = data;
-	});
-}
+// function AuthPW(data) {
+// 	return bcrypt.hash(data,10)
+// 	.then(hashish => {
+// 		console.log(hashish);
+// 		console.log('Mega Man is blue');
+// 		return hashish;
+// 	});
+// }
 
-AuthPW(password);
-console.log('piggies');
-console.log(password);
-console.log(attemptPW);
-console.log('Santa Clause 2 is on');
+// console.log('piggies');
+// console.log('Santa Clause 2 is on');
+
+// let hashCandy = AuthPW(password);
+// console.log(hashCandy);
 
 //going to pull down our Hooman with the same username,
 //compare the hashes and if they match, then do the below
-let legitWord;
-Hooman.findOne({username})
-	.then(function(Hooman) {
-		console.log('eat me');
-		console.log(Hooman);
-		console.log(attemptPW);
-		console.log('drink me');
-		legitWord = Hooman.password;
-		console.log(legitWord);
-		console.log(typeof legitWord);
-		return legitWord;
-	})
-	.then(function(legitWord){
-		console.log(legitWord);
-		legitWord = legitWord;
-		return Hooman.findOne({username})
-		.then((response)=>{
-			console.log('Magazines are dead');
-			console.log(response.password);
-			console.log(attemptPW === response.password);
+// let legitWord;
+// Hooman.findOne({username})
+// 	.then(function(Hooman) {
+// 		legitWord = Hooman.password;
+// 		console.log(typeof legitWord);
+// 		return legitWord;
+// 	})
+// 	.then(function(legitWord, hashCandy){
+// 		console.log(hashCandy);
+// 		console.log(legitWord);
+// 		legitWord = legitWord;
+// 		return Hooman.findOne({username})
+// 		.then((response)=>{
+// 			console.log(password);
+//  			console.log('Magazines are dead');
+// 			console.log(response.password);
+// 			return response.password;
+// 		});
 
-		});
-
-	});
-// console.log('heres the legit word');
+// 	})
+// // con/sole.log('heres the legit word');
 // console.log(legitWord);
 
 Hooman.updateOne({username},
 			{$set: {firstName: firstName, lastName: lastName}}
 			)
 			.then(function(){
-				// console.log(response);
-				// res.status(202).json(response);
+				res.status(202);
 				return Hooman.findOne({username})
 				.then((response)=>{
 					console.log(response);

@@ -1,4 +1,9 @@
 
+let deletedCodeForLater = `<div class='inputGroup'>
+			<p class='pw'>For Security Reasons,<br>please enter your password:</p>
+			<input type='password' name='password' id='password' placeholder='password'>
+			</div>`;
+
 let mLabApiKey = 'pJysmium6S33nXs_wxZ0VK9wyMIQQlSa';
 let mLabDb = 'mobius';
 let mLabCollection = 'hoomen';
@@ -184,10 +189,6 @@ function upDateAccount() {
 			<p class='last'>Last Name:</p>
 			<input type='text' name='lastName' id='lastName' placeholder=${localStorage.lastName} value=${localStorage.lastName}>
 			</div>
-			<div class='inputGroup'>
-			<p class='pw'>For Security Reasons,<br>please enter your password:</p>
-			<input type='password' name='password' id='password' placeholder='password'>
-			</div>
 			<button type='button'>S A V E</button>
 		</form>`);
 	($('form.updateForm button').click(function(event){
@@ -195,6 +196,7 @@ function upDateAccount() {
 		let newFirstName = $('form.updateForm #firstName').val();
 		let newLastName = $('form.updateForm #lastName').val();
 		let enteredPassword = $('form.updateForm #password').val();
+
 		let username = localStorage.username;
 				$.ajax({
 					method: "PUT",

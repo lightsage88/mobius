@@ -10,15 +10,21 @@ main {
     padding: 0;
 }
 header{
-    
     font-family: 'Comfortaa', cursive; 
     font-size: 4em;
+    background: black;
+    border: white 5px solid;
 }
 
 h1{
     margin-bottom: 0;
-    font-size: 1.9em;
-    color: orange;
+    font-size: 2.1em;
+    color: cadetblue;
+    box-sizing: border-box;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+    font-weight: lighter;
 }
 
 p{
@@ -112,11 +118,17 @@ a {
 @media only screen and (min-width: 1000px) {
 
 h1{
-    font-size: .5em;
-    color: lime;
+    font-size: .5168em;
+    color: cadetblue;
+    font-weight: 500;
     border: solid 3px white;
-    height: 2.04em;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: auto;
     margin-top: 0;
+    line-height: 3em;
+    letter-spacing: 1.9em;
     background: rgba(0,0,0,0.5);
 }
 
@@ -126,7 +138,7 @@ p.textHeaderPart {
 }
 
 header img {
-    height: 2em;
+    height: 1.66em;
     width: 4em;
 }
 
@@ -163,6 +175,12 @@ a > p{
     border: none;
 }
 
+header{
+    font-family: 'Comfortaa', cursive; 
+    font-size: 4em;
+    background: black;
+    border: none;
+}
 
 
 }
