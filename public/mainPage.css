@@ -61,7 +61,6 @@ a.logOut{
 
 body {
     background: url('assets/images/orangeDots.jpg');
-/*    background-size: cover;*/
 }
 
 img.characterThumbnail {
@@ -104,18 +103,14 @@ img.characterThumbnail {
 .eventList {
 	border: solid blue 1px;
 	clear: left;
-/*	height: auto;
-*/}
+}
 
 .eventBox {
 	overflow: auto;
 	height: auto;
-    /*unexpected choice for inline, but I like it*/
     display: inline;
 }
-/*The part for the eventLists*/
 ul:only-child {
-/*	background: white;*/
 	list-style: none;
 	clear: left;
     text-decoration: none;
@@ -278,8 +273,7 @@ a.siteLink {
 
 li a{
     font-size: 0.25em;
-/*    text-align:left;
-*/}
+}
 
 li {
     text-align:left;

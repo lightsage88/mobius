@@ -20,7 +20,6 @@
   		console.log(queryString);
   });
 console.log(queryString);
-  //on keydown an array is declared and filled and continuously fed into the line below so that each new additional character instatnly enters the autocomplete ajax request so that we get the whole autocomplete thing going on
 
   $('#autocomplete').autocomplete({
   		method: "GET",
