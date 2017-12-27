@@ -46,12 +46,13 @@ body {
 }
 
 #registerForm {
+    margin: 0 5em;
     border: 3px silver solid;
     border-radius: 1em;
     border-style: outset;
     border-width: .18em;
     font-family: 'Bungee', sans-serif;
-    font-size: 3em;
+    font-size: 1.5em;
     color: gold;
     text-shadow: 6px 6px 2px red;
     box-sizing: border-box;
@@ -115,6 +116,7 @@ main {
 }
 
 #registerForm {
+    margin: 0;
     text-align: center;
     font-size:1.8em;
     background: rgba(0,0,0,0.7);
