@@ -19,7 +19,6 @@
   		console.log(growingString);
   		console.log(queryString);
   });
-console.log(queryString);
 
   $('#autocomplete').autocomplete({
   		method: "GET",
