@@ -37,11 +37,7 @@ body {
     height: 0;
 }
 
-main {
-    height: 90em;
-    position: relative;
-    background: rgba(0,0,0,0.4);
-}
+
 
 #loginForm {
     border: 3px silver solid;
@@ -52,15 +48,23 @@ main {
     font-size: 3em;
     color: white;
     text-shadow: 6px 6px 2px blue;
-/*    box-sizing: border-box;
-*/    background: rgba(0,0,0,0.4);
-    padding: 1em 0;
+    background: rgba(0,0,0,0.7);
     position: relative;
-/*    top: 2em;
-*/    height: 70%;
+    height: auto;
+    width: 66%;
+    margin: auto;
+}
+
+h5{
+    position: relative;
+    left: .3em;
+    margin: 0;
+    padding: 0;
 }
 
 #formName{
+    margin: 0;
+    padding: 0;
 text-align: center;
 color: red;
 text-shadow: -3px 6px blue;
@@ -73,11 +77,10 @@ text-shadow: -3px 6px blue;
     border: 5px yellow solid;
     border-radius: .3em;
     height: 2em;
-    width: 62%;
+    width: auto;
     position: relative;
     margin-left: .2em;
     bottom: .1em;
-    left: .2em;
     background: rgba(0,0,0,0.6);
     color: white;
     font-family: "Comfortaa", sans-serif;
@@ -90,14 +93,60 @@ text-shadow: -3px 6px blue;
     height:3em;
     display: block;
     position:relative;
-    left: 37%;
-    width: 30%;
+    left: 33%;
+    width: auto;
     background: rgba(0,0,0,0);
     font-family: 'Bungee', sans-serif;
     color: lime;
     text-shadow: purple 6px 6px 2px;
     font-size: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
