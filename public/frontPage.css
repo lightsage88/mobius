@@ -11,30 +11,39 @@ main {
 }
 header{
     font-family: 'Comfortaa', cursive; 
-    font-size: 4em;
+    font-size: 2.03em;
     background: black;
     border: white 5px solid;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 h1{
-    margin-bottom: 0;
-    font-size: 2.1em;
+    font-size: 1.1em;
     color: cadetblue;
     box-sizing: border-box;
-    line-height: 1.5em;
+    line-height: 3.5em;
     padding: 0;
-    margin: 0;
+    margin-top: 1em;
     font-weight: lighter;
+    margin-bottom: -1em;
 }
 
 p{
-    margin: 0;
+    margin:0;
+    font-size: .4em;
+}
+
+span {
+    font-size: 15%;
+    font-style: italic;
+    color: lime;
 }
 
 body{
     background: url(assets/images/multiWall.jpg);
     color: #BFFFF1;
-    background-size: contain;
+    background-size: cover;
 }
 
 main{
@@ -51,8 +60,7 @@ main h3{
 
 img{
     height: 50%;
-    width: 50%;
-/*    border: white 1px solid;*/
+    width: 29%;
     bottom: 3em;
     float: left;
 }
