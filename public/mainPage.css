@@ -17,12 +17,12 @@ header h1.mainPageHeader{
 
 img.marvelLogo{
     height:2em;
-    top:.42em;
+    top:.3em;
     position: relative;
     display: inline-block;
-    margin-top:0;
+    margin:0;
 }
-
+  
 
 
 .stickyNav{

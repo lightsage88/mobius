@@ -2,21 +2,24 @@
 
 header{
     background: rgba(0,0,0,0.7);
+    border: white solid 1.9px;
 }
 
-header h1.mainPageHeader{
-    color: white;
+header h1.subtitle{
+    color: cadetblue;
     font-family: 'Comfortaa', cursive;
     padding: 0;
+    font-weight: 200;
+    bottom: .2em;
     font-size: 3.5em;
+    display: inline;
+    letter-spacing: .339em;
     text-size-adjust: auto;
-    text-align: center;
-    padding-bottom: .3em;
     position:relative;
 }
 
 img.marvelLogo{
-    height:2em;
+    height:4.9em;
     top:.42em;
     position: relative;
     display: inline-block;
@@ -320,8 +323,35 @@ a.main, a.logOut {
     font-size: 2.5em;
 }
 
+header{
+    margin-bottom: 1em;
+}
+
+header h1.subtitle {
+    color: cadetblue; 
+    font-family: 'Comfortaa', cursive;
+    padding: 0;
+    font-weight: 200;
+    bottom: 1.2em;
+    font-size: 1.3em;
+    display: inline;
+    left: 1em;
+    letter-spacing: 1.3em;
+    text-size-adjust: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+img.marvelLogo {
+    height: 4.9em;
+    top:.2em;
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+}
 
 
+  
 }
 
 /*end of larger screen styling*/

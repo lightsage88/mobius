@@ -15,11 +15,6 @@ $('#registerForm').submit(function(event){
 	let password = $('#password').val();
 	let firstName = $('#firstName').val();
 	let lastName = $('#lastName').val();
-	console.log('Super Mario is a friend');
-	console.log(username);
-	console.log(password);
-	console.log(firstName);
-	console.log(lastName);
 	$.ajax({
 		method: "POST",
 		url: "/api/hoomans",
@@ -35,7 +30,6 @@ $('#registerForm').submit(function(event){
 				}, 2000));
 		},
 		error: (err) => {
-			console.log('god damnit');
 			console.error(err);
 			$('form').after(`<p id='errorFriend'>Something is wrong</p>`);
 			$('#errorFriend').fadeOut(2000);
@@ -54,16 +48,11 @@ $('#loginForm').submit(function(event){
 		contentType: "application/json",
 		dataType: 'json',
 		success: (response) => {
-			console.log('cooking up authToken');
-			console.log(response);
-			console.log(response.authToken);
-			console.log(username); 
 			localStorage.setItem('token', response.authToken);
 			getDataFromMlabXXXLoadAccountPage(username);
 			toProtectedData();
 		},
 		error: (response) => {
-			console.log('You messed up!');
 			$('main').append('<p class="loginFail">Password/Username Error</p>');
 			$('.loginFail').fadeOut(2000);
 
@@ -97,8 +86,7 @@ function toProtectedData() {
 
 
 function getDataFromMlabXXXLoadAccountPage (username) {
-	console.log(username);
-	console.log(username);
+
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			method: "GET",
@@ -136,7 +124,6 @@ function logOut() {
 
 function deleteAccount() {
 	$('.deleteAccount').click(function(){
-        console.log('fishsticks');
 		$('main').append(`
 			<div class='superDelete'>
 				<p class='question'>Are you sure?</p>
@@ -173,8 +160,6 @@ function deleteAccount() {
 
 function upDateAccount() {
 	$('.upDateAccount').click(function(){
-	console.log('get ready to update your account');
-	console.log(localStorage);
 	$('.userLegend').html(`
 		<form class='updateForm'>
 			<h3>Edit your account</h3>
@@ -213,12 +198,10 @@ function upDateAccount() {
 						console.log(response);
 					},
 					error: (err) => {
-						console.log('something is wrong');
 						console.error(err);
 					}
 				})
 				.done((response)=>{
-					console.log('refreshing soon...');
 					console.log(response);
 					localStorage.setItem('firstName', response.firstName);
 					localStorage.setItem('lastName', response.lastName);
@@ -249,13 +232,10 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 			
 			
 			for(let i=0; i<=marvelousData.length-1; i++) {
-                console.log(marvelousData);
                 let road = (marvelousData[i].thumbnail.path).slice(7);
-                console.log(road);
                 
                 
 				let picPath = 'https://' + road + '.' + marvelousData[i].thumbnail.extension;
-                console.log(picPath);
 				let namePath = marvelousData[i].name;
 				let nameClass = namePath.replace(/\W/g,'');
 				$('#outputbox').append(`<div class='characterBox'>
@@ -277,7 +257,6 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				}
 				
 			if(eventList.length === 0) {
-				console.log('calling Ben Reilly');
 				$(`.${nameClass}`).append('<li>No events for this one</li>');
 			}	else {
 				for(let z=0; z<=eventList.length-1; z++) {
@@ -289,8 +268,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 		}
 			$('.deleteChar').click(function(){
 		let characterName = $(this).prev()[0].textContent;
-		console.log(characterName);
-		console.log('deselecting a character');
+
 		$.ajax({
 			method: "DELETE",
 			url: "/api/hoomans/char",
@@ -300,8 +278,6 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 			contentType: "application/json"
 		})
 		.then(function(response){
-			console.log(characterName);
-			console.log('merry ep8 was terrible mas');
 			console.log(response);
 		})
 		.then(()=>{
