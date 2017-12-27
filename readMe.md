@@ -6,7 +6,7 @@ My app is called Marvelous Bookworm, my original vision was to create an app tha
 comic book characters and then find which public libraries held copies of their adventures so that users could rent comic books for free
 I had originally wanted to use WorldCat's API in addition with Marvel Comics' API, which I did get to use. However the WorldCat admins would
 not grant me a key, so I decided instead to make an app that would allow users to see the large cross-over events that their favorite
-characters were a part of and to find them for purchase on Amazon.com.
+ characters were a part of and to find them for purchase on Amazon.com.
 
 This project utilized express, mocha, chai, bcryptjs (for password hashing), mongoose, passport, and bodyParser.
 I built an API with several endpoints that allowed for user account creation, reading, updating, and deleting (CRUD).

@@ -14,20 +14,26 @@ header{
 }
 
 header h1.mainPageHeader{
-    color: white;
+    color: cadetblue;
     font-family: 'Comfortaa', cursive;
     padding: 0;
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-size-adjust: auto;
-    text-align: center;
+    text-align: left;
     padding-bottom: .3em;
     position:relative;
+    border: white solid 1.5px;
+    box-sizing: border-box;
+    height:1.48em;
+    line-height: 1.7em;
+    letter-spacing: .3em;
+    font-weight: 100;
 }
 
 img.marvelLogo{
-    height:2em;
-    top:.42em;
+    height:1.4em;
     position: relative;
+    float:left;
     display: inline-block;
     margin-top:0;
 }
@@ -151,6 +157,7 @@ p.accountCreation{
     right: 10em;
     text-shadow: 2px 2px 1px blue;
 }
+
 
 
 
