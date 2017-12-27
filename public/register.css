@@ -31,7 +31,7 @@ header h1.mainPageHeader{
 }
 
 img.marvelLogo{
-    height:1.4em;
+    height:3.4em;
     position: relative;
     float:left;
     display: inline-block;
@@ -156,6 +156,15 @@ p.accountCreation{
     bottom: 6.5em;
     right: 10em;
     text-shadow: 2px 2px 1px blue;
+}
+
+img.marvelLogo {
+    height: 3.6em;
+    position: relative;
+    float: left;
+    display: inline-block;
+    margin-top: 0;
+    color: red;
 }
 
 
