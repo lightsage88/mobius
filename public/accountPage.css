@@ -332,10 +332,9 @@ header h1.subtitle {
     font-family: 'Comfortaa', cursive;
     padding: 0;
     font-weight: 200;
-    bottom: 1.2em;
-    font-size: 1.3em;
+    bottom: .3em;
+    font-size: 1.9em;
     display: inline;
-    left: 1em;
     letter-spacing: 1.3em;
     text-size-adjust: auto;
     position: relative;
