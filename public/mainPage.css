@@ -39,6 +39,7 @@ img.marvelLogo{
 
 #siteLinkBox{
     text-align: right;
+    font-size: .7em;
 }
 
 a.siteLink{
@@ -68,11 +69,14 @@ a.logOut{
 
 body {
     background: url('assets/images/orangeDots.jpg');
+    background-size:contain;
 }
 
+
 img.characterThumbnail {
-	max-height: 20em;
-	max-width: 20em;
+	height: auto;
+    width: auto;
+    max-height: 44em;
 	border: solid 3px green;
 	display: inline;
 	float: left;
@@ -91,17 +95,22 @@ img.characterThumbnail {
 #outputcontent{
     color: #C9FBFF;
     font-family: 'Bungee', cursive;
-    font-size: 4em;
+    font-size: 1.7em;
+    line-height: .9em;
+    background: rgba(0,0,0,0.6);
+    padding: .4em;
+    margin-top: -2em;
     text-align:center;
     text-shadow: 6px 6px blue;
     
 }
 
 .characterBox {
-	margin: 2em 0;
+	margin: 2em auto;
     position: relative;
 	height: auto;
-    width: auto;
+    font-size: .25em;
+    width: 84%;
 	min-height: 326px;
 	border: #379634 2px solid;
     background: rgba(0,0,0,0.5);
@@ -122,6 +131,7 @@ ul:only-child {
 	clear: left;
     text-decoration: none;
     color: white;
+    padding-top: .3em;
 }
 
 li{
@@ -149,10 +159,11 @@ a:active{
     border-style:outset;
     border-width: .52em;
 	position: absolute;
-    height: 16em;
-    width: 16em;
+    height: auto;
+    width: auto;
     right: 0em;
     top: 0;
+    float:right;
 }
 
 .deleteChar:hover{
@@ -160,13 +171,14 @@ a:active{
 }
 
 .xSymbol {
-    height: 100%;
-    width:100%;
+    height: auto;
+    width:auto;
+    max-height: 3.5em;
 }
 
 span.characterName {
 	display: inline-block;
-	font-size: 10vw;
+	font-size: 4.5vw;
     overflow-wrap: break-word;
     font-family: 'Bungee', cursive; 
     line-height: 1.2em;
@@ -174,8 +186,10 @@ span.characterName {
     text-align: center;
     color: #66D7D1;
     padding: 0;
-    clear:right;
-    margin: .694em;
+    clear:left;
+    margin: auto;
+    float:left;
+    width: 100%;
 }
 
 #searchfield{
@@ -190,7 +204,9 @@ span.characterName {
     border-width: .2em;
     border-radius: .8em;
     width: 90%;
-    height: 2em;
+    height: 1.7em;
+    position: relative;
+    bottom: 1em;
     background: black;
     padding: 0;
     font-family: 'Comfortaa', cursive;
@@ -223,6 +239,60 @@ span.characterName {
     background: #66d7d1;
     color: red;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 1000px) {
