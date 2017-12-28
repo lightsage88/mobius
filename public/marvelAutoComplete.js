@@ -6,9 +6,10 @@
     $('div.autocomplete-suggestions').removeAttr('style');
 
   $('.biginput').keydown(function(){
+    console.log(event.key);
 
   	characterNames = [];
-  		  		if(event.key !== 'Backspace' && 'Alt') {
+  		  		if(event.key !== 'Backspace' && 'Alt' && 'Enter') {
   			growingArray.push(event.key);
   		} else {
   			growingArray.pop();
@@ -16,11 +17,13 @@
   		console.log(growingArray);
   		let growingString = growingArray.toString();
  		queryString = growingString.replace(/,/g,'');
+    queryString = growingString.replace(/Enter/g,'');
   		console.log(growingString);
   		console.log(queryString);
   });
 
   $('#autocomplete').autocomplete({
+      autoSelectFirst: true,  
   		method: "GET",
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
   		minChars: 2,
@@ -44,6 +47,7 @@
   		},
   		onSelect: function(suggestion) {
   			query = '';
+        console.log('bargain');
   			console.log(suggestion);
   			console.log(suggestion.data);
         let entry = suggestion.data;
@@ -104,5 +108,7 @@
       window.location.reload();
   		}
    });
+
+
 
   

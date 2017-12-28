@@ -385,7 +385,7 @@ ul:only-child {
 }
 
 body::-webkit-scrollbar {
-    width: 1em;
+    width: 2em;
 
 
 }
