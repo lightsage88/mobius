@@ -212,7 +212,8 @@ span.characterName {
     font-family: 'Comfortaa', cursive;
     font-size: 400%;
     color: skyblue;
-    
+    position: relative;
+    bottom: 4em;
 }
 
 .logOut {
@@ -295,7 +296,7 @@ span.characterName {
 
 
 
-@media only screen and (min-width: 1000px) {
+/*@media only screen and (min-width: 1000px) {
 
 header{
     position:relative;
@@ -424,6 +425,244 @@ img.marvelLogo {
     position: relative;
     display: inline;
     margin: 0;
+}
+
+}
+*/
+
+@media only screen and (min-width: 1000px) {
+
+header{
+    background: rgba(0,0,0,0.7);
+    display: inline-block;
+    width:  100%;
+    border: solid 4px white;
+    }
+
+header h1.mainPageHeader{
+    color: cadetblue;
+    font-family: 'Comfortaa', cursive;
+    padding: 0;
+    font-size: 4.5em;
+    letter-spacing: .1em;
+    text-size-adjust: auto;
+    padding-bottom: .3em;
+    position:relative;
+    display: inline;
+    font-weight: 100;
+}
+
+img.marvelLogo{
+
+    height:4.4em;
+    position: relative;
+    display: inline;
+    margin:0;
+    float: left;
+    top: .3em;
+}
+  
+
+
+.stickyNav{
+    text-align:center;
+}
+
+
+#siteLinkBox{
+    text-align: right;
+}
+
+a.siteLink{
+    font-family: 'Bungee', cursive;
+    padding: 0 .2em;
+    font-weight:bold;
+    color:#C9FBFF;
+    text-decoration: none;
+    text-shadow: .1em -0.13em 2px blue;
+    border-radius: 20%;
+    font-size: 4em;
+    text-align:center;
+    text-shadow: 6px 6px blue;
+}
+
+a.account{
+    float: left;
+}
+
+/*
+a.logOut{
+    
+}
+*/
+
+
+
+body {
+    background: url('assets/images/orangeDots.jpg');
+    margin:auto;
+    width: 80%;
+}
+
+img.characterThumbnail {
+    max-height: 50em;
+    max-width: 50em;
+    border: solid 3px green;
+    display: inline;
+    float: left;
+    clear: left;
+}
+
+
+
+
+
+.outputbox {
+    position: static;
+    height: 100%;
+}
+
+#outputcontent{
+    color: #C9FBFF;
+    font-family: 'Bungee', cursive;
+    font-size: 1em;
+    text-align:center;
+    text-shadow: 6px 6px blue;
+    position: relative;
+    bottom: 10em;
+    
+}
+
+.characterBox {
+    margin: 2em 0;
+    position: relative;
+    bottom: 25em;
+    height: auto;
+    width: auto;
+    min-height: 326px;
+    border: #379634 2px solid;
+    background: rgba(0,0,0,0.5);
+}
+
+.eventList {
+    border: solid blue 1px;
+    clear: left;
+}
+
+.eventBox {
+    overflow: auto;
+    height: auto;
+    display: inline;
+}
+ul:only-child {
+    list-style: none;
+    clear: left;
+    text-decoration: none;
+    color: white;
+    font-size:.7vw;
+    padding-top: 0;
+}
+
+li{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 5em;
+    margin: 1.7em 0;
+}
+
+a:hover{
+    color: yellow;
+}
+
+a:active{
+    color: #5fdd9d;
+}
+
+ li a {
+    color: #f1fffa;
+    text-decoration: none;
+}
+
+.deleteChar {
+    border-radius: 50%;
+    border-style:outset;
+    border-width: .52em;
+    position: absolute;
+    height: auto;
+    width: auto;
+    right: 0em;
+    top: 0;
+}
+
+.deleteChar:hover{
+    background: yellow;
+}
+
+.xSymbol {
+    height: auto;
+    width:auto;
+}
+
+span.characterName {
+    display: inline;
+    font-size: 4.5vw;
+    overflow-wrap: break-word;
+    font-family: 'Bungee', cursive; 
+    line-height: 1.2em;
+    word-spacing: 0em;
+    text-align: center;
+    color: #66D7D1;
+    padding: 0;
+    clear:right;
+    margin: .5em auto;
+    position: relative;
+    bottom: .5em;
+}
+
+#searchfield{
+    margin-top:10%;
+    margin-bottom: 10%;
+    padding: 0;
+    text-align: center;
+}
+
+.biginput{
+    border-style: outset;
+    border-width: .2em;
+    border-radius: .8em;
+    width: 90%;
+    height: .85em;
+    background: black;
+    padding: .4em;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2em;
+    color: skyblue;
+    
+}
+
+.logOut {
+    position: relative;
+    height: 4em;
+    width: 7em;
+    
+}
+
+.autocomplete-suggestions .autocomplete-suggestion {
+    color: white;
+    background: black;
+    font-family: 'Comfortaa', cursive;
+    font-size: 400%;
+    color: skyblue;
+
+}
+.autocomplete-suggestions .autocomplete-suggestion:hover{
+    background: #fde74c;
+    color: #66d7d1;
+}
+
+.autocomplete-suggestions .autocomplete-suggestion:active{
+    background: #66d7d1;
+    color: red;
 }
 
 }
