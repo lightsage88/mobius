@@ -47,7 +47,7 @@ body {
 
 #registerForm {
     height: auto;
-    min-height: 22em;
+    min-height: 19em;
     width: auto;
     margin: 6em 2%;
     border: 3px silver solid;
@@ -61,6 +61,7 @@ body {
     box-sizing: border-box;
     background: rgba(0,0,0,0.f2);
     padding: 1em;
+    line-height: 4em;
 }
 
 #registerForm span {
