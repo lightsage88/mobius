@@ -59,7 +59,8 @@ main h3{
 }
 
 img{
-    height: 50%;
+    height: auto;
+    max-height: 3.8em;
     width: 29%;
     bottom: 3em;
     float: left;
