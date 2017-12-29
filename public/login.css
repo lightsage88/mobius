@@ -251,8 +251,8 @@ p.loginFail {
     font-family: 'Bungee',cursive;
     color: black;
     font-size: 1.1em;
-    left: -13em;
     position: relative;
+    left:30%;
     bottom:1.4em;
     text-shadow: yellow 5px -1px 4px;
 }
