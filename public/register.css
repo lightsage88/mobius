@@ -5,8 +5,6 @@ p.accountCreation {
     color: white;
     font-size: 2.5em;
     text-align:center;
-
-
 }
 
 header{
@@ -64,7 +62,7 @@ body {
     line-height: 4em;
 }
 
-#registerForm span {
+span {
     color: cyan;
     text-shadow: 6px 6px 2px green;
     font-size: .75em;
@@ -75,7 +73,8 @@ body {
     display: inline-block;
     border: 2px yellow solid;
     border-radius: .3em;
-    height: 2.4em;
+    height: 2em;
+    margin-top: 1em;
     width: auto;
     position: absolute;
     left: 40%;
@@ -83,7 +82,7 @@ body {
     color: white;
     font-family: "Comfortaa", sans-serif;
     box-sizing: border-box;
-    font-size: 1em;
+    font-size: .7em;
     padding: 0;
     
 
@@ -94,7 +93,8 @@ body {
     width: auto;
     display: block;
     position: relative;
-    left: 40%;
+    left: 45%;
+    top: 5em;
     background: rgba(0,0,0,0.8);
     font-family: 'Bungee', sans-serif;
     color: lime;
@@ -108,6 +108,35 @@ body {
     position: relative;
 }
 
+span.regInput {
+        position: relative;
+        bottom: 1em;
+        color: gold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media only screen and (min-width: 1000px) {
@@ -118,10 +147,10 @@ main {
     position: relative;
 }
 
-#registerForm {
+form#registerForm {
     margin: 0;
-    text-align: center;
-    font-size:1.8em;
+    text-align: left;
+    font-size:1.1em;
     background: rgba(0,0,0,0.7);
     width: 116%;
     padding: 0;
@@ -172,7 +201,48 @@ img.marvelLogo {
     color: red;
 }
 
+span.regInput {
+        position: relative;
+        bottom: 1em;
+        color: gold;
+        margin-left: 2em;
+        font-size: 1.1em;
+}
 
+#lastName {
+    position: absolute;
+    bottom: -.3em;
+}
+
+#registerForm input {
+        text-align: center;
+    display: inline-block;
+    border: 2px yellow solid;
+    border-radius: .3em;
+    height: 2em;
+    width: 69%;
+    position: absolute;
+    left: 36%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    box-sizing: border-box;
+    font-size: .7em;
+    padding: 0;
+    margin: 0.5em;
+    margin-bottom: 2em;
+}
+span#pwInfo{
+    position: relative;
+    bottom: 2em;
+}
+
+span#pwDetails{
+        display: inline;
+    position: relative;
+    left: 3em;
+    bottom: 3em;
+}
 
 
 }

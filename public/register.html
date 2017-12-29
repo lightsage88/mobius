@@ -13,17 +13,17 @@
 	<main>
 		
 		<form id='registerForm'>
-			Username:
+			<span class='regInput'>Username:</span>
 			<input type='text' name='username' id='username'>
             <br>
-			Password<span id='pwInfo'>*</span>:<input type='password' id='password' name='password'>
-            <br><span>[at least 6 characters, but no more than 20]</span> 
-			
-            <br>
-			First Name:
+			<span class='regInput'>Password:</span>
+			<span id='pwInfo'>*</span><input type='password' id='password' name='password'>
+            <br><span id='pwDetails'>[at least 6 characters, but no more than 20]</span> 
+			<br>
+			<span class='regInput'>First Name:</span>
 			<input type='text' placeholder="D'Artagnan" name='firstName' id='firstName'>
 			<br>
-            Last Name:
+            <span id='lastName' class='regInput'>Last Name:</span>
 			<input type='text' placeholder="Jones" name='lastName' id='lastName'>
 
 			<button type='submit'>Submit</button>
