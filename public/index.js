@@ -123,7 +123,10 @@ function logOut() {
 
 
 function deleteAccount() {
+	let counter = 0;
 	$('.deleteAccount').click(function(){
+		if(counter === 0) {
+				counter = 1;
 		$('main').append(`
 			<div class='superDelete'>
 				<p class='question'>Are you sure?</p>
@@ -149,12 +152,18 @@ function deleteAccount() {
 					}
 				});
 				
-			})
-		});	
+			});
 		$('p.reprieve').click(function(){
-			location.href='accountPage.html';
+			counter = 0;
+			$('.superDelete').remove();
 		});
+			} else {
+			}
+	});	
+		
 }
+
+
 
 
 
