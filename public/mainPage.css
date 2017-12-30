@@ -11,7 +11,7 @@ header h1.mainPageHeader{
     color: cadetblue;
     font-family: 'Comfortaa', cursive;
     padding: 0;
-    font-size: 4.5em;
+    font-size: 440%;
     letter-spacing: .1em;
     text-size-adjust: auto;
     padding-bottom: .3em;
@@ -337,8 +337,7 @@ body {
 }
 
 img.characterThumbnail {
-    max-height: 25em;
-    max-width: 25em;
+   
     border: solid 3px green;
     display: inline;
     float: left;
@@ -346,7 +345,9 @@ img.characterThumbnail {
 }
 
 
-
+div#outputbox {
+    margin-top: 16%;
+}
 
 
 .outputbox {
@@ -366,10 +367,8 @@ img.characterThumbnail {
 }
 
 .characterBox {
-    margin: 2em 0;
+    margin: 2em 19%;
     position: relative;
-    bottom: 25em;
-    height: auto;
     height: 3.5em;
     width: auto;
     min-height: 326px;
@@ -392,21 +391,20 @@ ul:only-child {
     clear: left;
     text-decoration: none;
     color: white;
-/*    font-size:.4vw;
-*/    padding: 0;
-    width: auto;
-    position: relative;
-    bottom: 26em;
-    height: auto;
-    max-height: 39em;
+    font-size:.25vw;
+    padding: 0;
+    width: 60%;
+    position:absolute;
+/*    bottom: 26em;
+*/    height: auto;
+    max-height: 98%;
     overflow-y: scroll;
     line-height: 0;
+    margin: 0 39%;
 }
 
 body::-webkit-scrollbar {
     width: 2em;
-
-
 }
 
 body::-webkit-scrollbar-track {
@@ -420,6 +418,10 @@ body::-webkit-scrollbar-thumb {
   background-size: contain;
   outline: 1px solid blue;
 }
+
+/*ul::-webkit-scrollbar {
+   width:4em;
+}*/
 
 li{
     text-align: center;
@@ -499,6 +501,10 @@ span.characterName {
     font-family: 'Comfortaa', cursive;
     font-size: 2em;
     color: skyblue;
+    margin-bottom: .5em;
+        position: absolute;
+     top: 26%; 
+    left: 3em;
     
 }
 
