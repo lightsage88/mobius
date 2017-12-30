@@ -199,7 +199,26 @@ span.characterName {
     text-align: center;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+  font-size:.71em;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+  font-size:.71em;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+  font-size:.71em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+  font-size:.71em;
+}
+
 .biginput{
+    text-align:center;
+    font-size-adjust: auto;
     border-style: outset;
     border-width: .2em;
     border-radius: .8em;
