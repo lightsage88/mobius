@@ -347,6 +347,9 @@ img.characterThumbnail {
 
 div#outputbox {
     margin-top: 16%;
+top:29%;
+        position: absolute;
+        width: 80%;
 }
 
 
@@ -501,9 +504,10 @@ span.characterName {
     font-family: 'Comfortaa', cursive;
     font-size: 2em;
     color: skyblue;
-    margin-bottom: .5em;
+    margin-top: 12%; 
+    margin-bottom: 10%;
         position: absolute;
-     top: 26%; 
+     top: 22%; 
     left: 3em;
     
 }
