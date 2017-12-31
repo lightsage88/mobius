@@ -269,6 +269,8 @@ header{
     display: inline-block;
     width:  100%;
     border: solid 4px white;
+    height: auto;
+    min-height: 4vw;
     }
 
 header h1.mainPageHeader{
@@ -278,20 +280,22 @@ header h1.mainPageHeader{
     letter-spacing: .1em;
     text-size-adjust: auto;
     position:relative;
-    display: inline-block;
+    display: inline;
     font-weight: 100;
-    font-size: 183%;
-    left: 0%;
+    font-size: 5vw;
+    left:0vw;
+    top: .5vw;
+    
 }
 
 img.marvelLogo{
 
-    height:4.1em;
-    position: relative;
-    display: inline;
+    height:6vw;
+/*    position: absolute;
+*/    display: inline;
     margin:0;
     float: left;
-    top: .3em;
+    top: 0;
 }
   
 
@@ -524,9 +528,11 @@ span.characterName {
     color: white;
     background: black;
     font-family: 'Comfortaa', cursive;
-    font-size: 1.5em;
+    font-size: 2.5vw;
     color: skyblue;
     left: 50px;
+    width: -webkit-fill-available;
+    max-width: 21em;
 
 
 }
