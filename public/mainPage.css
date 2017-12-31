@@ -46,7 +46,9 @@ img.marvelLogo{
 
 #siteLinkBox{
     text-align: right;
-    font-size: .7em;
+    font-size: 1.5vw;
+    display: inline-grid;
+    margin-bottom: 4vw;
 }
 
 a.siteLink{
@@ -117,7 +119,7 @@ img.characterThumbnail {
     position: relative;
 	height: auto;
     font-size: .25em;
-    width: 84%;
+    width: auto;
 	min-height: 326px;
 	border: #379634 2px solid;
     background: rgba(0,0,0,0.5);
@@ -383,8 +385,7 @@ top:29%;
 }
 
 .characterBox {
-    margin: 0 16%;
-    margin-bottom: 3%;
+    margin: 2vw 16%;
     position: sticky;
     height: auto;
     width: auto;
