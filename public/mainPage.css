@@ -48,7 +48,7 @@ img.marvelLogo{
     text-align: right;
     font-size: 1.5vw;
     display: inline-grid;
-    margin-bottom: 4vw;
+    margin-bottom: 4.5vw;
 }
 
 a.siteLink{
@@ -238,7 +238,7 @@ span.characterName {
     background: black;
     padding: 0;
     font-family: 'Comfortaa', cursive;
-    font-size: 400%;
+    font-size: 5vw;
     color: skyblue;
     position: relative;
 /*    bottom: 4em;
@@ -255,7 +255,7 @@ span.characterName {
 	color: white;
 	background: black;
     font-family: 'Comfortaa', cursive;
-    font-size: 400%;
+    font-size: 4vw;
     color: skyblue;
 
 }
