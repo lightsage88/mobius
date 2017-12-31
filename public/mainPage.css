@@ -316,6 +316,7 @@ img.marvelLogo{
 
 #siteLinkBox{
 display:inline-block;
+border: solid cyan 2px;
 }
 
 a.siteLink{
@@ -329,6 +330,7 @@ a.siteLink{
     font-size: 3vw;
     text-align:center;
     text-shadow: 6px 6px blue;
+    margin: 0 10vw;
 }
 
 a.account{
@@ -385,7 +387,7 @@ top:29%;
 }
 
 .characterBox {
-    margin: 2vw 16%;
+    margin: 3.5vw 16%;
     position: sticky;
     height: auto;
     width: auto;
@@ -423,7 +425,7 @@ ul:only-child {
 }
 
 body::-webkit-scrollbar {
-    width: 2em;
+    width: 2vw;
 }
 
 body::-webkit-scrollbar-track {
