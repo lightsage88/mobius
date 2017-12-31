@@ -275,18 +275,18 @@ header h1.mainPageHeader{
     color: cadetblue;
     font-family: 'Comfortaa', cursive;
     padding: 0;
-    font-size: 4.5em;
     letter-spacing: .1em;
     text-size-adjust: auto;
-    padding-bottom: .3em;
     position:relative;
-    display: inline;
+    display: inline-block;
     font-weight: 100;
+    font-size: 183%;
+    left: 0%;
 }
 
 img.marvelLogo{
 
-    height:4.4em;
+    height:4.1em;
     position: relative;
     display: inline;
     margin:0;
@@ -302,7 +302,7 @@ img.marvelLogo{
 
 
 #siteLinkBox{
-    text-align: right;
+display:inline-block;
 }
 
 a.siteLink{
@@ -313,7 +313,7 @@ a.siteLink{
     text-decoration: none;
     text-shadow: .1em -0.13em 2px blue;
     border-radius: 20%;
-    font-size: 4em;
+    font-size: 3vw;
     text-align:center;
     text-shadow: 6px 6px blue;
 }
@@ -342,6 +342,8 @@ img.characterThumbnail {
     display: inline;
     float: left;
     clear: left;
+    position: absolute;
+    max-height: 66%;
 }
 
 
@@ -370,11 +372,13 @@ top:29%;
 }
 
 .characterBox {
-    margin: 2em 19%;
-    position: relative;
-    height: 3.5em;
+    margin: 0 16%;
+    margin-bottom: 3%;
+    position: sticky;
+    height: auto;
     width: auto;
-    min-height: 326px;
+    min-height: 60em;
+    min-width: 70%;
     border: none;
     background: rgba(0,0,0,0.5);
 }
@@ -482,8 +486,8 @@ span.characterName {
     padding: 0;
     clear:left;
     margin: .5em auto;
-    position: relative;
-    bottom: .5em;
+    position: absolute;
+    bottom: 8%;
 }
 
 #searchfield{
@@ -498,18 +502,13 @@ span.characterName {
     border-width: .2em;
     border-radius: .8em;
     width: 90%;
-    height: .85em;
     background: black;
-    padding: .4em;
+    padding: 0;
     font-family: 'Comfortaa', cursive;
-    font-size: 2em;
+    font-size: 4vw;
     color: skyblue;
-    margin-top: 12%; 
-    margin-bottom: 10%;
-        position: absolute;
-     top: 22%; 
-    left: 3em;
-    
+    margin-top: -10%; 
+        position: sticky;
 }
 
 .logOut {

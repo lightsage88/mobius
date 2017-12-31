@@ -22,7 +22,7 @@
   		console.log(queryString);
   });
 
-  $('#autocomplete').autocomplete({
+  $('.biginput').autocomplete({
       autoSelectFirst: true,  
   		method: "GET",
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
