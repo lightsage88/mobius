@@ -164,7 +164,7 @@ margin-top: 10px;
 
 body {
 /*    background: url('assets/images/blueDots.jpg');*/
-    background: linear-gradient(to left, transparent, red), url('assets/images/blueDots.jpg');
+    background: linear-gradient(to left, transparent, red), url('assets/images/blueDots.png');
     height: auto;
 }
 
