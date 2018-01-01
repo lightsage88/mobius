@@ -11,9 +11,9 @@ main {
 }
 header{
     font-family: 'Comfortaa', cursive; 
-    font-size: 2.03em;
+    font-size: 3vw;
     background: black;
-    border: white 5px solid;
+    border: white .2vw solid;
     box-sizing: border-box;
     height: 100%;
 }
@@ -27,6 +27,12 @@ h1{
     margin-top: 1em;
     font-weight: lighter;
     margin-bottom: -1em;
+}
+
+img.marvelLogo {
+    position: relative;
+    bottom: 3.3vw;
+    height: 11.5vw;
 }
 
 p{
@@ -143,8 +149,8 @@ p.textHeaderPart {
     top: .1em;
 }
 
-header img {
-    top: 0;
+header img.marvelLogo {
+    top: .1vw;
     height: 8.5vw;
     width: auto;
     max-width: 19vw;
@@ -152,9 +158,10 @@ header img {
     position: absolute;
 }
 
-main img{
+main img#spiderBook{
     float: left;
-    height: 8vw;
+    height: auto;
+    max-height: 10vw;
     width: 7vw;
 }
 
