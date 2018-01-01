@@ -483,6 +483,7 @@ a:active{
 .xSymbol {
     height: auto;
     max-height: 1.5vw;
+    max-width: 1.5vw;
     width:auto;
 }
 
