@@ -120,7 +120,7 @@ a {
 @media only screen and (min-width: 1000px) {
 
 span {
-    font-size: .26em;
+    font-size: 1.6vw;
 }
 
 h1{
@@ -145,7 +145,7 @@ p.textHeaderPart {
 
 header img {
     top: 0;
-    height: auto;
+    height: 8.5vw;
     width: auto;
     max-width: 19vw;
     max-height: 8.5vw;
@@ -154,9 +154,8 @@ header img {
 
 main img{
     float: left;
-    height: 3em;
-    width: 2.5em;
-    bottom: 3em;
+    height: 8vw;
+    width: 7vw;
 }
 
 h3 {
@@ -186,9 +185,12 @@ a > p{
 }
 
 .frontGroup {
-    top: 1.6em;
+    top: 1vw;
+    font-size: 4vw;
+    width: 18vw;
+    margin: auto 33%;
     border: none;
-    display: inline-grid;
+    display: inline-block;
 }
 
 header{
