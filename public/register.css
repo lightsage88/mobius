@@ -9,6 +9,11 @@ p.accountCreation {
 
 header{
     background: rgba(0,0,0,0.7);
+    position: absolute;
+    height: auto;
+    min-height: 6vw;
+    border: solid .1vw white;
+    width: 100%;
 }
 
 header h1.mainPageHeader{
@@ -20,7 +25,6 @@ header h1.mainPageHeader{
     text-align: left;
     padding-bottom: .3em;
     position:relative;
-    border: white solid 1.5px;
     box-sizing: border-box;
     height:1.48em;
     line-height: 1.7em;
@@ -147,12 +151,33 @@ main {
     position: relative;
 }
 
+header h1.mainPageHeader {
+    color: cadetblue;
+    font-family: 'Comfortaa', cursive;
+    padding: 0;
+    font-size: 2vw;
+    /* text-size-adjust: auto; */
+    text-align: left;
+    /* padding-bottom: .3em; */
+    position: absolute;
+    /* box-sizing: border-box; */
+    /* height: 1.48em; */
+    line-height: 3vw;
+    letter-spacing: 1vw;
+    font-weight: 100;
+    left: 13.5vw;
+}
+
 form#registerForm {
+    position: absolute;
+    top: 18vw;
     margin: 0;
     text-align: left;
-    font-size:1.1em;
+    font-size:2vw;
     background: rgba(0,0,0,0.7);
-    width: 116%;
+    width: 58vw;
+    height: auto;
+    min-height: 25vw;
     padding: 0;
 }
 
@@ -193,8 +218,8 @@ p.accountCreation{
 }
 
 img.marvelLogo {
-    height: 3.6em;
-    position: relative;
+    height: 6vw;
+    position: absolute;
     float: left;
     display: inline-block;
     margin-top: 0;
@@ -220,7 +245,7 @@ span.regInput {
     border: 2px yellow solid;
     border-radius: .3em;
     height: 2em;
-    width: 69%;
+    width: 33vw;
     position: absolute;
     left: 36%;
     background: rgba(0,0,0,0.6);
