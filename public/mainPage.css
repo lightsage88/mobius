@@ -10,7 +10,7 @@ header{
 background: rgba(0,0,0,0.7);
     display: inline-block;
     width: 100%;
-    border: solid 4px white;
+    border: solid .2vw white;
     height: auto;
     min-height: 4vw;
 }
@@ -47,7 +47,6 @@ img.marvelLogo{
 #siteLinkBox{
     text-align: right;
     font-size: 1.5vw;
-    display: inline-grid;
     margin-bottom: 4.5vw;
 }
 
@@ -86,7 +85,7 @@ img.characterThumbnail {
 	height: auto;
     width: auto;
     max-height: 44em;
-	border: solid 3px green;
+	border: dashed .2vw white;
 	display: inline;
 	float: left;
 	clear: left;
@@ -277,7 +276,7 @@ header{
     background: rgba(0,0,0,0.7);
     display: inline-block;
     width:  100%;
-    border: solid 4px white;
+    border: solid .2vw white;
     height: auto;
     min-height: 4vw;
     }
@@ -316,7 +315,7 @@ img.marvelLogo{
 
 #siteLinkBox{
 display:inline-block;
-border: solid cyan 2px;
+border: solid cyan .2vw;
 }
 
 a.siteLink{
@@ -329,7 +328,7 @@ a.siteLink{
     border-radius: 20%;
     font-size: 3vw;
     text-align:center;
-    text-shadow: 6px 6px blue;
+    text-shadow: .2vw .2vw blue;
     margin: 0 10vw;
 }
 
@@ -488,20 +487,20 @@ a:active{
 }
 
 span.characterName {
+    max-width: 14vw;
     display: block;
-    font-size: 2vw;
+    font-size: 1.5vw;
     overflow-wrap: break-word;
     font-family: 'Bungee', cursive; 
-    line-height: 1.2em;
+    line-height: 2vw;
     word-spacing: 0em;
     width: auto;
     text-align: left;
     color: #66D7D1;
-    padding: 0;
     clear:left;
     margin: .5em auto;
     position: absolute;
-    bottom: 8%;
+    bottom: -1vw;
 }
 
 #searchfield{
@@ -521,7 +520,7 @@ span.characterName {
     font-family: 'Comfortaa', cursive;
     font-size: 4vw;
     color: skyblue;
-    margin-top: -10%; 
+    margin-top: -5vw; 
         position: sticky;
 }
 
