@@ -90,7 +90,7 @@ text-shadow: .3vw .3vw blue;
     color: white;
     font-family: "Comfortaa", sans-serif;
     box-sizing: border-box;
-    font-size: 60vw;
+    font-size: 10vw;
     padding: 0;
 }
 
@@ -260,9 +260,9 @@ p.loginFail {
     font-family: 'Bungee',cursive;
     color: black;
     font-size: 1.1em;
-    position: relative;
-    left:35%;
-    top: 5vw;
+    position: absolute;
+    left: 18vw;
+    top: 33vw;
     text-shadow: yellow 5px -1px 4px;
 }
 
