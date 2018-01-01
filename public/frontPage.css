@@ -31,7 +31,7 @@ h1{
 
 p{
     margin:0;
-    font-size: .4em;
+    font-size: 2.5vw;
 }
 
 span {
@@ -127,7 +127,6 @@ h1{
     font-size: .5168em;
     color: cadetblue;
     font-weight: 500;
-    border: solid 3px white;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -145,11 +144,12 @@ p.textHeaderPart {
 }
 
 header img {
-    height: 1.55em;
-    width: 4em;
-    top:0.05em;
-    left:0.05em;
-    position: relative;
+    top: 0;
+    height: auto;
+    width: auto;
+    max-width: 19vw;
+    max-height: 8.5vw;
+    position: absolute;
 }
 
 main img{
@@ -193,11 +193,17 @@ a > p{
 
 header{
     font-family: 'Comfortaa', cursive; 
-    font-size: 4em;
+    height: auto;
+    width: 98%;
+    max-height: 9vw;
+    position: absolute;
+    font-size: 6vw;
     background: black;
-    border: none;
+    border: white solid .2vw;
 }
-
+main {
+    padding-top: 10vw;
+}
 
 }
 /*end of larger screen rules*/
