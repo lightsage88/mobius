@@ -53,6 +53,7 @@ body {
     background: rgba(0,0,0,0.7);
     position: relative;
     height: auto;
+    min-height: 160vw;
     width: 82vw;
     margin: auto;
 }
@@ -100,7 +101,7 @@ text-shadow: .3vw .3vw blue;
     display: block;
     position:relative;
     left: 33%;
-    bottom: 1vw;
+    bottom: -9vw;
     width: auto;
     background: rgba(0,0,0,0);
     font-family: 'Bungee', sans-serif;
