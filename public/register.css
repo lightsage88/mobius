@@ -7,14 +7,15 @@ p.accountCreation {
     text-align:center;
 }
 
-header{
+header {
     background: rgba(0,0,0,0.7);
     position: absolute;
     height: auto;
     min-height: 6vw;
     border: solid .1vw white;
-    width: 100%;
+    width: -webkit-fill-available;
     top: 1vw;
+    margin: 0 2%;
 }
 
 header h1.mainPageHeader{
@@ -160,13 +161,14 @@ main {
     position: relative;
 }
 
-header{
+header {
     background: rgba(0,0,0,0.7);
     position: absolute;
     height: auto;
     min-height: 6vw;
     border: solid .1vw white;
-    width: 100%;
+    width: -webkit-fill-available;
+    margin: 0 2%;
 }
 
 header h1.mainPageHeader {
@@ -215,12 +217,12 @@ form#registerForm {
     text-shadow: 2px 2px 1px red;
 }
 
-button{
+#registerForm button {
     float: left;
-    top: 1.3em;
+    top: 4vw;
+    font-size: 1vw;
+    height: 3vw;
     background: rgba(0,0,0,0.8);
-
-
 }
 
 p.accountCreation{
