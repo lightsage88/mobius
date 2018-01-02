@@ -96,8 +96,8 @@ span {
 #registerForm button {
     height: auto;
     width: auto;
-    margin: 25% 15%;
-    display: inline-block;
+    margin: 10% 33%;
+    display: inline;
     position: absolute;
     /* top: 5em; */
     background: rgba(0,0,0,0.8);
