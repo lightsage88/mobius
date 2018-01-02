@@ -96,10 +96,11 @@ span {
 #registerForm button{
     height:auto;
     width: auto;
+    min-width: 30%;
     display: inline-block;
-    margin: 0 33%;
+    margin: 0 35%;
     position: relative;
-    top: 5em;
+    top: 16vw;
     background: rgba(0,0,0,0.8);
     font-family: 'Bungee', sans-serif;
     color: lime;
