@@ -187,10 +187,10 @@ header h1.mainPageHeader {
 
 form#registerForm {
     position: absolute;
-    top: 18vw;
+    top: 7.6vw;
     margin: 0;
     text-align: left;
-    font-size:2vw;
+    font-size:1.6vw;
     background: rgba(0,0,0,0.7);
     width: 58vw;
     height: auto;
@@ -202,12 +202,14 @@ form#registerForm {
     margin-bottom: 2em;
     text-align: left;
     display: inline-block;
-    position: relative;
-    right: -4em;
-    margin:0;
-    font-size: 1.2em;
+    position: absolute;
+    /* right: -4em; */
+    top: 47vw;
+    left: 19vw;
+    margin: 0;
+    font-size: 1.5vw;
     color: antiquewhite;
-    bottom: .4em;
+    /* bottom: -56vw; */
     font-family: 'Bungee',cursive;
     text-shadow: 2px 2px 1px red;
 }
