@@ -53,9 +53,10 @@ body {
     background: rgba(0,0,0,0.7);
     position: relative;
     height: auto;
-    min-height: 140vw;
+        min-height:auto;
     width: 82vw;
     margin: auto;
+    padding-bottom: 8vw
 }
 
 h5{
@@ -198,7 +199,8 @@ main {
     width: 66%;
     font-size: 3vw;
     top: 6vw;
-
+    min-height:0;
+    padding-bottom: 0;
 }
 
 button#submitButton{
