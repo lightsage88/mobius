@@ -93,18 +93,18 @@ span {
 
 }
 
-#registerForm button{
-    height:3em;
+#registerForm button {
+    height: auto;
     width: auto;
+    margin: 25% 15%;
     display: inline-block;
-    margin: 0 33%;
-    position: relative;
-    top: 5em;
+    position: absolute;
+    /* top: 5em; */
     background: rgba(0,0,0,0.8);
     font-family: 'Bungee', sans-serif;
     color: lime;
-    text-shadow: purple 6px 6px 2px;
-    font-size: 100%;
+    text-shadow: purple 0.6vw 0.6vw 0.2vw;
+    font-size: 3vw;
 }
 
 #errorFriend {
