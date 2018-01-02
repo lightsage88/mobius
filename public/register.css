@@ -96,9 +96,9 @@ span {
 #registerForm button{
     height:3em;
     width: auto;
-    display: block;
+    display: inline-block;
+    margin: 0 33%;
     position: relative;
-    left: 40%;
     top: 5em;
     background: rgba(0,0,0,0.8);
     font-family: 'Bungee', sans-serif;
