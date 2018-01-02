@@ -108,12 +108,16 @@ span {
 }
 
 #errorFriend {
-    margin-bottom: 2em;
+ 
+    /* margin-bottom: 2em; */
     text-align: center;
-    position: relative;
+    position: absolute;
     font-family: 'Bungee', sans-serif;
     color: wheat;
     font-size: 3vw;
+    top: 100vw;
+    left: 30%;
+
 }
 
 span.regInput {
