@@ -36,12 +36,13 @@ img.marvelLogo{
 }
 
 
-#siteLinkBox{
+#siteLinkBox {
     text-align: right;
-    height: 9em;
+    height: 19vw;
     font-size: 2.3vw;
     position: relative;
     top: 2vw;
+    padding-top: 10vw;
 }
 
 a.siteLink, p.upDateAccount, p.deleteAccount{
