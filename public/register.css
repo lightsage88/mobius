@@ -111,6 +111,9 @@ span {
     margin-bottom: 2em;
     text-align: center;
     position: relative;
+    font-family: 'Bungee', sans-serif;
+    color: wheat;
+    font-size: 3vw;
 }
 
 span.regInput {
