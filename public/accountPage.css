@@ -40,6 +40,8 @@ img.marvelLogo{
     text-align: right;
     height: 9em;
     font-size: 2.3vw;
+    position: relative;
+    top: 2vw;
 }
 
 a.siteLink, p.upDateAccount, p.deleteAccount{
