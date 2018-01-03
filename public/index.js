@@ -27,7 +27,7 @@ $('#registerForm').submit(function(event){
 			$('.accountCreation').fadeOut(2000);
 				(setTimeout(function(){
 					location.href = 'login.html';
-				}, 2000));
+				}, 2000)); 
 		},
 		error: (err) => {
 			console.error(err);
@@ -144,7 +144,7 @@ function deleteAccount() {
 					contentType: 'application/json',
 					success: function(){
 				$('main').html('');
-                $('main').append("<p class='deleteMessage'>Your account has been deleted successfully...returning to beginning</p>");
+                $('main').append("<p class='deleteMessage'>Your account has been deleted successfully...  returning to beginning</p>");
 						setTimeout(function(){
 							location.href='index.html';
 						}, 3000);
