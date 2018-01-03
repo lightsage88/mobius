@@ -115,12 +115,6 @@ a.main, p.upDateAccount{
     text-shadow: red 3px 6px 2px;
 }
 
-.updateForm #firstName {
-}
-
-.updateForm #lastName {
-
-}
 
 .updateForm #password {
 bottom: 2em;
@@ -264,6 +258,50 @@ div.userInfo {
     font-size: 1.3vw;
 }
 
+a.siteLink.logOut, a.logOut{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Larger Screen Styling Rules*/
 
 @media only screen and (min-width: 1000px) {
@@ -298,11 +336,14 @@ p.deleteAccount {
     cursor: pointer;
 }
 
-a.siteLink.logOut{
+a.siteLink.logOut, a.logOut{
     float:left;
     clear:left;
-    left: -1.3em;
+    left: 0vw;
     color: black;
+    cursor: pointer;
+    width: auto;
+    height: auto;
 }
 
 div.userInfo {
