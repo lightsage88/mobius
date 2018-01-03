@@ -1,4 +1,9 @@
 /*Mobile style*/
+.testerCorner {
+    background:white;
+    font-family: sans-serif;
+    font-size: 2vw;
+}
 
 header{
     background: rgba(0,0,0,0.7);
