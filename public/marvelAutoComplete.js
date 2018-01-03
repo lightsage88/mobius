@@ -5,7 +5,7 @@
   let characterNames;
     $('div.autocomplete-suggestions').removeAttr('style');
 
-  $('.biginput').keydown(function(){
+  $('.biginput').keydown(function(event){
     console.log(event.key);
 
   	characterNames = [];

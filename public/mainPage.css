@@ -386,7 +386,7 @@ top:29%;
 }
 
 .characterBox {
-    margin: 3.5vw 16%;
+    margin: 6.5vw 16%;
     position: sticky;
     height: auto;
     width: auto;
@@ -501,7 +501,7 @@ span.characterName {
     clear:left;
     margin: .5em auto;
     position: absolute;
-    bottom: 2vw;
+    bottom: -1vw;
 }
 
 #searchfield{
