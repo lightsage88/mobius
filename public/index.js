@@ -143,6 +143,7 @@ function deleteAccount() {
 					dataType: 'json',
 					contentType: 'application/json',
 					success: function(){
+				localStorage.clear();
 				$('main').html('');
                 $('main').append("<p class='deleteMessage'>Your account has been deleted successfully...  returning to beginning</p>");
 						setTimeout(function(){
