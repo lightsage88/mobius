@@ -11,6 +11,12 @@ $('#loginForm').submit(function(event){
 		success: (response) => {
 			localStorage.setItem('token', response.authToken);
 			getDataFromMlabXXXLoadAccountPage(username);
+			
+ $('.firstName').html(localStorage.firstName);
+ $('.lastName').html(localStorage.lastName);
+ $('.username').html(localStorage.username);
+
+
 			toProtectedData();
 		},
 		error: (response) => {

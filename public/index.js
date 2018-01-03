@@ -111,11 +111,14 @@ $('#registerForm').submit(function(event){
 // }
 
 function logOut() {
-	$('.logOut').click(function(){
+	$('.logOut').click(function(){		
+		 $('.firstName').html('');
+		 $('.lastName').html('');
+		 $('.username').html('');
 		localStorage.clear();
         setTimeout(function(){
             location.href='index.html';
-            }, 3000);
+            }, 100);
         
 	});
 
