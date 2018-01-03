@@ -1,8 +1,8 @@
 
-let deletedCodeForLater = `<div class='inputGroup'>
-			<p class='pw'>For Security Reasons,<br>please enter your password:</p>
-			<input type='password' name='password' id='password' placeholder='password'>
-			</div>`;
+// let deletedCodeForLater = `<div class='inputGroup'>
+// 			<p class='pw'>For Security Reasons,<br>please enter your password:</p>
+// 			<input type='password' name='password' id='password' placeholder='password'>
+// 			</div>`;
 
 let mLabApiKey = 'pJysmium6S33nXs_wxZ0VK9wyMIQQlSa';
 let mLabDb = 'mobius';

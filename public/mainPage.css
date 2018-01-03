@@ -362,8 +362,6 @@ img.characterThumbnail {
 
 
 div#outputbox {
-    margin-top: 16%;
-top:29%;
         position: absolute;
         width: 80%;
 }
@@ -386,11 +384,11 @@ top:29%;
 }
 
 .characterBox {
-    margin: 6.5vw 16%;
+    margin: .5vw 16%;
     position: sticky;
     height: auto;
     width: auto;
-    min-height: 60em;
+    min-height: 20vw;
     min-width: 70%;
     border: none;
     background: rgba(0,0,0,0.5);
@@ -468,7 +466,8 @@ a:active{
     border-style:outset;
     border-width: .52em;
     position: absolute;
-    left: .3em;
+    left: 0vw;
+    right:auto;
     height: auto;
     width: auto;
     min-width: 2.2vw;
