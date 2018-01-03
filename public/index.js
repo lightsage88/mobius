@@ -77,9 +77,9 @@ $('#registerForm').submit(function(event){
 // 	})	
 // }
 
-//  $('.firstName').html(localStorage.firstName);
-//  $('.lastName').html(localStorage.lastName);
-//  $('.username').html(localStorage.username);
+ $('.firstName').html(localStorage.firstName);
+ $('.lastName').html(localStorage.lastName);
+ $('.username').html(localStorage.username);
 
 
 
