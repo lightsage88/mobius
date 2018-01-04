@@ -98,8 +98,10 @@ text-shadow: .3vw .3vw blue;
     color: white;
     font-family: "Comfortaa", sans-serif;
     box-sizing: border-box;
-    font-size: 8vw;
+    font-size: 4vw;
     padding: 0;
+    min-width: 80%;
+    margin: auto 10%;
 }
 
 #loginForm button {
