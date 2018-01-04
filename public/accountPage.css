@@ -67,6 +67,7 @@ p.upDateAccount, p.deleteAccount{
 
 .updateForm {
     height: 43em;
+    font-size: 1vw;
 
 }
 
@@ -237,8 +238,10 @@ body {
 
 .deleteMessage {
     font-family: 'Bungee', cursive;
-    font-size: 4.5em;
+    font-size: 3vw;
     word-wrap: break-word;
+    position: absolute;
+    bottom: 50%;
     color: white;
     text-shadow: 6px 6px black;
 }

@@ -118,7 +118,19 @@ text-shadow: .3vw .3vw blue;
 }
 
 
-
+p.loginFail {
+    display: inline;
+    text-align: center;
+    font-family: 'Bungee',cursive;
+    color: black;
+    font-size: 1.1em;
+    position: fixed;
+    left: 15vw;
+    top: 50%;
+    text-shadow: yellow 5px -1px 4px;
+    background:red;
+    padding: 1vw;
+}
 
 
 
@@ -270,10 +282,10 @@ p.loginFail {
     font-family: 'Bungee',cursive;
     color: black;
     font-size: 1.1em;
-    position: absolute;
-    left: 18vw;
-    top: 33vw;
+    position: fixed;
+    top: 50%;
     text-shadow: yellow 5px -1px 4px;
+    margin: auto 25%;
 }
 
 header h1.mainPageHeader{
