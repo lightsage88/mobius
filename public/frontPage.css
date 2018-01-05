@@ -1,6 +1,6 @@
 main {
     font-family: 'Comfortaa', cursive; 
-    font-size: 5em;
+    font-size: 5vw;
     
 }
 .marvel{
@@ -15,33 +15,37 @@ header{
     background: black;
     border: white .2vw solid;
     box-sizing: border-box;
-    height: 100%;
+    width: auto;
+    height: auto;
+    max-height:6.5vw;
+    min-width: 97%;
+    margin: auto 1%;
+    position: absolute;
 }
 
 h1{
-    font-size: 1.1em;
+    font-size: 5vw;
     color: cadetblue;
-    box-sizing: border-box;
-    line-height: 3.5em;
     padding: 0;
-    margin-top: 1em;
+    display:inline;
     font-weight: lighter;
-    margin-bottom: -1em;
+    position: relative;
+    top: -1vw;
 }
 
 img.marvelLogo {
-    position: relative;
-    bottom: 3.3vw;
-    height: 11.5vw;
+    height: auto;
+    max-height: 6vw;
+    width: auto;
 }
 
 p{
     margin:0;
-    font-size: 2.5vw;
+    font-size: 5vw;
 }
 
 span {
-    font-size: 15%;
+    font-size: 3vw;
     font-style: italic;
     color: lime;
 }
@@ -54,36 +58,36 @@ body{
 
 main{
     background: rgba(0,0,0,0.6);
-    padding-top: .6em;
+    padding-top: 10vw;
 }
 
 main h3{
     margin: 0;
-    padding: .3em;
+    padding: .3vw;
     word-wrap: normal;
     
 }
 
-img{
+img#spiderBook{
     height: auto;
-    max-height: 3.8em;
-    width: 29%;
-    bottom: 3em;
+    min-height: 30vw;
+    max-height: 35vw;
+    width: auto;
     float: left;
 }
 
 a {
     display: inline-block;
     clear: left;
-    border: solid 2px white;
-    margin: 0 1em;
+    border: solid .2vw white;
+    margin: 0 1vw;
     position: relative;
     background: white;
     text-decoration: none;
 }
 
 .textHeaderPart{
-    font-size: 1.5em;
+    font-size: 1.5vw;
     margin: auto;
     display: inline;
     box-sizing: border-box;
@@ -98,16 +102,16 @@ a {
 }
 
 .frontGroup a {
-    border-radius: 1em;
+    border-radius: 1vw;
     font-family: 'Bungee', sans-serif;
     display: block;
     text-align: center;
-    margin: .11em 0;
+    margin: .11vw 0;
     border-style: inset;
     border-collapse: collapse;
     background: rgba(0,0,0,0);
     color: gold;
-    text-shadow: -2px 5px 2px red;
+    text-shadow: .-2vw .5vw .2vw red;
 
 }
 .frontGroup a:hover{
@@ -125,22 +129,20 @@ a {
 /*FOR LARGER SCREENS*/
 @media only screen and (min-width: 1000px) {
 
+p {
+    font-size: 3.5vw;
+}
+
 span {
     font-size: 1.6vw;
 }
 
 h1{
-    font-size: .5168em;
+    font-size: 3vw;
     color: cadetblue;
-    font-weight: 500;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    text-align:left;
-    height: auto;
-    margin-top: 0;
-    line-height: 3em;
-    letter-spacing: .8em;
+    font-weight: 200;
+    top: -3vw;
+    letter-spacing: 3vw;
     background: rgba(0,0,0,0.5);
 }
 
@@ -155,14 +157,15 @@ header img.marvelLogo {
     width: auto;
     max-width: 19vw;
     max-height: 8.5vw;
-    position: absolute;
+    position: relative;
 }
 
-main img#spiderBook{
+main img#spiderBook {
     float: left;
     height: auto;
-    max-height: 10vw;
-    width: 7vw;
+    min-height: 21vw;
+    max-height: 22vw;
+    width: auto;
 }
 
 h3 {
@@ -171,18 +174,20 @@ h3 {
     font-size: .41em;
 }
 
-a.register, a.login{
+/*a.register, a.login{
     width:3em;
 }
 
 a.register {
     right: 1em;
+    bottom:1vw;
+    position:relative;
 }
 
 a.login {
     float:right;
     position: relative;
-    bottom: 1.54em;
+    bottom: 1vw;
     left: 3em;
 }
 
@@ -198,7 +203,7 @@ a > p{
     margin: auto 33%;
     border: none;
     display: inline-block;
-}
+}*/
 
 header{
     font-family: 'Comfortaa', cursive; 
