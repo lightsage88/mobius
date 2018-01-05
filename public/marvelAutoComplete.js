@@ -1,4 +1,3 @@
-
   let growingArray = [];
   let resultArray = [];
   let queryString = '';
@@ -21,6 +20,8 @@
   		console.log(growingString);
   		console.log(queryString);
   });
+
+
 
   $('.biginput').autocomplete({
       autoSelectFirst: true,  
@@ -46,8 +47,12 @@
   			};
   		},
   		onSelect: function(suggestion) {
+
+
+
   			query = '';
         console.log('bargain');
+
   			console.log(suggestion);
   			console.log(suggestion.data);
         let entry = suggestion.data;
@@ -75,7 +80,7 @@
           for(let i=0; i<=eventBlock.length-1; i++) {
             eventList.push(eventBlock[i].name);
           }
-          
+        
   			$('#outputbox').append(`<div class='characterBox'>
           <img class='characterThumbnail' src=${thumbnail}>
   				<span class='characterName'>${suggestion.value}<span>
@@ -88,6 +93,11 @@
             $('ul.eventList').append(`<li>${name}</li>`);
             console.log('clamburger');
           });
+
+
+
+
+
         $('.deleteChar').click(function(){
         console.log('deselecting a character');
         let characterName = `${suggestion.value}`;
