@@ -8,9 +8,19 @@
     }*/
 
 /*.noShow {
-    
+
 }*/
 
+.existentialStuff {
+    position: fixed;
+    background: black;
+    color: white;
+    font-family: 'Bungee', san-serif;
+    width: auto;
+    min-width: 60%;
+    margin: auto 10%;
+    top:65%;
+}
 
 header{
 background: rgba(0,0,0,0.7);

@@ -29,12 +29,19 @@
   		serviceUrl: `https://gateway.marvel.com/v1/public/characters?ts=1&hash=f3700db80c0cf9a4891307451bb101b8&apikey=d049098ccf60dd7f74887d62466e540b&orderBy=name`,
   		minChars: 2,
   		maxHeight: 150,
+      preventBadQueries: false,
   		contentType: 'application/json',
   		dataType: 'json',
   		paramName: 'nameStartsWith',
   		transformResult: function(response) {
   			resultArray = response.data.results;
   			console.log(resultArray);
+          if(resultArray.length === 0) {
+            console.log('pudding');
+            $('.biginput').after(`<h3 class='existentialStuff'>This search will yield nothing</h3>`);
+            $('.existentialStuff').fadeOut(2000);
+          }
+
   			return {
   				suggestions: $.map(response.data.results, function(results) {
   					return { value: results.name, data: {
