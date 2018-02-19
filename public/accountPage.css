@@ -1,18 +1,24 @@
-/*Mobile style*/
 
-header{
-    background: rgba(0,0,0,0.7);
-    border: white solid .2vw;
+
+header.header {
+        font-family: 'Comfortaa', cursive;
+    font-size: 3vw;
+    background: black;
+    border: white .2vw solid;
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    max-height: 7.5vw;
+    min-width: 97%;
+    margin: auto 1%;
     position: absolute;
-    width: 94%;
-    height: 7.1vw;
 }
 
-header h1.subtitle{
+h1.subtitle{
     color: cadetblue;
     font-family: 'Comfortaa', cursive;
     padding: 0;
-    left: 15.6vw;
+    left: 16.6vw;
     font-weight: 200;
     bottom: 1vw;
     font-size: 2vw;
@@ -20,11 +26,12 @@ header h1.subtitle{
     letter-spacing: .339em;
     text-size-adjust: auto;
     position: absolute;
+    top: 1.5vw;
 }
 
 img.marvelLogo{
-    height: 7.1vw;
-    position: absolute;
+    height: auto;
+    max-height: 7.1vw;
     display: inline-block;
     margin-top:0;
 }
@@ -34,7 +41,7 @@ img.marvelLogo{
 .stickyNav{
     text-align:center;
     display:inline-block;
-    margin-top: 5vw;
+    margin-top:2vw;
 }
 
 
@@ -50,12 +57,12 @@ a.siteLink, p.upDateAccount, p.deleteAccount{
     border-radius: 20%;
     font-size: 4vw;
     text-align:center;
-    text-shadow: 6px 6px red;
+    text-shadow: .6vw .6vw red;
 }
 
 p.upDateAccount, p.deleteAccount{
     color: black;
-    text-shadow: 6px 6px cyan;
+    text-shadow: .6vw .6vw cyan;
     display:inline-block;
     position: relative;
     cursor: pointer;
@@ -305,9 +312,15 @@ a.siteLink.logOut, a.logOut{
 /*Larger Screen Styling Rules*/
 
 @media only screen and (min-width: 1000px) {
+
+header{
+    border: solid white;
+}
+
 main {
-    width: 50%;
-    margin: 0 auto;
+    margin:auto;
+    position: absolute;
+    top: 1vw;
 }
 
 #registerForm {
@@ -322,29 +335,6 @@ section#siteLinkBox {
     margin-top: 6vw;
 }
 
-p.upDateAccount{
-    float:left;
-    bottom: 16em;
-    display: inline-block;
-    cursor: pointer;
-}
-
-p.deleteAccount {
-    bottom: 13.7em;
-    margin-left: -3em;
-    float: left;
-    cursor: pointer;
-}
-
-a.siteLink.logOut, a.logOut{
-    float:left;
-    clear:left;
-    left: 0vw;
-    color: black;
-    cursor: pointer;
-    width: auto;
-    height: auto;
-}
 
 div.userInfo {
     font-size: 0.7em;
@@ -352,13 +342,13 @@ div.userInfo {
 
 section.userLegend {
     position: absolute;
-    top: 9vw;
+    top: 70%;
     min-height: 31vw;
     clear: left;
     width: 56vw;
     margin-left: 10em;
     background: rgba(0,0,0,0.8);
-    font-size: 1.2vw;
+    font-size: .8vw;
     padding-bottom: 0;
 }
 
@@ -403,55 +393,26 @@ header h1.subtitle {
     font-family: 'Comfortaa', cursive;
     padding: 0;
     font-weight: 200;
-    /* bottom: .3em; */
     font-size: 2vw;
     display: inline;
     letter-spacing: 1vw;
     text-size-adjust: auto;
     position: absolute;
     box-sizing: border-box;
+    top: 2vw;
+    left: 17%;
 }
 
 img.marvelLogo {
     height: 7.1vw;
-    position: absolute;
     display: inline-block;
 }
 
 
-p.upDateAccount, p.deleteAccount {
-    color: black;
-    text-shadow: 6px 6px cyan;
-    display: inline-block;
-    position: relative;
-    bottom: 1em;
-    right: 10.1vw;
-}
-
-p.upDateAccount {
-    bottom: -3vw;
-}
-
-p.deleteAccount {
-    bottom: -8vw;
-}
 
 .kill, .reprieve {
     /* position: relative; */
     font-size: 3em;
-}
-
-.stickyNav {
-    position: absolute;
-    height: auto;
-    left:1vw;
-    top:10vw;
-}
-
-.stickyNav a, .stickyNav p {
-    background: white;
-    font-size: 2vw;
-    float:left;
 }
 
 
@@ -460,4 +421,4 @@ p.deleteAccount {
   
 }
 
-/*end of larger screen styling*/
+/*end of larger screen styling
