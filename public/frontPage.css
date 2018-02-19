@@ -93,14 +93,14 @@ a {
     box-sizing: border-box;
 }
 
-.frontGroup {
+/*.frontGroup {
     position: relative;
     padding: 0;
     box-sizing: content-box;
 
     
 }
-
+*/
 .frontGroup a {
     border-radius: 1vw;
     font-family: 'Bungee', sans-serif;
@@ -189,19 +189,7 @@ main {
     padding-top: 10vw;
 }
 
-.frontGroup {
-    position: relative;
-    padding: 0;
-    box-sizing: content-box;
-    width: auto;
-    max-width: 30%;
-    height: auto;
-    margin: auto;
-}
 
-.frontGroup a {
-height:7vw;
-}
 
 }
 /*end of larger screen rules*/

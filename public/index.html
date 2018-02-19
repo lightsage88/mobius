@@ -4,6 +4,7 @@
 	<title>Bookworm</title>
     <link href="https://fonts.googleapis.com/css?family=Bungee|Comfortaa" rel="stylesheet">
 	<link rel='stylesheet' type='text/css' href='frontPage.css'>
+	<link rel='stylesheet' type="text/css" href='float-grid.css'>
 </head>
 <body>
 	<header role='header'>
@@ -18,10 +19,16 @@
         <img id='spiderBook' src='assets/images/reading.gif'>
         <p>MARVELous Bookworm lets you discover comic book events involving Marvel characters that you search for. Each listing becomes a link you can click on to purchase the story!</p>
         <span>Create an account and try it!</span>
-    <section class='frontGroup'>    
-		<a class='register' href='register.html'><p>Sign up!</p></a>
-		<a class='login' href='login.html'><p>LOGIN</p></a>
-    </section>    
+    <div class='row'>
+	    <section class='frontGroup'>  
+	    	<div class='col-6'>  
+				<a class='register' href='register.html'><p>Sign up!</p></a>
+			</div>
+			<div class='col-6'>
+				<a class='login' href='login.html'><p>LOGIN</p></a>
+			</div>
+	    </section>
+	</div>
 	</main>
 <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 </body>
