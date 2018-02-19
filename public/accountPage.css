@@ -214,6 +214,7 @@ body {
     width: 89vw;
     top: 22vw;
     height: 87vw;
+    border-radius: 1.5vw;
 
 }
 
@@ -373,6 +374,7 @@ a.main, a.logOut {
             /* border: 2em; */
     height: 32.3vw;
     /* min-height: 32em; */
+    border-radius: 1.5vw;
     top: 9vw;
     font-size: 1vw;
 }
