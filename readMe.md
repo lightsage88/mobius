@@ -53,23 +53,19 @@ Register Page
 Login Page
 
 -When there is an error logging in:
-<img src='https://imgur.com/rKuBtSL'>
+<img src='screenshots/loginscreenFail.jpg'>
 
 Main Page
 
 -what you first see when successfully logging in
-<img src='https://imgur.com/tn0OdLZ'>
+<img src='screenshots/mainPage1.jpg'>
 
 -When you begin typing in the search bar, autofill kicks in with what Marvel has to offer and you hover over selections before
 clicking them
-<img src='https://imgur.com/t0WEcWa'>
-
--What you get when you click a suggestion from the search bar
-<img src='https://imgur.com/cUKZZLB'>
-
+<img src='screenshots/mainPage2.jpg'>
 
 -what you get sent to when you click a link:
-<img src='https://imgur.com/ze58ePg'>
+<img src='screenshots/mainPage5.jpg'>
 
 Account Page
 -first screen you see when clicking the 'ACCOUNT' link:
