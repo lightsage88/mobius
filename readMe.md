@@ -39,15 +39,15 @@ Then open [`localhost:8080`](http://localhost:8080) in your browser.
 
 Welcome Page/Index.html
 - First screen you see, gives you option of signing up or logging in.
-<img src='https://imgur.com/2f3tcAW'>
+<img src='screenshots/index.jpg'>
 
 Register Page
 
 -what you first see upon choosing to register/signup
-<img src='https://imgur.com/wDb0AUb'>
+<img src='screenshots/registerScreen1.jpg'>
 
 -When you begin filling out the registration form...
-<img src='https://imgur.com/I3yYbBk'>
+<img src='screenshots/registerScreen3.jpg'>
 
 
 Login Page
