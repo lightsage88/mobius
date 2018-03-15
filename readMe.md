@@ -35,7 +35,7 @@ Then open [`localhost:8080`](http://localhost:8080) in your browser.
 <h3>Account</h3>
 <p>This part of the site lets you observe and change your user information. You can't change your login username or your password, but you can change the first and last name you registered with.</p>
 
-<h2>SCREENSHOTS</h2>
+<h2>Screenshots</h2>
 
 Welcome Page/Index.html
 - First screen you see, gives you option of signing up or logging in.
@@ -69,21 +69,45 @@ clicking them
 
 Account Page
 -first screen you see when clicking the 'ACCOUNT' link:
-<img src='https://imgur.com/iccfNdo'>
+<img src='screenshots/accountPage1.jpg'>
 
 -what you see when you click the 'EDIT' text on the Account page. you're given the ability to edit your first and last names:
-<img src='https://imgur.com/oaMOZ7A'>
+<img src='screenshots/accountPage2.jpg'>
 
 -a prompt upon pressing 'DELETE' to confirm your choice:
-<img src='https://imgur.com/74RDDc6'>
+<img src='screenshots/accountPage3.jpg'>
 
 -when you successfully delete an account:
-<img src='https://imgur.com/0xOYPCy'>
+<img src='screenshots/accountPage4.jpg'>
 
 
-
-This project utilized express, mocha, chai, bcryptjs (for password hashing), mongoose, passport, and bodyParser.
+<h2>Technology</h2>
+<p>This project utilized express, mocha, chai, bcryptjs (for password hashing), mongoose, passport, and bodyParser.
 I built an API with several endpoints that allowed for user account creation, reading, updating, and deleting (CRUD).
 The API's schema included a place for a hashed password to be stored, an optional first name and last name, and an array of
 'marvelousData' which would hold information needed to render users' favorite characters and the pertinent information regarding their
-participation in cross-over comic book events.
+participation in cross-over comic book events.</p>
+<h3>Front End</h3>
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>JavaScript</li>
+  <li>jQuery</li>
+</ul>
+<h3>Back End</h3>
+<ul>
+  <li>Bcrypt.js</li>
+  <li>Body-Parser</li>
+  <li>Express.js</li>
+  <li>Json Web Token</li>
+  <li>Mocha + Chai + ChaiHttp</li>
+  <li>MongoDB/mLab.com</li>
+  <li>Mongoose</li>
+  <li>Morgan</li>
+  <li>Node.js</li>
+  <li>Passport + Passport.jwt + Passport.local</li>
+  <li>Request</li>
+  <li>Continuous integration and deployment with <a href='https://travis-ci.org/'>Travis-CI</a></li>
+</ul>
+
+
