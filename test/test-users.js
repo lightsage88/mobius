@@ -7,13 +7,13 @@ const should = chai.should;
 
 const {app, runServer, closeServer} = require('../server');
 
-const {Hooman} = require('../hoomans');
+const {User} = require('../users');
 
 const expect = chai.expect;
 chai.use(chaiHttp);
 
 
-describe('/api/hoomans', function(){
+describe('/api/users', function(){
 	const username = 'TestDummy1' + Math.random();
 	const password = 'password';
 	const firstName = 'Kevin';
@@ -366,9 +366,9 @@ afterEach(function(){
 });
 
 	describe('GET', function(){
-		it('should return all Hooman entries', ()=>{
+		it('should return all User entries', ()=>{
 			return chai.request(app)
-			.get('/api/hoomans')
+			.get('/api/users')
 			.then(res=> {
 				console.log(res.body);
 				expect(res).to.have.status(200);
@@ -380,13 +380,13 @@ afterEach(function(){
 	describe('DELETE', function(){
 		it('should delete a specific user', ()=>{
 		return chai.request(app)
-		.get('/api/hoomans')
+		.get('/api/users')
 		.then(res=>{
 			console.log(res.body[0].id);
 			killSwitch = res.body[0].id;
 			console.log(killSwitch);
 			return chai.request(app)
-			.delete(`/api/hoomans`)
+			.delete(`/api/users`)
 			.send({'_id': '5a3484cdcbe57939348da91e'})
 			.then(res=>{
 				expect(res).to.have.status(204);
@@ -399,7 +399,7 @@ afterEach(function(){
 	describe('POST', ()=>{
 		it('should create a user',()=>{
 			return chai.request(app)
-			.post('/api/hoomans')
+			.post('/api/users')
 			.send({username, password, firstName, lastName})
 			.then((res)=>{
 				expect(res).to.have.status(201);
@@ -424,7 +424,7 @@ afterEach(function(){
 	describe('PUT', ()=>{
 		it('should update a user', ()=>{
 			return chai.request(app)
-			.put('/api/hoomans')
+			.put('/api/users')
 			.send({username, firstName, lastName, password})
 			.then((res)=>{
 				console.log(res.body);
@@ -450,7 +450,7 @@ afterEach(function(){
 	describe('Put/char', ()=>{
 		it('should update the characters in a users screen', ()=>{
 			return chai.request(app)
-			.put('/api/hoomans/char')
+			.put('/api/users/char')
 			.send({username, marvelousData})
 			.then((res)=>{
 				console.log('retrospectives make you feel old, but cool');
@@ -471,7 +471,7 @@ afterEach(function(){
 	describe('GET/char', ()=>{
 		it('should get out one particular user..seems redundant', ()=>{
 			return chai.request(app)
-			.get('/api/hoomans/char')
+			.get('/api/users/char')
 			.send({username})
 			.then((res)=>{
 				console.log('this seems like a redundant one that I must have written while sleeping');

@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express');
 const bodyParser = require('body-parser');
-const {Hooman} = require('./models');
+const {User} = require('./models');
 const router = express.Router();
 
 const request = require('request');
@@ -13,7 +13,7 @@ const bcrypt = require('bcryptjs');
 router.put('/char', jsonParser, function(req,res){
 	
 	let {username, marvelousData} = req.body;
-	Hooman.updateOne(
+	User.updateOne(
 		{username},
 		{$addToSet: {marvelousData: marvelousData} }
 	)
@@ -26,10 +26,10 @@ router.put('/char', jsonParser, function(req,res){
 router.get('/char', jsonParser, function(req, res){
 	let {username} = req.headers;
 	console.log(username);
-	Hooman.findOne({username})
-	.then(function(hooman){
-	console.log(hooman);
-	res.status(200).json(hooman);
+	User.findOne({username})
+	.then(function(user){
+	console.log(user);
+	res.status(200).json(user);
 	})
 	
 })
@@ -41,12 +41,12 @@ let {firstName, lastName, password, username} = req.body;
 firstName = firstName.trim();
 lastName = lastName.trim();
 
-Hooman.updateOne({username},
+User.updateOne({username},
 			{$set: {firstName: firstName, lastName: lastName}}
 			)
 			.then(function(){
 				res.status(202);
-				return Hooman.findOne({username})
+				return User.findOne({username})
 				.then((response)=>{
 					console.log(response);
 					console.log('I like pigshit to eat');
@@ -151,7 +151,7 @@ let {username, password, firstName, lastName} = req.body;
 
 
 
-return Hooman.find({username})
+return User.find({username})
 	.count()
 	.then(function(count){
 		console.log(count);
@@ -165,13 +165,13 @@ return Hooman.find({username})
 			});
 		}
 		
-		return Hooman.hashPassword(password);
+		return User.hashPassword(password);
 		
 		})
 	.then(function(hash){
 		console.log(hash);
 		
-		return Hooman.create({
+		return User.create({
 			username,
 			password: hash,
 			firstName,
@@ -179,9 +179,9 @@ return Hooman.find({username})
 		});
 	})
 
-	.then(function(hooman){
+	.then(function(user){
 	
-		return res.status(201).json(hooman.apiRepr());
+		return res.status(201).json(user.apiRepr());
 	})
 	.catch(function(err){
 		
@@ -195,11 +195,11 @@ return Hooman.find({username})
 
 
 router.get('/', function(req, res){
-	return Hooman.find()
-	.then(function(hoomans){
+	return User.find()
+	.then(function(users){
 	let set = [];
-	for(let i=0; i<=hoomans.length-1; i++){
-		set.push(hoomans[i].apiRepr());
+	for(let i=0; i<=users.length-1; i++){
+		set.push(users[i].apiRepr());
 	}
 	console.log(set);
 	console.log(set[0].id);
@@ -214,11 +214,11 @@ router.get('/', function(req, res){
 
 router.delete('/', jsonParser, (req,res)=> {
 	let {id} = req.body;
-	return Hooman.findOne({'_id': id})
-	.then((hooman)=>{
+	return User.findOne({'_id': id})
+	.then((user)=>{
 		let killSwitch = id;
-		console.log(hooman);
-		return Hooman.deleteOne({'_id': killSwitch})
+		console.log(user);
+		return User.deleteOne({'_id': killSwitch})
 			.then(()=>{
 			console.log(`account id ${killSwitch} terminated`);
 			return res.status(204).json({message: 'Account Terminated'});
@@ -244,15 +244,15 @@ router.delete('/', jsonParser, (req,res)=> {
 
 router.delete('/char', jsonParser, function(req,res){
 	let {username, characterName} = req.body;
-	return Hooman.findOne({'username':username})
-		.then((hooman)=>{
-		let marvelousData =	hooman.marvelousData;
+	return User.findOne({'username':username})
+		.then((user)=>{
+		let marvelousData =	user.marvelousData;
 		console.log(characterName);
 		for(let i=0; i<=marvelousData.length-1; i++) {
 			if(marvelousData[i].name === characterName) {
 				console.log(`deleting ${characterName}`);
 				let target = marvelousData[i];
-				Hooman.update({'username':username},{$pull : {marvelousData:target}},
+				User.update({'username':username},{$pull : {marvelousData:target}},
 							function(err, data) {
 								if(err) {
 									return res.status(500).json({'error': 'gosh darn'});

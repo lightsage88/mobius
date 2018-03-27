@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 
 
 
-const {router: hoomanRouter} = require('./hoomans');
-const {router: policeRouter, localStrategy, jwtStrategy} = require('./cyberPolice');
+const {router: userRouter} = require('./users');
+const {router: authRouter, localStrategy, jwtStrategy} = require('./auth');
 
 
 
@@ -44,8 +44,8 @@ app.use(function(req, res, next) {
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
-app.use('/api/hoomans', hoomanRouter);
-app.use('/api/cyberPolice/', policeRouter);
+app.use('/api/users', userRouter);
+app.use('/api/auth/', authRouter);
 
 
 const jwtAuth = passport.authenticate('jwt', {session:false});

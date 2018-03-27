@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 
-const HoomanSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
 	
 	username: {
 		type: String,
@@ -28,7 +28,7 @@ const HoomanSchema = mongoose.Schema({
 	
 });
 
-HoomanSchema.methods.apiRepr = function () {
+UserSchema.methods.apiRepr = function () {
 	return {
 		username: this.username || '',
 		firstName: this.firstName || '',
@@ -39,15 +39,15 @@ HoomanSchema.methods.apiRepr = function () {
 };
 
 
-HoomanSchema.methods.validatePassword = function(password) {
+UserSchema.methods.validatePassword = function(password) {
 	return bcrypt.compare(password, this.password);
 };
 
 
-HoomanSchema.statics.hashPassword = function(password) {
+UserSchema.statics.hashPassword = function(password) {
 	return bcrypt.hash(password, 10);
 };
 
-const Hooman = mongoose.model('Hooman', HoomanSchema);
+const User = mongoose.model('User', UserSchema);
 
-module.exports = {Hooman};
+module.exports = {User};

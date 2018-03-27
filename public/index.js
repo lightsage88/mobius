@@ -13,7 +13,7 @@ $('#registerForm').submit(function(event){
 	let lastName = $('#lastName').val();
 	$.ajax({
 		method: "POST",
-		url: "/api/hoomans",
+		url: "/api/users",
 		data: JSON.stringify({username: username, password: password, firstName: firstName, lastName: lastName}),
       	contentType: 'application/json',
       	dataType: 'json', 
@@ -73,7 +73,7 @@ function deleteAccount() {
 		$('p.kill').click(function(){
 				$.ajax({
 					method: "DELETE",
-					url: 'api/hoomans',
+					url: 'api/users',
 					data: JSON.stringify({id:localStorage.id}),
 					dataType: 'json',
 					contentType: 'application/json',
@@ -129,7 +129,7 @@ function upDateAccount() {
 		let username = localStorage.username;
 				$.ajax({
 					method: "PUT",
-					url: '/api/hoomans',
+					url: '/api/users',
 					contentType: 'application/json',
 					dataType: 'JSON',
 					data: JSON.stringify(
@@ -167,7 +167,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 	
 		$.ajax({
 			method: "GET",
-			url: "/api/hoomans/char",
+			url: "/api/users/char",
 			headers: {
 				contentType: 'application/json',
 				username: `${localStorage.username}`
@@ -219,7 +219,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 
 		$.ajax({
 			method: "DELETE",
-			url: "/api/hoomans/char",
+			url: "/api/users/char",
 			data: JSON.stringify({username:localStorage.username,
 				characterName: characterName}),
 			dataType: "json",

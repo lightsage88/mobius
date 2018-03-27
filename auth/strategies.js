@@ -4,26 +4,26 @@ const {Strategy: LocalStrategy} = require('passport-local');
 const {Strategy: JwtStrategy, ExtractJwt} = require('passport-jwt');
 
 
-const {Hooman} = require('../hoomans/models');
+const {User} = require('../users/models');
 const {JWT_SECRET} = require('../config');
 
 
 const localStrategy = new LocalStrategy(function(username, password, callback){
 	
-	let hooman;
+	let user;
 	
-	Hooman.findOne({username: username})
+	User.findOne({username: username})
 		
 		.then(function(whatwasFound){
-			hooman = whatwasFound;
-			if(!hooman) {
+			user = whatwasFound;
+			if(!user) {
 				return Promise.reject({
 					reason: 'LoginError',
 					message: 'Incomplete username or password'
 				});
 			
 			}
-			return hooman.validatePassword(password);
+			return user.validatePassword(password);
 		})
 		
 		.then(function(isValid){
@@ -34,7 +34,7 @@ const localStrategy = new LocalStrategy(function(username, password, callback){
 				});
 			}
 			
-			return callback(null, hooman);
+			return callback(null, user);
 		})
 		.catch(function(err){
 			if(err.reason === 'LoginError') {
@@ -54,7 +54,7 @@ const jwtStrategy = new JwtStrategy(
 	},
 	
 	function(payload, done) {
-		done(null, payload.hooman);
+		done(null, payload.user);
 	}
 
 );

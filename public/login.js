@@ -4,7 +4,7 @@ $('#loginForm').submit(function(event){
 	let password = $('#password').val();
 	$.ajax({
 		method: "POST",
-		url: "/api/cyberPolice/login",
+		url: "/api/auth/login",
 		data: JSON.stringify({username: username, password: password}),
 		contentType: "application/json",
 		dataType: 'json',
@@ -57,7 +57,7 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			method: "GET",
-			url: '/api/hoomans',
+			url: '/api/users',
 			contentType: 'application/json',
 			dataType: 'json'
 			})
@@ -76,90 +76,3 @@ function getDataFromMlabXXXLoadAccountPage (username) {
 		});
 	});
 }
-
-
-
-
-// function loadMainPage() {
-
-
-// if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-anchorage-29615.herokuapp.com/mainPage.html') {
-// 	console.log('bloods');
-// 	console.log(location.href);
-// 	if((localStorage.getItem('username') === null || undefined) && (location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-anchorage-29615.herokuapp.com/mainPage.html')) {
-// 		console.log('crips');
-// 		window.location = 'index.html';
-// 	} else {
-
-// 		$.ajax({
-// 			method: "GET",
-// 			url: "/api/hoomans/char",
-// 			headers: {
-// 				contentType: 'application/json',
-// 				username: `${localStorage.username}`
-// 			},
-// 			dataType: 'json'
-// 		})
-// 		.then((response)=>{
-// 			let marvelousData = response.marvelousData;
-// 			let events = [];
-			
-			
-// 			for(let i=0; i<=marvelousData.length-1; i++) {
-//                 let road = (marvelousData[i].thumbnail.path).slice(7);
-                
-                
-// 				let picPath = 'https://' + road + '.' + marvelousData[i].thumbnail.extension;
-// 				let namePath = marvelousData[i].name;
-// 				let nameClass = namePath.replace(/\W/g,'');
-// 				$('#outputbox').append(`<div class='characterBox'>
-// 				<img class='characterThumbnail' src=${picPath}>
-// 				<span class='characterName'>${namePath}</span>
-// 				<button class='deleteChar' type='button'>
-// 					<img class='xSymbol' src='assets/images/xSymbol.png'>
-// 				</button>
-// 				<div class='eventBox'>
-// 		          <ul class=${nameClass}></ul>
-// 		        </div> 
-// 				</div>`);
-
-// 				events = marvelousData[i].events.items;
-// 				let eventList = [];
-// 				for(let x=0; x<=events.length-1; x++) {
-// 					eventList.push(events[x].name);
-					
-// 				}
-				
-// 			if(eventList.length === 0) {
-// 				$(`.${nameClass}`).append('<li>No events for this one</li>');
-// 			}	else {
-// 				for(let z=0; z<=eventList.length-1; z++) {
-					
-// 					$(`.${nameClass}`).append(`
-// 						<li><a target="blank" href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=marvel ${eventList[z]}">${eventList[z]}</a></li>`);
-// 				}
-// 			}
-// 		}
-// 			$('.deleteChar').click(function(){
-// 		let characterName = $(this).prev()[0].textContent;
-
-// 		$.ajax({
-// 			method: "DELETE",
-// 			url: "/api/hoomans/char",
-// 			data: JSON.stringify({username:localStorage.username,
-// 				characterName: characterName}),
-// 			dataType: "json",
-// 			contentType: "application/json"
-// 		})
-// 		.then(function(response){
-// 			console.log(response);
-// 		})
-// 		.then(()=>{
-// 			location.href='mainPage.html';
-
-// 			})
-// 	});
-// 		})
-// 	}	
-// }
-// }

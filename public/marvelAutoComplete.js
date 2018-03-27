@@ -64,7 +64,7 @@
   			console.log(suggestion.data);
         let entry = suggestion.data;
         $.ajax({
-          url: '/api/hoomans/char',
+          url: '/api/users/char',
           method: "PUT",
           data: JSON.stringify({marvelousData:entry, username: localStorage.username}),
           dataType: 'json',
@@ -111,7 +111,7 @@
         console.log(characterName);
         $.ajax({
           method: "DELETE",
-          url: "/api/hoomans",
+          url: "/api/users",
           data: JSON.stringify({username:localStorage.username, characterName: characterName}),
           dataType: "json",
           contentType: "application/json"
