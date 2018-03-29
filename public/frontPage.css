@@ -127,7 +127,7 @@ a {
 
 
 /*FOR LARGER SCREENS*/
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 7500px) {
 
 .frontGroup{
     margin-top:5vw;

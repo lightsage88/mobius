@@ -291,7 +291,7 @@ span.characterName {
 
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 750px) {
 
 header{
     background: rgba(0,0,0,0.7);
