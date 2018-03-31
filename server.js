@@ -53,7 +53,7 @@ const jwtAuth = passport.authenticate('jwt', {session:false});
 
 app.get('/api/vault', jwtAuth, (req, res)=>{
 	return res.json({
-		data: 'Blue stays TRU, Crip 4 LIFE'
+		data: 'User has successfuly accessed the vault area'
 	});
 });
 
@@ -62,7 +62,7 @@ app.get('/api/vault', jwtAuth, (req, res)=>{
 
 
 app.use('*', (req, res)=>{
-	return res.status(404).json({message: 'Mang, that shit dont exist'});
+	return res.status(404).json({message: 'Something is amiss...'});
 });
 
 
@@ -76,7 +76,7 @@ function runServer() {
 				return reject(err);
 			}
 			server = app.listen(PORT, function(){
-				console.log(`Your shit is cripping on port ${PORT}`);
+				console.log(`Marvelous Bookworm is running on port: ${PORT}`);
 				resolve();
 			})
 			.on('error', function(err){
@@ -90,7 +90,7 @@ function runServer() {
 function closeServer() {
 	return mongoose.disconnect().then(function(){
 		return new Promise(function(resolve, reject){
-			console.log('waltzing away');
+			console.log('closing server');
 			server.close(function(err){
 				if(err) {
 					reject(err);
