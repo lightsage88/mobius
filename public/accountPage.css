@@ -9,9 +9,10 @@ header.header {
     width: auto;
     height: auto;
     max-height: 7.5vw;
-    min-width: 97%;
+    min-width: 98%;
     margin: auto 1%;
     position: absolute;
+    left:0;
 }
 
 h1.subtitle{
@@ -55,7 +56,7 @@ a.siteLink, p.upDateAccount, p.deleteAccount{
     text-decoration: none;
     text-shadow: .1em -0.13em 2px blue;
     border-radius: 20%;
-    font-size: 4vw;
+    font-size: 3.5vw;
     text-align:center;
     text-shadow: .6vw .6vw cyan;
 }
@@ -179,6 +180,7 @@ body {
     border-radius: 2vw;
     min-height: 90vw;
     height: auto;
+    border: solid white;
 }
 
 
@@ -187,7 +189,7 @@ body {
     font-family:'Bungee', cursive;
     font-size: 3em;
     color: white;
-    text-align: left;
+    text-align: center;
 }
 
 .username, .firstName, .lastName {
@@ -353,6 +355,7 @@ section.userLegend {
     background: rgba(0,0,0,0.8);
     font-size: .8vw;
     padding-bottom: 0;
+    border: solid white;
 }
 
 form.updateForm{
