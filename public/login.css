@@ -28,7 +28,7 @@ header h1.mainPageHeader{
     font-weight: 100;
     top: 1vw;
     position:relative;
-    letter-spacing: .1em;
+    letter-spacing: 1vw;
 }
 
 img.marvelLogo{
