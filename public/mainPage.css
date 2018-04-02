@@ -93,7 +93,7 @@ a.logOut{
 
 
 body {
-    background: url('assets/images/orangeDots.png');
+    background: url('assets/images/orangeDots.jpg');
     background-size:contain;
 }
 
@@ -366,7 +366,7 @@ a.logOut{
 
 
 body {
-    background: url('assets/images/orangeDots.png');
+    background: url('assets/images/orangeDots.jpg');
     margin:auto;
     width: 80%;
 }
@@ -449,12 +449,12 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px cyan;
-    background: url(assets/images/ggoblin.png);
+    background: url(assets/images/ggoblin.jpg);
     background-size: contain;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: url(assets/images/Spider-man-logo.png);
+  background: url(assets/images/Spider-man-logo.jpg);
   background-size: contain;
   outline: 1px solid blue;
 }

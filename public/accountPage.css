@@ -51,13 +51,13 @@ a.siteLink, p.upDateAccount, p.deleteAccount{
     font-family: 'Bungee', cursive;
     padding: 0 .2em;
     font-weight:bold;
-    color:gold;
+    color:black;
     text-decoration: none;
     text-shadow: .1em -0.13em 2px blue;
     border-radius: 20%;
     font-size: 4vw;
     text-align:center;
-    text-shadow: .6vw .6vw red;
+    text-shadow: .6vw .6vw cyan;
 }
 
 p.upDateAccount, p.deleteAccount{
@@ -364,6 +364,10 @@ form.updateForm{
 a.main, a.logOut {
     color:black;
     text-shadow: 3px 6px 2px lime;
+}
+
+a:hover, p.siteLink:hover {
+    color: whitesmoke;
 }
 
 .superDelete {
