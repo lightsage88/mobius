@@ -131,6 +131,7 @@ a {
 
 .frontGroup{
     margin-top:5vw;
+    display: flex;
 
 }
 
