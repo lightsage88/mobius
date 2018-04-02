@@ -5,7 +5,7 @@ before_deploy:
 deploy:
   provider: heroku
   api_key:
-    secure: 8aec391c-5a4e-4f3e-88ae-9925f7dd93b6
+    secure: df9bd3c0-0be0-4809-9a3a-de809d4805f3
   app: shrouded-anchorage-29615
   on:
     repo: lightsage88/mobius
