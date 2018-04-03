@@ -189,9 +189,10 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				$('#outputbox').append(`<div class='characterBox'>
 				<img class='characterThumbnail' src=${picPath}>
 				<span class='characterName'>${namePath}</span>
-				<button class='deleteChar' type='button'>
+				<button class='deleteChar tooltip' type='button'>
 					<img class='xSymbol' src='assets/images/xSymbol.png'>
 				</button>
+				
 				<div class='eventBox'>
 		          <ul class=${nameClass}></ul>
 		        </div> 

@@ -11,6 +11,16 @@
 
 }*/
 
+#savedChars {
+    text-align: center;
+font-family: 'Bungee', sans-serif;
+color: #C9FBFF;
+text-shadow: .2vw .2vw .2vw black;
+position: relative;
+top: -5vh;
+font-size: 1.4em;
+}
+
 .existentialStuff {
     position: fixed;
     background: black;
@@ -448,7 +458,7 @@ ul:only-child {
     max-height: 98%;
     overflow-y: scroll;
     line-height: 0;
-    margin: 0 39%;
+    margin: 0 25%;
 }
 
 body::-webkit-scrollbar {
@@ -496,8 +506,7 @@ a:active{
     border-style:outset;
     border-width: .52em;
     position: absolute;
-    left: 0vw;
-    right:auto;
+    right:0;
     height: auto;
     width: auto;
     min-width: 2.2vw;
