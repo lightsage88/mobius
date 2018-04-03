@@ -123,6 +123,8 @@ font-size:10vw;
     color: lime;
     text-shadow: purple 6px 6px 2px;
     font-size: 2vw;
+    padding: 5vw;
+    line-height:0;
 }
 
 
@@ -257,6 +259,7 @@ width: 20%;
 min-width: unset;
 
 left: 40%;
+padding: 2vw;
 }
 
 .testerCorner {
