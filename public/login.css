@@ -7,6 +7,7 @@
     text-shadow: none;
     position: absolute;
     bottom: -10vw;
+    margin: auto 10%;
 }
 
 header{
@@ -238,112 +239,41 @@ input#password, input#username {
 
 button#submitButton {
     bottom: 9vw;
-    font-size:1vw;
-    width: auto;
-    height: auto;
-    background: rgba(0,0,0,0.7);
+
+font-size: 1vw;
+
+width: auto;
+
+height: auto;
+
+background: rgba(0,0,0,0.7);
+
+position: absolute;
+
+bottom: -5vw;
+
+width: 20%;
+
+min-width: unset;
+
+left: 40%;
 }
 
 .testerCorner {
-    {
-    display: inline;
-    text-align: center;
-    width: 90%;
-    margin: auto 5%;
-}
-}
-
-/*main {
-    width: 50%;
-    margin: 0 auto;
-    right: 4.3%;
-    position: absolute;
-    left: 1em;
-    border-radius: 2em;
-    height:auto;
-    max-height: 23em;
-}*/
-
-/*#loginForm{
     
-    margin: 10vw 20%;
-    height: 29vw;
-    width: auto;
-    min-width: 60%;
-    font-size: 3vw;
-    top: auto;
-    min-height:30vw;
-    padding-bottom: 0;
-    position: absolute;
-}*/
-/*
-button#submitButton{
-    left: 1.5vw;
-    width: 90%;
-    clear: left;
-    height: auto;
-    top:.1vw;
-    font-size: 1.5vw;
-    background: rgba(0,0,0,0.6);
-}
-
-#formName {
-    margin: -2vw auto;
-    font-size: 3vw;
-    position: relative;
-    bottom: 5vw;
-}
-
-
-
-h5 {
-    margin: 0;
-    font-size: .5em;
-    top: 1.3em;
-}
-
-h5.siteName {
-    position: relative;
-    top: -1.8em;
-    left: .5em;
-}
-
-h5.pDub {
-    position: relative;
-    top: -3.3em;
-    left: .5em;
-}
-
-#password {
-    float: left;
-}
-
-#registerForm {
-    text-align: center;
-    font-size:1.8em;
-    background: rgba(0,0,0,0.7);
-    width: 116%;
-}
-
-#errorFriend {
-    margin-bottom: 2em;
-    text-align: left;
-    display: inline-block;
-    position: relative;
-    right: 2.5em;
-}
-p.loginFail {
     display: inline;
-    text-align: center;
-    font-family: 'Bungee',cursive;
-    color: black;
-    font-size: 1.1em;
-    position: fixed;
-    top: 50%;
-    width:100%;
-    text-shadow: yellow 5px -1px 4px;
-   
-}*/
+
+text-align: center;
+
+width: auto;
+
+
+position: relative;
+
+bottom: 7.5vh;
+margin: auto 15%;
+}
+
 
 header h1.mainPageHeader{
     display: inline;
