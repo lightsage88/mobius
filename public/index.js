@@ -190,7 +190,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				<img class='characterThumbnail' src=${picPath}>
 				<span class='characterName'>${namePath}</span>
 				<button class='deleteChar tooltip' type='button'>
-					<img class='xSymbol' src='assets/images/xSymbol.png'>
+					<img class='xSymbol' src='assets/images/xmenX.jpg'>
 				</button>
 
 				<div class='eventBox'>

@@ -192,8 +192,8 @@ a:active{
 }
 
 .deleteChar {
-    border-radius: 50%;
-    border-style:outset;
+/*    border-radius: 50%;
+*/    border-style:outset;
     border-width: .52em;
 	position: absolute;
     height: auto;
@@ -204,7 +204,7 @@ a:active{
 }
 
 .deleteChar:hover{
-    background: yellow;
+    background: #f11e24;
 }
 
 .xSymbol {
@@ -502,8 +502,8 @@ a:active{
 }
 
 .deleteChar {
-    border-radius: 50%;
-    border-style:outset;
+/*    border-radius: 50%;
+*/    border-style:outset;
     border-width: .52em;
     position: absolute;
     right:0;
@@ -515,7 +515,7 @@ a:active{
 }
 
 .deleteChar:hover{
-    background: yellow;
+    background: #f11e24;
 }
 
 .xSymbol {

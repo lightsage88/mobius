@@ -92,7 +92,7 @@
           <img class='characterThumbnail' src=${thumbnail}>
   				<span class='characterName'>${suggestion.value}<span>
           <button class='deleteChar' type='button'>
-          <img class='xSymbol' src='assets/images/xSymbol.png'>
+          <img class='xSymbol' src='assets/images/xmenX.jpg'>
           </button>
           <ul class='eventList'></ul>
           </div><!--characterBox-->`);
