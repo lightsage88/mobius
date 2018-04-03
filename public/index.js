@@ -179,7 +179,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 			let events = [];
 			
 			
-			for(let i=0; i<=marvelousData.length-1; i++) {
+			for(let i=marvelousData.length-1; i>=0; i--) {
                 let road = (marvelousData[i].thumbnail.path).slice(7);
                 
                 
@@ -192,7 +192,7 @@ if(location.href === 'http://localhost:8080/mainPage.html' || 'https://shrouded-
 				<button class='deleteChar tooltip' type='button'>
 					<img class='xSymbol' src='assets/images/xSymbol.png'>
 				</button>
-				
+
 				<div class='eventBox'>
 		          <ul class=${nameClass}></ul>
 		        </div> 
