@@ -48,9 +48,7 @@ User.updateOne({username},
 				res.status(202);
 				return User.findOne({username})
 				.then((response)=>{
-					console.log(response);
-					console.log('I like pigshit to eat');
-					console.log(response.password);
+					
 					res.status(202).json(response);
 				})
 			})
